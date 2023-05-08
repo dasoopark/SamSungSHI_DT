@@ -1,0 +1,11 @@
+ ggoreb.com/dt/
+ 위키독스 -> 책 강의자료 
+
+jupyter notebook 실행/편집파일 위치 정하기
+cd / => cd python  =>jupyter notebook (타이핑하면 파이썬 환경에서 실행 가능해짐) =>new -> python3 (파일생성)
+
+
+1.cd 위치 변경 , cd / 최상위로 이동 
+2.mkdir 풀더 생성
+3.cls 화면 지우기
+
