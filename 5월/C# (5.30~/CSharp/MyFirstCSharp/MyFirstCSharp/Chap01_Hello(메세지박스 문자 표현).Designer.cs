@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.btnbanga = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -41,11 +42,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnHello_Click);
             // 
+            // btnbanga
+            // 
+            this.btnbanga.Location = new System.Drawing.Point(105, 162);
+            this.btnbanga.Name = "btnbanga";
+            this.btnbanga.Size = new System.Drawing.Size(75, 23);
+            this.btnbanga.TabIndex = 1;
+            this.btnbanga.Text = "반갑습니다";
+            this.btnbanga.UseVisualStyleBackColor = true;
+            this.btnbanga.Click += new System.EventHandler(this.btnbanga_Click);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(549, 354);
+            this.Controls.Add(this.btnbanga);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -54,6 +67,7 @@
 
         private System.Windows.Forms.Button btnHello;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnbanga;
     }
 }
 

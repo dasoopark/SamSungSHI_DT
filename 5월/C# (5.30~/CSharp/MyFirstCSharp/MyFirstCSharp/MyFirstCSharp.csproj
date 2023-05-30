@@ -46,16 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Chap01_Hello%28메세지박스 문자 표현%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Chap01_Hello%28메세지박스 문자 표현%29.Designer.cs">
+      <DependentUpon>Chap01_Hello%28메세지박스 문자 표현%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap02_DataType%28데이터타입%29.cs" />
+    <Compile Include="Chap03_DataTypeConversion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap03_DataTypeConversion.Designer.cs">
+      <DependentUpon>Chap03_DataTypeConversion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Chap01_Hello%28메세지박스 문자 표현%29.resx">
+      <DependentUpon>Chap01_Hello%28메세지박스 문자 표현%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap03_DataTypeConversion.resx">
+      <DependentUpon>Chap03_DataTypeConversion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

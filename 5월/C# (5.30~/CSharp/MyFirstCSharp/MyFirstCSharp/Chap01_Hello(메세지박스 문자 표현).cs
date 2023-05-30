@@ -26,5 +26,17 @@ namespace MyFirstCSharp
             // "HELLO WORLD"를 표현하라.
             MessageBox.Show("Hello World");
         }
+
+
+        //반갑습니다 버튼
+        private void btnbanga_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("반갑습니다");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
