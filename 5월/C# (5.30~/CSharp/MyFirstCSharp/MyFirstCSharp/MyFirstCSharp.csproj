@@ -95,6 +95,12 @@
     <Compile Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].designer.cs">
       <DependentUpon>Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs</DependentUpon>
     </Compile>
+    <Compile Include="Chap10_NullManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap10_NullManage.Designer.cs">
+      <DependentUpon>Chap10_NullManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].resx">
       <DependentUpon>Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap10_NullManage.resx">
+      <DependentUpon>Chap10_NullManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
