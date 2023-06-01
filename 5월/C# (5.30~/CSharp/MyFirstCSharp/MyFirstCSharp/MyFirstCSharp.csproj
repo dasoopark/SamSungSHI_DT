@@ -89,11 +89,11 @@
     <Compile Include="Chap08_StringSplit[문자 나누기].Designer.cs">
       <DependentUpon>Chap08_StringSplit[문자 나누기].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap09_StringManage_Test.cs">
+    <Compile Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap09_StringManage_Test.Designer.cs">
-      <DependentUpon>Chap09_StringManage_Test.cs</DependentUpon>
+    <Compile Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].designer.cs">
+      <DependentUpon>Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,8 +118,8 @@
     <EmbeddedResource Include="Chap08_StringSplit[문자 나누기].resx">
       <DependentUpon>Chap08_StringSplit[문자 나누기].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap09_StringManage_Test.resx">
-      <DependentUpon>Chap09_StringManage_Test.cs</DependentUpon>
+    <EmbeddedResource Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].resx">
+      <DependentUpon>Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
