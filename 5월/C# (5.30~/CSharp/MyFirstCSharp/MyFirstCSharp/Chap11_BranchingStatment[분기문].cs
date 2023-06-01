@@ -318,5 +318,31 @@ namespace MyFirstCSharp
            
 
         }
+
+        private void btnTernaryOperator_Click(object sender, EventArgs e)
+        {
+            //삼항 연산자 
+            //피 연산자의 개수가 3개인 조건부 연산자.
+            // if - else구문을 한줄로 간단하게 표현할 수 있기 때문에 사용 
+            //IN-LINE IF문이라고도 한다.
+            //입력한 값을 받아오기 
+            string svalue = txtBS.Text;
+
+            //정수 데이터 변수 생성
+            int iResult = 0;
+
+            //입력 받은 값을 숫자로 변환할 수 있는지 체크 bool 변수 
+            bool bFlag = false;
+
+            //입력 문자를 숫자로 변환 후 iResult에 담고 성공여부를 bFlag에 담기
+            bFlag = int.TryParse(svalue, out iResult); // svalue를 iResult 형태의 데이터로 변환 할 수 있는지 true or false 반환
+
+            //결과를 담을 STRING 변수
+            string sResult = string.Empty; //""
+            // string sResult = "";
+
+            sResult = (iResult % 2 == 0) ? "짝수입니다." : "홀수입니다.";
+            MessageBox.Show(sResult);
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.btnbool_if = new System.Windows.Forms.Button();
             this.btnPM = new System.Windows.Forms.Button();
             this.btnhol_jjack = new System.Windows.Forms.Button();
+            this.btnTernaryOperator = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnIF_Click
@@ -126,11 +127,22 @@
             this.btnhol_jjack.UseVisualStyleBackColor = true;
             this.btnhol_jjack.Click += new System.EventHandler(this.btnhol_jjack_Click);
             // 
+            // btnTernaryOperator
+            // 
+            this.btnTernaryOperator.Location = new System.Drawing.Point(357, 302);
+            this.btnTernaryOperator.Name = "btnTernaryOperator";
+            this.btnTernaryOperator.Size = new System.Drawing.Size(148, 70);
+            this.btnTernaryOperator.TabIndex = 9;
+            this.btnTernaryOperator.Text = "삼항 연산자";
+            this.btnTernaryOperator.UseVisualStyleBackColor = true;
+            this.btnTernaryOperator.Click += new System.EventHandler(this.btnTernaryOperator_Click);
+            // 
             // Chap11_BranchingStatment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnTernaryOperator);
             this.Controls.Add(this.btnhol_jjack);
             this.Controls.Add(this.btnPM);
             this.Controls.Add(this.btnbool_if);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.Button btnbool_if;
         private System.Windows.Forms.Button btnPM;
         private System.Windows.Forms.Button btnhol_jjack;
+        private System.Windows.Forms.Button btnTernaryOperator;
     }
 }
