@@ -95,11 +95,17 @@
     <Compile Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].designer.cs">
       <DependentUpon>Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap10_NullManage.cs">
+    <Compile Include="Chap10_NullManage[NULL 다루기].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap10_NullManage.Designer.cs">
-      <DependentUpon>Chap10_NullManage.cs</DependentUpon>
+    <Compile Include="Chap10_NullManage[NULL 다루기].Designer.cs">
+      <DependentUpon>Chap10_NullManage[NULL 다루기].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap11_BranchingStatment[분기문].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap11_BranchingStatment[분기문].Designer.cs">
+      <DependentUpon>Chap11_BranchingStatment[분기문].cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,8 +133,11 @@
     <EmbeddedResource Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].resx">
       <DependentUpon>Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap10_NullManage.resx">
-      <DependentUpon>Chap10_NullManage.cs</DependentUpon>
+    <EmbeddedResource Include="Chap10_NullManage[NULL 다루기].resx">
+      <DependentUpon>Chap10_NullManage[NULL 다루기].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap11_BranchingStatment[분기문].resx">
+      <DependentUpon>Chap11_BranchingStatment[분기문].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
