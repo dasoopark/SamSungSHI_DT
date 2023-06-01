@@ -230,5 +230,93 @@ namespace MyFirstCSharp
             }
 
         }
+
+        private void btnPM_Click(object sender, EventArgs e)
+        {
+            //r 입력한 값이 음수 인지 양수 인지 판단
+
+            //입력한 값을 받아오기 
+            string svalue = txtBS.Text;
+
+            //정수 데이터 변수 생성
+            int iResult = 0;
+
+            //입력 받은 값을 숫자로 변환할 수 있는지 체크 bool 변수 
+            bool bFlag = false;
+
+            //입력 문자를 숫자로 변환 후 iResult에 담고 성공여부를 bFlag에 담기
+            bFlag = int.TryParse(svalue, out iResult); // svalue를 iResult 형태의 데이터로 변환 할 수 있는지 true or false 반환
+            
+            //벨리데이션 체크
+            // 개발자가 프로그램 개발 시 오류 사항이 발생할 수 있는 로직을 예상하고
+            // 오류 상황이 발생할 수 있는 로직을 처리 하기 전에 
+            // 에러 메세지를 사용자 에게 전달 해 줌으로서
+            // 시스템 오류 를 발생 시키지 않으면서 프로그램에 대한 신뢰도를
+            // 높이는 개발 방법.
+            // 사용자에게 정확한 사용 방법을 알리면서 올바르게 프로그램을 사용 할 수 있도록 유도.
+
+            if(!bFlag)
+            {
+                MessageBox.Show("음수 양수 판단을 할 수 없습니다.");
+                return;
+            }
+            if(iResult > 0)
+            {
+                MessageBox.Show("양수입니다.");
+            }
+            else if (iResult < 0)
+            {
+                MessageBox.Show("음수입니다.");
+            }
+            else
+            {
+                MessageBox.Show("0입니다.");
+            }
+        }
+
+        private void btnhol_jjack_Click(object sender, EventArgs e)
+        {
+            // 홀수 짝수 판단 
+
+            //입력한 값을 받아오기 
+            string svalue = txtBS.Text;
+
+            //정수 데이터 변수 생성
+            int iResult = 0;
+
+            //입력 받은 값을 숫자로 변환할 수 있는지 체크 bool 변수 
+            bool bFlag = false;
+
+            //입력 문자를 숫자로 변환 후 iResult에 담고 성공여부를 bFlag에 담기
+            bFlag = int.TryParse(svalue, out iResult); // svalue를 iResult 형태의 데이터로 변환 할 수 있는지 true or false 반환
+
+            //벨리데이션 체크
+            // 개발자가 프로그램 개발 시 오류 사항이 발생할 수 있는 로직을 예상하고
+            // 오류 상황이 발생할 수 있는 로직을 처리 하기 전에 
+            // 에러 메세지를 사용자 에게 전달 해 줌으로서
+            // 시스템 오류 를 발생 시키지 않으면서 프로그램에 대한 신뢰도를
+            // 높이는 개발 방법.
+            // 사용자에게 정확한 사용 방법을 알리면서 올바르게 프로그램을 사용 할 수 있도록 유도.
+
+            if (!bFlag)
+            {
+                MessageBox.Show("홀수,짝수 구분 불가");
+                return;
+            }
+            if (iResult == 0)
+            {
+                MessageBox.Show("영");
+            }
+            if (iResult % 2 == 0)
+            {
+                MessageBox.Show("짝수입니다.");
+            }
+            else if(iResult %2 == 1)
+            {
+                MessageBox.Show("홀수입니다.");
+            }
+           
+
+        }
     }
 }

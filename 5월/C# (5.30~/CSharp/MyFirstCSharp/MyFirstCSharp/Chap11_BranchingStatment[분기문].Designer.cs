@@ -35,6 +35,8 @@
             this.btnAndif_Click = new System.Windows.Forms.Button();
             this.btnORif = new System.Windows.Forms.Button();
             this.btnbool_if = new System.Windows.Forms.Button();
+            this.btnPM = new System.Windows.Forms.Button();
+            this.btnhol_jjack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnIF_Click
@@ -104,11 +106,33 @@
             this.btnbool_if.UseVisualStyleBackColor = true;
             this.btnbool_if.Click += new System.EventHandler(this.btnbool_if_Click);
             // 
+            // btnPM
+            // 
+            this.btnPM.Location = new System.Drawing.Point(45, 302);
+            this.btnPM.Name = "btnPM";
+            this.btnPM.Size = new System.Drawing.Size(127, 70);
+            this.btnPM.TabIndex = 7;
+            this.btnPM.Text = "음수/양수 판단";
+            this.btnPM.UseVisualStyleBackColor = true;
+            this.btnPM.Click += new System.EventHandler(this.btnPM_Click);
+            // 
+            // btnhol_jjack
+            // 
+            this.btnhol_jjack.Location = new System.Drawing.Point(202, 302);
+            this.btnhol_jjack.Name = "btnhol_jjack";
+            this.btnhol_jjack.Size = new System.Drawing.Size(127, 70);
+            this.btnhol_jjack.TabIndex = 8;
+            this.btnhol_jjack.Text = "홀수 / 짝수 판단";
+            this.btnhol_jjack.UseVisualStyleBackColor = true;
+            this.btnhol_jjack.Click += new System.EventHandler(this.btnhol_jjack_Click);
+            // 
             // Chap11_BranchingStatment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnhol_jjack);
+            this.Controls.Add(this.btnPM);
             this.Controls.Add(this.btnbool_if);
             this.Controls.Add(this.btnORif);
             this.Controls.Add(this.btnAndif_Click);
@@ -132,5 +156,7 @@
         private System.Windows.Forms.Button btnAndif_Click;
         private System.Windows.Forms.Button btnORif;
         private System.Windows.Forms.Button btnbool_if;
+        private System.Windows.Forms.Button btnPM;
+        private System.Windows.Forms.Button btnhol_jjack;
     }
 }
