@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{70CB0858-DB82-49B5-9FB5-FE66932016BA}</ProjectGuid>
+    <ProjectGuid>{A78414FC-AA86-47ED-B164-FF3647039B52}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MyFirstCSharp</RootNamespace>
     <AssemblyName>MyFirstCSharp</AssemblyName>
@@ -46,26 +46,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chap01_Hello%28메세지박스 문자 표현%29.cs">
+    <Compile Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap01_Hello%28메세지박스 문자 표현%29.Designer.cs">
-      <DependentUpon>Chap01_Hello%28메세지박스 문자 표현%29.cs</DependentUpon>
+    <Compile Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].Designer.cs">
+      <DependentUpon>Chap04_DataType_ConvTest[데이터타입 변환 TEST].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap02_DataType%28데이터타입%29.cs" />
+    <Compile Include="Chap01_Hello[메세지박스 문자 표현].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap01_Hello[메세지박스 문자 표현].Designer.cs">
+      <DependentUpon>Chap01_Hello[메세지박스 문자 표현].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap02_DataType[데이터타입].cs" />
     <Compile Include="Chap03_DataTypeConversion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Chap03_DataTypeConversion.Designer.cs">
       <DependentUpon>Chap03_DataTypeConversion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chap05_Operator[연산자].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap05_Operator[연산자].Designer.cs">
+      <DependentUpon>Chap05_Operator[연산자].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap06_StringChange[문자 바꾸기].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap06_StringChange[문자 바꾸기].Designer.cs">
+      <DependentUpon>Chap06_StringChange[문자 바꾸기].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap07_StringFind[문자 찾기 및 바꾸기].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap07_StringFind[문자 찾기 및 바꾸기].Designer.cs">
+      <DependentUpon>Chap07_StringFind[문자 찾기 및 바꾸기].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap08_StringSplit[문자 나누기].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap08_StringSplit[문자 나누기].Designer.cs">
+      <DependentUpon>Chap08_StringSplit[문자 나누기].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap09_StringManage_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap09_StringManage_Test.Designer.cs">
+      <DependentUpon>Chap09_StringManage_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Chap01_Hello%28메세지박스 문자 표현%29.resx">
-      <DependentUpon>Chap01_Hello%28메세지박스 문자 표현%29.cs</DependentUpon>
+    <EmbeddedResource Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
+      <DependentUpon>Chap04_DataType_ConvTest[데이터타입 변환 TEST].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap01_Hello[메세지박스 문자 표현].resx">
+      <DependentUpon>Chap01_Hello[메세지박스 문자 표현].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chap03_DataTypeConversion.resx">
       <DependentUpon>Chap03_DataTypeConversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap05_Operator[연산자].resx">
+      <DependentUpon>Chap05_Operator[연산자].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap06_StringChange[문자 바꾸기].resx">
+      <DependentUpon>Chap06_StringChange[문자 바꾸기].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap07_StringFind[문자 찾기 및 바꾸기].resx">
+      <DependentUpon>Chap07_StringFind[문자 찾기 및 바꾸기].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap08_StringSplit[문자 나누기].resx">
+      <DependentUpon>Chap08_StringSplit[문자 나누기].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap09_StringManage_Test.resx">
+      <DependentUpon>Chap09_StringManage_Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
