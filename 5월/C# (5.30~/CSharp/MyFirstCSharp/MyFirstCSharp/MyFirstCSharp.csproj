@@ -113,6 +113,18 @@
     <Compile Include="Chap12_IF_Test.Designer.cs">
       <DependentUpon>Chap12_IF_Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chap13_switch[Switch 분기문].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap13_switch[Switch 분기문].Designer.cs">
+      <DependentUpon>Chap13_switch[Switch 분기문].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap14_Switch_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap14_Switch_Test.Designer.cs">
+      <DependentUpon>Chap14_Switch_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
@@ -147,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chap12_IF_Test.resx">
       <DependentUpon>Chap12_IF_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap13_switch[Switch 분기문].resx">
+      <DependentUpon>Chap13_switch[Switch 분기문].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap14_Switch_Test.resx">
+      <DependentUpon>Chap14_Switch_Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
