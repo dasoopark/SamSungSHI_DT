@@ -69,5 +69,28 @@ namespace MyFirstCSharp
                 }
             }
         }
+
+        private void btnimmutable_Click(object sender, EventArgs e)
+        {
+            //값형식의 타입.
+            //immutable Type과 (string) 과 Mutable Type (int)
+            //immutable 타입은 저장되는 번지수만 늘어나서 데이터가 증가하는 방식.
+            //누적 되기 전의 데이터가 사라지지 않는 방식.
+            //2 * 1 = 2   //2 * 1 = 2  //2 * 1 = 2
+            //2 * 2 = 4  //2 * 2 = 4
+            //2 * 3 = 6
+            //데이터가 누적 될 때 불필요한 메모리 공간이 많이 소비되므로 비효율적인 코딩 이 될 수 있다.
+            //StringBuilder를 사용할 것을 권장 (강추추추)
+
+            StringBuilder sBuilder = new StringBuilder();
+            // 12345678910 .... 100
+            for (int i = 1; i <= 100; i++)
+            {
+                sBuilder.Append(i.ToString());
+                // 12345678910..............100
+            }
+            MessageBox.Show(sBuilder.ToString());
+            sBuilder.Clear(); // 내용 삭제
+        }
     }
 }

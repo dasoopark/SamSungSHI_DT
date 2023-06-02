@@ -32,6 +32,7 @@
             this.btnArraySum = new System.Windows.Forms.Button();
             this.txtGuGu = new System.Windows.Forms.TextBox();
             this.GuGu_Btn = new System.Windows.Forms.Button();
+            this.btnimmutable = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnforsum
@@ -76,11 +77,23 @@
             this.GuGu_Btn.UseVisualStyleBackColor = true;
             this.GuGu_Btn.Click += new System.EventHandler(this.GuGu_Btn_Click);
             // 
+            // btnimmutable
+            // 
+            this.btnimmutable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnimmutable.Location = new System.Drawing.Point(0, 302);
+            this.btnimmutable.Name = "btnimmutable";
+            this.btnimmutable.Size = new System.Drawing.Size(719, 23);
+            this.btnimmutable.TabIndex = 4;
+            this.btnimmutable.Text = "immutable";
+            this.btnimmutable.UseVisualStyleBackColor = true;
+            this.btnimmutable.Click += new System.EventHandler(this.btnimmutable_Click);
+            // 
             // Chap16_Loop_For
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 365);
+            this.Controls.Add(this.btnimmutable);
             this.Controls.Add(this.GuGu_Btn);
             this.Controls.Add(this.txtGuGu);
             this.Controls.Add(this.btnArraySum);
@@ -98,5 +111,6 @@
         private System.Windows.Forms.Button btnArraySum;
         private System.Windows.Forms.TextBox txtGuGu;
         private System.Windows.Forms.Button GuGu_Btn;
+        private System.Windows.Forms.Button btnimmutable;
     }
 }
