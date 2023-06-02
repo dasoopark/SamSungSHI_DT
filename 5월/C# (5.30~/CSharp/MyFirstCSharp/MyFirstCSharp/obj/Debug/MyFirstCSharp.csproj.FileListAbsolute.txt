@@ -21,3 +21,4 @@ C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSh
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap12_IF_Test.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap13_switch.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap14_Switch_Test.resources
+C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap15_Array.resources
