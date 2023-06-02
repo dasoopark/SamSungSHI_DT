@@ -181,6 +181,9 @@
     <EmbeddedResource Include="Chap15_Array.resx">
       <DependentUpon>Chap15_Array.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Chap16_Loop_For.resx">
+      <DependentUpon>Chap16_Loop_For.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
