@@ -131,6 +131,12 @@
     <Compile Include="Chap15_Array.Designer.cs">
       <DependentUpon>Chap15_Array.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chap16_Loop_For.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap16_Loop_For.Designer.cs">
+      <DependentUpon>Chap16_Loop_For.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
