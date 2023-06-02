@@ -23,6 +23,7 @@ namespace MyFirstCSharp
 
         private void btnIF_Click_Click(object sender, EventArgs e)
         {
+          
             //텍스트 박스에 입력한 값이 없을 경우 
             //"아무 값도 없습니다." 라는 메세지를 표현하고
             // 아닐 경우(값이 있을경우) 해당 값을 메세지로 표현
