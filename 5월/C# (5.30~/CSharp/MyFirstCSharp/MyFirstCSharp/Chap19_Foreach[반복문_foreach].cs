@@ -98,7 +98,15 @@ namespace MyFirstCSharp
             //텍스트 박스 일 경우 텍스트 속성을 내용을 지우는 로직을 구현.
             //Winform 에서는 도구의 클래스 를 (Control, Component)라고 부른다.
 
-
+            //그룹 박스의 컨트롤 들을 하나씩 추출 하여 컨트롤 클래스 MyControl로 받아낸다.
+            foreach(Control MyControl in grpControls.Controls) //Control형태
+            {
+               //is : 해당 클래스 인지, 해당 클래스를 상속 받았는지 에 대한 여부 판단 후  결과를 반환.
+               if(MyControl is TextBox)  //트루 OR FALSE 반환
+                {
+                    MyControl.Text = "";
+                }
+            }
         }
     }
 }

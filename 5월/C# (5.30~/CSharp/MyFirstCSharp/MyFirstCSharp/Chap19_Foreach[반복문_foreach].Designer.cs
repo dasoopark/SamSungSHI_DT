@@ -35,7 +35,7 @@
             this.txtinputWord = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpControls = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAllClear = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -68,7 +68,7 @@
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.grpControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStringForeach
@@ -132,46 +132,46 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBox1
+            // grpControls
             // 
-            this.groupBox1.Controls.Add(this.textBox22);
-            this.groupBox1.Controls.Add(this.textBox23);
-            this.groupBox1.Controls.Add(this.textBox24);
-            this.groupBox1.Controls.Add(this.textBox25);
-            this.groupBox1.Controls.Add(this.textBox26);
-            this.groupBox1.Controls.Add(this.textBox27);
-            this.groupBox1.Controls.Add(this.textBox28);
-            this.groupBox1.Controls.Add(this.textBox29);
-            this.groupBox1.Controls.Add(this.textBox30);
-            this.groupBox1.Controls.Add(this.textBox31);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.textBox14);
-            this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Controls.Add(this.textBox16);
-            this.groupBox1.Controls.Add(this.textBox17);
-            this.groupBox1.Controls.Add(this.textBox18);
-            this.groupBox1.Controls.Add(this.textBox19);
-            this.groupBox1.Controls.Add(this.textBox20);
-            this.groupBox1.Controls.Add(this.textBox21);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.btnAllClear);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(61, 245);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(863, 351);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "컨테이너 도구 모음";
+            this.grpControls.Controls.Add(this.textBox22);
+            this.grpControls.Controls.Add(this.textBox23);
+            this.grpControls.Controls.Add(this.textBox24);
+            this.grpControls.Controls.Add(this.textBox25);
+            this.grpControls.Controls.Add(this.textBox26);
+            this.grpControls.Controls.Add(this.textBox27);
+            this.grpControls.Controls.Add(this.textBox28);
+            this.grpControls.Controls.Add(this.textBox29);
+            this.grpControls.Controls.Add(this.textBox30);
+            this.grpControls.Controls.Add(this.textBox31);
+            this.grpControls.Controls.Add(this.textBox12);
+            this.grpControls.Controls.Add(this.textBox13);
+            this.grpControls.Controls.Add(this.textBox14);
+            this.grpControls.Controls.Add(this.textBox15);
+            this.grpControls.Controls.Add(this.textBox16);
+            this.grpControls.Controls.Add(this.textBox17);
+            this.grpControls.Controls.Add(this.textBox18);
+            this.grpControls.Controls.Add(this.textBox19);
+            this.grpControls.Controls.Add(this.textBox20);
+            this.grpControls.Controls.Add(this.textBox21);
+            this.grpControls.Controls.Add(this.textBox10);
+            this.grpControls.Controls.Add(this.textBox11);
+            this.grpControls.Controls.Add(this.textBox8);
+            this.grpControls.Controls.Add(this.textBox9);
+            this.grpControls.Controls.Add(this.textBox6);
+            this.grpControls.Controls.Add(this.textBox7);
+            this.grpControls.Controls.Add(this.textBox4);
+            this.grpControls.Controls.Add(this.textBox5);
+            this.grpControls.Controls.Add(this.textBox3);
+            this.grpControls.Controls.Add(this.textBox2);
+            this.grpControls.Controls.Add(this.btnAllClear);
+            this.grpControls.Controls.Add(this.label3);
+            this.grpControls.Location = new System.Drawing.Point(61, 245);
+            this.grpControls.Name = "grpControls";
+            this.grpControls.Size = new System.Drawing.Size(863, 351);
+            this.grpControls.TabIndex = 7;
+            this.grpControls.TabStop = false;
+            this.grpControls.Text = "컨테이너 도구 모음";
             // 
             // label3
             // 
@@ -437,7 +437,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 623);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpControls);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtinputWord);
@@ -447,8 +447,8 @@
             this.Controls.Add(this.btnStringForeach);
             this.Name = "Chap19_Foreach_반복문_foreach_";
             this.Text = "Chap19_Foreach_반복문_foreach_";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpControls.ResumeLayout(false);
+            this.grpControls.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,7 +463,7 @@
         private System.Windows.Forms.TextBox txtinputWord;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpControls;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnAllClear;
         private System.Windows.Forms.Label label3;
