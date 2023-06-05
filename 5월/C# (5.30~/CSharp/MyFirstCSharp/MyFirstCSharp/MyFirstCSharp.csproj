@@ -167,6 +167,12 @@
     <Compile Include="Chap19_Foreach[반복문_foreach].Designer.cs">
       <DependentUpon>Chap19_Foreach[반복문_foreach].cs</DependentUpon>
     </Compile>
+    <Compile Include="Chap19_Foreach_Test[Foreach 예제].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap19_Foreach_Test[Foreach 예제].Designer.cs">
+      <DependentUpon>Chap19_Foreach_Test[Foreach 예제].cs</DependentUpon>
+    </Compile>
     <Compile Include="Chat17_Array2[2차원 배열].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chap19_Foreach[반복문_foreach].resx">
       <DependentUpon>Chap19_Foreach[반복문_foreach].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap19_Foreach_Test[Foreach 예제].resx">
+      <DependentUpon>Chap19_Foreach_Test[Foreach 예제].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chat17_Array2[2차원 배열].resx">
       <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>
