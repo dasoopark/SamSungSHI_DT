@@ -131,11 +131,23 @@
     <Compile Include="Chap15_Array.Designer.cs">
       <DependentUpon>Chap15_Array.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap16_Loop_For.cs">
+    <Compile Include="Chap16_Loop_For[분기문 FOR].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap16_Loop_For.Designer.cs">
-      <DependentUpon>Chap16_Loop_For.cs</DependentUpon>
+    <Compile Include="Chap16_Loop_For[분기문 FOR].Designer.cs">
+      <DependentUpon>Chap16_Loop_For[분기문 FOR].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap16_Loop_For_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap16_Loop_For_Test.Designer.cs">
+      <DependentUpon>Chap16_Loop_For_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chat17_Array2[2차원 배열].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat17_Array2[2차원 배열].Designer.cs">
+      <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,8 +193,11 @@
     <EmbeddedResource Include="Chap15_Array.resx">
       <DependentUpon>Chap15_Array.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap16_Loop_For.resx">
-      <DependentUpon>Chap16_Loop_For.cs</DependentUpon>
+    <EmbeddedResource Include="Chap16_Loop_For[분기문 FOR].resx">
+      <DependentUpon>Chap16_Loop_For[분기문 FOR].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap16_Loop_For_Test.resx">
+      <DependentUpon>Chap16_Loop_For_Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
