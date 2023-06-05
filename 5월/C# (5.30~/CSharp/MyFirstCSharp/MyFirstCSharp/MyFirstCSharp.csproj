@@ -137,11 +137,29 @@
     <Compile Include="Chap16_Loop_For[분기문 FOR].Designer.cs">
       <DependentUpon>Chap16_Loop_For[분기문 FOR].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap16_Loop_For_Test.cs">
+    <Compile Include="Chap16_Loop_For_Test[내꺼].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap16_Loop_For_Test.Designer.cs">
-      <DependentUpon>Chap16_Loop_For_Test.cs</DependentUpon>
+    <Compile Include="Chap16_Loop_For_Test[내꺼].Designer.cs">
+      <DependentUpon>Chap16_Loop_For_Test[내꺼].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap16_Loop_For_Test_T[반복문 Test].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap16_Loop_For_Test_T[반복문 Test].designer.cs">
+      <DependentUpon>Chap16_Loop_For_Test_T[반복문 Test].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap17_MatrixTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap17_MatrixTest.Designer.cs">
+      <DependentUpon>Chap17_MatrixTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap18_While[반복문].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap18_While[반복문].Designer.cs">
+      <DependentUpon>Chap18_While[반복문].cs</DependentUpon>
     </Compile>
     <Compile Include="Chat17_Array2[2차원 배열].cs">
       <SubType>Form</SubType>
@@ -196,8 +214,20 @@
     <EmbeddedResource Include="Chap16_Loop_For[분기문 FOR].resx">
       <DependentUpon>Chap16_Loop_For[분기문 FOR].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap16_Loop_For_Test.resx">
-      <DependentUpon>Chap16_Loop_For_Test.cs</DependentUpon>
+    <EmbeddedResource Include="Chap16_Loop_For_Test[내꺼].resx">
+      <DependentUpon>Chap16_Loop_For_Test[내꺼].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap16_Loop_For_Test_T[반복문 Test].resx">
+      <DependentUpon>Chap16_Loop_For_Test_T[반복문 Test].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap17_MatrixTest.resx">
+      <DependentUpon>Chap17_MatrixTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap18_While[반복문].resx">
+      <DependentUpon>Chap18_While[반복문].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat17_Array2[2차원 배열].resx">
+      <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
