@@ -173,6 +173,18 @@
     <Compile Include="Chap19_Foreach_Test[Foreach 예제].Designer.cs">
       <DependentUpon>Chap19_Foreach_Test[Foreach 예제].cs</DependentUpon>
     </Compile>
+    <Compile Include="Chap20_MiddleTest_01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap20_MiddleTest_01.Designer.cs">
+      <DependentUpon>Chap20_MiddleTest_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap20_MiddleTest_02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap20_MiddleTest_02.Designer.cs">
+      <DependentUpon>Chap20_MiddleTest_02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chat17_Array2[2차원 배열].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chap19_Foreach_Test[Foreach 예제].resx">
       <DependentUpon>Chap19_Foreach_Test[Foreach 예제].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap20_MiddleTest_01.resx">
+      <DependentUpon>Chap20_MiddleTest_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap20_MiddleTest_02.resx">
+      <DependentUpon>Chap20_MiddleTest_02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chat17_Array2[2차원 배열].resx">
       <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>
