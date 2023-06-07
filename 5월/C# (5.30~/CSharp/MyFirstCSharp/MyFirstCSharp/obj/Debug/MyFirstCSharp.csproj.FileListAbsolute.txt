@@ -32,3 +32,5 @@ C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSh
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap19_Foreach_Test.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap20_MiddleTest_01.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap20_MiddleTest_02.resources
+C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap20_MiddleTest_03.resources
+C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap20_MiddleTest_03_T.resources
