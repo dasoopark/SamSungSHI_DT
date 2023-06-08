@@ -35,7 +35,7 @@ namespace MyFirstCSharp
                     }
                 }
             }
-            MessageBox.Show(arr.Length.ToString());
+       
             string sortarr = string.Join(",", arr);
             textBox1.Text = sortarr.ToString();
         }
