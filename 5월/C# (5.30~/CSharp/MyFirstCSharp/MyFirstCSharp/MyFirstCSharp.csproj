@@ -227,6 +227,12 @@
     <Compile Include="Chap20_MiddleTest_07_T.designer.cs">
       <DependentUpon>Chap20_MiddleTest_07_T.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chap20_MiddleTest_08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap20_MiddleTest_08.Designer.cs">
+      <DependentUpon>Chap20_MiddleTest_08.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chat17_Array2[2차원 배열].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chap20_MiddleTest_07_T.resx">
       <DependentUpon>Chap20_MiddleTest_07_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap20_MiddleTest_08.resx">
+      <DependentUpon>Chap20_MiddleTest_08.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chat17_Array2[2차원 배열].resx">
       <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>
