@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbltitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lbltitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label1.Location = new System.Drawing.Point(21, 126);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(754, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "동해물과?백두산이 마르고닳?도록 하느님이 보우하사?우리 나라만세?무궁화 삼천리? 화려강산";
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lbltitle.Location = new System.Drawing.Point(21, 126);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(754, 26);
+            this.lbltitle.TabIndex = 0;
+            this.lbltitle.Text = "동해물과?백두산이 마르고닳?도록 하느님이 보우하사?우리 나라만세?무궁화 삼천리? 화려강산";
             // 
             // label2
             // 
@@ -79,7 +79,7 @@
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbltitle);
             this.Name = "Chap20_MiddleTest_05";
             this.Text = "Chap20_MiddleTest_05";
             this.ResumeLayout(false);
@@ -89,7 +89,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbltitle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtResult;
