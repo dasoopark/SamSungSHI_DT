@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace MyFirstCSharp
 {
@@ -22,7 +24,7 @@ namespace MyFirstCSharp
             InitializeComponent();
 
         }
-
+        #region 리스트 공부
         private void btnList_Click(object sender, EventArgs e)
         {
             //List
@@ -92,6 +94,8 @@ namespace MyFirstCSharp
 
 
         }
+  
+
 
         private void listll_Click(object sender, EventArgs e)
         {
@@ -155,5 +159,283 @@ namespace MyFirstCSharp
                 }
             }
         }
+        #endregion 리스트 공부
+
+
+#region ArrayList공부
+        // ArrayList
+        // 데이터 형식에 상관없이 다중 데이터를 관리 할 수 있는 데이터 타입.
+        // - 데이터 형식에 구애 없이 데이터가 할당 되므로
+        // 데이터를 확인할 때는 반드시 데이터 형 변환이 이루어져야한다.
+        private void btnArrayList_Click(object sender, EventArgs e)
+        {
+            //1. ArrayList의 생성
+            // using System.Collections; ArrayList
+            // ArrayList 클래스가 있는 DLL 파일(프로젝트, 어셈블리, 네임스페이스)
+            ArrayList arrayList = new ArrayList();
+
+            for(int i = 0; i< 11; i++)
+            {
+                arrayList.Add(i); //ArrayList에 정수형 데이터를 0~10까지 할당
+            }
+            arrayList.Add("안녕하세요");
+            // ArrayList에 데이터를 등록 할 때 Object형식으로 할당 된다. (Boxing)
+
+            //arrayList.Sort(); // 오름차순 정렬
+            //정수형 데이터와 문자 데이터가 혼합 등록 되어있으므로 오류가 발생.
+
+            //요소(index, 데이터) 삭제.
+            arrayList.Remove(3);  //3이라는 값을 가진 데이터의 요소를 직접 삭제
+
+            arrayList.Remove("안녕하세요"); 
+
+            arrayList.RemoveAt(3); //3번 index의 요소를 삭제
+            
+
+            //요소의 등록
+            arrayList.Insert(2, 40);
+
+
+            //ArrayList에 기존 컬렉션의 데이터를 추가 하는 방법.
+            //arrayList <- int[] 넣기
+
+            int[] iValues = { 1, 2, 3, 4 };
+            //ArrayList라는 클래스를 사용할건데
+            //정수 배열 iValues를 던져 줄테니 이값을 가지고 복사해서
+            //초기 값을 할당후(초기화) 사용하게 해주세요.
+            ArrayList arraylist2 = new ArrayList(iValues);
+            MessageBox.Show(arraylist2[0].ToString());
+            arraylist2[0] = "안녕하세요";
+
+            //이렇게도 넣어줄 수 있음
+            //ArrayList arraylist3 = new ArrayList(new int[] { 1, 2, 3, 4, 5 });
+        }
+        #endregion ArrayList공부
+
+        #region Queue 공부
+        private void Queuebtn_Click(object sender, EventArgs e)
+        {
+            // Queue
+            // 선입 선출 방식의 자료 구조.
+            // 데이터나 작업을 차례대로 입력된 순서에 따라 하나씩 처리.
+            // 웹 등에서 동영상 이나 문서 등의 파일을 다운 받을 때 순차적으로 처리 하기 위해 데이터를 담을 때 주로 사용
+
+            // 1. Queue의 선언.
+            Queue<int> queue = new Queue<int>();
+
+            //2. Queue에 데이터 등록.
+            //할당하는 식으로 등록하는 것이 아닌 데이터 등록 메서드가 별도로 존재.
+            queue.Enqueue(10); // 선입 선출 할 수 있는 데이터 정렬을 하는 기능.
+            queue.Enqueue(20);
+            queue.Enqueue(30);
+            queue.Enqueue(40);
+
+            //3. Queue에 데이터를 확인.
+            // 어떤 데이터가 있는지 확인.
+            foreach(int iValue in queue)
+            {
+                MessageBox.Show("Foreach: " + iValue.ToString());
+            }
+
+            //Queue의 데이터를 확인.
+            for(int i=0; i<queue.Count;i++)
+            {
+                MessageBox.Show("Peek : " + queue.Peek().ToString());
+                //우선 순위가 높은 (선입)데이터를 표현.
+                //현재 추출될 데이터가 무엇인지 확인 하고 로직을 처리하는데 사용.
+            }
+
+            //Queue의 데이터를 사용하기 위하여 추출 하고 요소를 삭제.
+            while (queue.Count > 0)
+            {
+                MessageBox.Show(queue.Dequeue().ToString());
+            }
+
+            //다른 컬렉션의 데이터를 Queue에 담기.
+            Queue queue2 = new Queue(new int[] { 1, 2, 3, 4, 5 });
+
+            Queue queue3 = new Queue(new List<int>() { 1, 2, 3, 4, 5 }); //이름을 통해서도 넣을 수 있음
+
+        
+        }
+
+
+        //Queue
+        // 데이터를 순차적으로 담아서 처리 ( 선입 선출 ) 후 메모리에서 데이터를 삭제 하므로
+        // 메모리 관리에 용이한 자료형 구조이나.
+        //데이터가 휘발성(확인후 삭제)되므로 필요한 곳에 따라서 잘 사용할 수 있도록 하자.
+
+        #endregion Queue 공부
+
+        #region Stack 공부
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Stack 
+            //선입 후출 방식의 데이터 자료 구조.
+            // 메모리 영역의 Stack과 이름은 같으나 자료형 구조의 Stack인 경우 Stack 메모리 영역에 데이터가
+            // 관리되는 방법을 나타낸다.
+
+            // Stack Queue는
+            // 데이터가 등록되고 호출시 메모리에서 삭제 되므로
+            // 메모리 관리에 용이하다 (데이터 사용 후 즉각 처리).
+
+            // Stack의 생성.
+            Stack<int> stack = new Stack<int>();
+
+            // Stack 에 데이터를 등록하는 방법
+            stack.Push(10); //후입 선출 하기 위해 데이터를 재정렬 하는 기능.
+            stack.Push(20);
+            stack.Push(30);
+            stack.Push(40);
+
+            //데이터 확인.
+            foreach(int iValue in stack)
+            {
+                MessageBox.Show("Foreach :" + iValue.ToString());
+                //나중에 들어온 데이터를 우선순위로 하여 보여준다.
+            }
+
+            //데이터를 제거 하지 않고 표현.
+            for(int i =0; i<stack.Count;i++)
+            {
+                MessageBox.Show("Peek: " + stack.Peek()); //40 40 40 40
+            }
+            
+            //데이터를 추출 후 우선순위 재정렬
+            while(stack.Count > 0)
+            {
+                MessageBox.Show(stack.Pop().ToString());
+            }
+
+        }
+        #endregion Stack 공부
+
+        #region Dictionary
+        private void BtnDictionary_Click(object sender, EventArgs e)
+        {
+            //Dictionary
+            //데이터가 담기는 주소를 Key로 설정하여 데이터를 등록하는 자료형 자료구조
+
+            //1. Dictionary의 생성
+            Dictionary<string, int> MyDic = new Dictionary<string, int>();
+
+            //2. Dic에 데이터 등록.
+            MyDic.Add("하나", 10);
+            MyDic.Add("둘", 20);
+            MyDic["셋"] = 40; //셋 이라는 키를 가진 요소를 새로 생성하면서 40 값을 할당.
+
+            //3. Dic의 데이터 확인.
+            MessageBox.Show(MyDic["셋"].ToString());
+
+            //4. Dic의 복사.
+            //참조 전달 복사 (주소 전달)
+            Dictionary<string, int> MyDic_Copy = MyDic;
+            MyDic_Copy["하나"] = 100;
+            MessageBox.Show(MyDic["하나"].ToString());
+
+            //값 형태로 복사. (깊은 복사)
+            //MyDic_Copy2 라는 이름으로 Dictionary 클래스의 기능을 사용할건데
+            //MyDic에 있는값으로 새로운 메모리 데이터를 만들어서 할당하여 사용하게 해주세요.
+            Dictionary<string, int> MyDic_Copy2 = new Dictionary<string, int>(MyDic);
+
+            MyDic["하나"] = 4000;
+            MessageBox.Show(MyDic_Copy2["하나"].ToString());
+
+            //5. Key를 사용하고 있는지 확인하는 기능.
+            if (MyDic.ContainsKey("하나"))
+            {
+                MessageBox.Show("하나 라는 키를 사용하고 있습니다.");
+            }
+            else
+            {
+                MessageBox.Show("열 라는 키를 사용하고있지 않습니다.");
+            }
+
+            //6. Value의 사용유무 확인.
+            if(MyDic.ContainsValue(100))
+            {
+                MessageBox.Show("100 값이 포함되어 있습니다.");
+            }
+
+            //7. 데이터의 삭제
+            MyDic.Remove("이십"); //"이십"이라는 Key의 요소를 삭제.
+            //MyDic 의 Remove는 해당 key가 존재하지 않을 경우 오류가 반환 되지 않는다.
+
+        }
+        #endregion Dictionary
+
+        #region Hash테이블 공부
+        private void btnHash_Click(object sender, EventArgs e)
+        {
+            //HashTable
+            //Dictionary와 유사한 기능을 가지지만.
+            //Key와 value의 데이터 유형을 따로 정홰주지 않는다. (Object 방식)
+            //Value의 내용이 데이터 타입이 지정되지 않았으므로.
+            // 호출 시에는 반드시 형 변환 과정이 필요하다.
+
+            //생성 및 데이터 등록
+            Hashtable HT = new Hashtable();
+            HT.Add("하나", 1);
+            HT[10] = "십";
+            HT["소수"] = 1.2;
+            HT.Add(true, "트루");
+
+            //2.HashTable의 데이터 표현.
+            //(int): 명시적 형변환 캐스팅. (강제 형변환)
+            // * 반드시 변형 되어야 하는 데이터 형이 정해져 있어(일치해)야 한다.
+            //오류예시 int iValue = (int)HT["10"]; //unboxing을 통한 데이터 타입 일치. => (오류) "십" -> 정수
+            string sValue = (string)HT[10]; //올바른 형변환.
+
+            //3. HashTable에 데이터 등록 방법(초기화)
+            //3-1 Dictionary 초기자로 초기화 하는 방식.
+            Hashtable HT2 = new Hashtable() { ["일"] = 10, ["Two"] = 20, [2] = "이", [1.3] = 1.3 };
+
+            //3-2 컬렉션의 초기자로 초기화 하는 방식.
+            Hashtable HT3 = new Hashtable() { { "하나", 1 }, { "둘", 2 }, { 1.3, 1.2 } }; //2차원 배열 생성방식과 흡사.
+
+            //4.HashTable의 복사
+            //4-1 얕은 복사.
+            Hashtable HT4 = HT; //얕은 복사 방식
+
+
+            //4-2 깊은 복사.
+            //Heap에 등록된 값을 그대로 복사하여 새로 생성된 주소를 새로운객체에 전달.
+            Hashtable HT5 = new Hashtable(HT);
+
+            //5. 키와 값 추가.
+            HT.Add("육", 102);
+
+            //6. 키와 값 삭제.
+            HT.Remove("육");
+
+            //7. 키의 존재 여부.
+            bool bCheck;
+            bCheck = HT.ContainsKey("육"); //육이라는 key가 존재하는지 확인.
+
+            //8. 값의 존재여부 확인
+            bCheck = HT.ContainsValue(102); //102값이 있는지 확인.
+
+            //9. 데이터의 삭제.
+            HT.Clear();
+
+        }
+        #endregion Hash테이블 공부
+
+        //자료형 구조, Collection
+        // 크게 두가지 유형으로 나뉜다.
+        // 1. 주소값 index로 데이터를 관리하는 유형.
+        //      - int[], List, ArrayList, 
+        //      - 수정, 삭제 시 인덱스를 재 정렬하고 주소값을 전달해야 하는 과정이 일어나므로
+        // 갱신 속도가 떨어진다.
+        // index 주소 값을 곧바로 찾아 가므로 조회에 대한 성능은 좋다.
+
+        // 2. key 정보를 바탕으로 주소를 찾아가서 데이터를 관리하는 유형
+        //      - Dictionary, HashTable
+        //        .지정한 키를 통해 데이터를 등록 삭제하므로 Heap의 변경에 관계없이 메모리 부하를 낮출 수 있다.
+        //  수정, 삭제, 추가 의 효율이 높다.
+        //  .조회의 성능은 떨어진다. (Key를 통하여 Heap메모리 주소를 참조).
+
+
     }
+
 }
