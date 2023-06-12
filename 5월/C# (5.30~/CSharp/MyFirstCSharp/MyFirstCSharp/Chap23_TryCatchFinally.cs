@@ -134,9 +134,9 @@ namespace MyFirstCSharp
                 }    
                 // 예상 오류 내역은 index over 오류
             }
-            catch(IndexOutOfRangeException indexEx)
+           catch(Exception ex)
             {
-                MessageBox.Show(indexEx.ToString());
+                //Exception : 모든 종류의 오류를 검출 하는데 자세하지는 못하다.
             }
         }
 
