@@ -251,5 +251,29 @@ namespace MyFirstCSharp
             sMessage = "값을 지웠습니다.";
         }
         #endregion
+
+        #region < 배열을 리턴 하는 경우 >
+        private void btnArrayReturn_Click(object sender, EventArgs e)
+        {
+            //배열을 반환하는 메서드
+            // 1. 배열 인자 생성.
+            int[] iValues = { 10, 20 };
+
+            //2. 메서드 호출
+            iValues = ArrayReturnMethod(iValues);
+            MessageBox.Show($"[0] :{iValues[0]}, [1]:{iValues[1]}");
+        }
+
+        int[] ArrayReturnMethod(int[] _iValues)
+        {
+            //배열 인수를 일정한 값과 합하는 메서드.
+            int[] iSumints = { 5, 10 };
+            iSumints[0] = iSumints[0] + _iValues[0];
+            iSumints[1] += _iValues[1];
+
+            return iSumints;
+        }
+
+        #endregion
     }
 }

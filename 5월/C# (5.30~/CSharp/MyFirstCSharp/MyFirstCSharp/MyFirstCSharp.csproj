@@ -251,11 +251,23 @@
     <Compile Include="Chap21_Collection_Test_T.designer.cs">
       <DependentUpon>Chap21_Collection_Test_T.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap22_Method.cs">
+    <Compile Include="Chap22_Method01_Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap22_Method.Designer.cs">
-      <DependentUpon>Chap22_Method.cs</DependentUpon>
+    <Compile Include="Chap22_Method01_Test.Designer.cs">
+      <DependentUpon>Chap22_Method01_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap22_Method02_Test_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap22_Method02_Test_T.designer.cs">
+      <DependentUpon>Chap22_Method02_Test_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chap22_Method[메서드01].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap22_Method[메서드01].Designer.cs">
+      <DependentUpon>Chap22_Method[메서드01].cs</DependentUpon>
     </Compile>
     <Compile Include="Chat17_Array2[2차원 배열].cs">
       <SubType>Form</SubType>
@@ -367,8 +379,14 @@
     <EmbeddedResource Include="Chap21_Collection_Test_T.resx">
       <DependentUpon>Chap21_Collection_Test_T.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap22_Method.resx">
-      <DependentUpon>Chap22_Method.cs</DependentUpon>
+    <EmbeddedResource Include="Chap22_Method01_Test.resx">
+      <DependentUpon>Chap22_Method01_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap22_Method02_Test_T.resx">
+      <DependentUpon>Chap22_Method02_Test_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap22_Method[메서드01].resx">
+      <DependentUpon>Chap22_Method[메서드01].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chat17_Array2[2차원 배열].resx">
       <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>

@@ -22,7 +22,7 @@ namespace MyFirstCSharp
             InitializeComponent();
         }
 
-        private void btnAppleOrder_Click(object sender, EventArgs e)
+        private void BtnAppleOrder_Click(object sender, EventArgs e)
         {
             apple -= 1;
             if(apple<0)
