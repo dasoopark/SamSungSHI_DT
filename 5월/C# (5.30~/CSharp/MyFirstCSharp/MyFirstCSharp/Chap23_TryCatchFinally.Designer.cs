@@ -32,6 +32,8 @@
             this.btnTryCatch = new System.Windows.Forms.Button();
             this.btnMethodException = new System.Windows.Forms.Button();
             this.btnException = new System.Windows.Forms.Button();
+            this.btnFinally = new System.Windows.Forms.Button();
+            this.btnThrow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSysError
@@ -74,11 +76,33 @@
             this.btnException.UseVisualStyleBackColor = true;
             this.btnException.Click += new System.EventHandler(this.btnException_Click);
             // 
+            // btnFinally
+            // 
+            this.btnFinally.Location = new System.Drawing.Point(267, 166);
+            this.btnFinally.Name = "btnFinally";
+            this.btnFinally.Size = new System.Drawing.Size(212, 114);
+            this.btnFinally.TabIndex = 4;
+            this.btnFinally.Text = "Finally";
+            this.btnFinally.UseVisualStyleBackColor = true;
+            this.btnFinally.Click += new System.EventHandler(this.btnFinally_Click);
+            // 
+            // btnThrow
+            // 
+            this.btnThrow.Location = new System.Drawing.Point(503, 166);
+            this.btnThrow.Name = "btnThrow";
+            this.btnThrow.Size = new System.Drawing.Size(188, 114);
+            this.btnThrow.TabIndex = 5;
+            this.btnThrow.Text = "Throw";
+            this.btnThrow.UseVisualStyleBackColor = true;
+            this.btnThrow.Click += new System.EventHandler(this.btnThrow_Click);
+            // 
             // Chap23_TryCatchFinally
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnThrow);
+            this.Controls.Add(this.btnFinally);
             this.Controls.Add(this.btnException);
             this.Controls.Add(this.btnMethodException);
             this.Controls.Add(this.btnTryCatch);
@@ -95,5 +119,7 @@
         private System.Windows.Forms.Button btnTryCatch;
         private System.Windows.Forms.Button btnMethodException;
         private System.Windows.Forms.Button btnException;
+        private System.Windows.Forms.Button btnFinally;
+        private System.Windows.Forms.Button btnThrow;
     }
 }

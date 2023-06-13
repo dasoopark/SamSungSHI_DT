@@ -140,6 +140,9 @@ namespace MyFirstCSharp
             }
         }
 
+
+
+
         #region < --  Exception 의 종류 -- > 
 
         // Exception 모든 종류의 예외를 처리할 수 있다.
@@ -187,8 +190,63 @@ namespace MyFirstCSharp
         // UriFormatException 잘못 된 URI(Uniform Resource Identifier)가 사용 되었다.
         #endregion
 
-     
+        #region <Finally>
+        private void btnFinally_Click(object sender, EventArgs e)
+        {
+            //try와 catch는 반드시 한쌍으로 구현되어야 한다.
+            try
+            {
+                string sMessage = "Try";
 
+                for(int i = 0; i<5; i++)
+                {
+                    MessageBox.Show(iValues[i].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                //finally 구문은 try와 catch의 마지막에 구현 된다.
+                //반드시 구현되어야 하는 구문은 아니다.
+                // -Try(정상로직이 완료되는 경우)와 
+                // Catch (예외 상황의 로직이 실행되는 경우)
+                // 에 관계 없이 반드시 실행 되어야 하는 로직이 위치.
 
+                // 보통 데이터 베이스의 작업 완료 이후 데이터베이스 세션을 종료 해주는 역할로 사용.
+            }
+        }
+        #endregion
+
+        #region <Throw 예외 상황을 강제로 발생 시키는 구문>
+        private void btnThrow_Click(object sender, EventArgs e)
+        {
+            //예외 상황 강제 발생(Throw)
+            // 예외상황을 강제로 발생 시켜 예외 처리 로직을 (Catch) 수행 하게 한다.
+
+            //0 ~ 10 난수를 받아 서 5이하 일 경우는 예외 로직을 처리하는 시나리오.
+            Random random = new Random();
+
+            try
+            {
+                if(random.Next(0,11) <= 5) //0이상 11미만.
+                {
+                    //예외 상황에 있는 로직을 강제로 실행.
+                    throw new Exception("10 이하의 값을 생성 하였습니다.");
+                }
+            }
+            catch(Exception ex)
+            {
+                //예외 상황의로직을 구현
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                //데이터 베이스 종료
+            }
+        }
+        #endregion
     }
 }
