@@ -240,6 +240,8 @@ namespace MyFirstCSharp
             // 관리 할 수 있다.
             GenericMethod<int,String>(10, 20, "Hi", "Hellow");
             GenericMethod<String, bool>("안녕", "반가워",true, false);
+            
+            
         }
         void GenericMethod<T,K>(T iValue1, T tValue2, K kValue1, K kvalue2)
         {

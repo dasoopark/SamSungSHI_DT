@@ -17,7 +17,7 @@ namespace MyFirstCSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Chap24_Method02_메서드02_()); 
+            Application.Run(new Chap25_RecursiveFunction()); 
         }
     }
 }
