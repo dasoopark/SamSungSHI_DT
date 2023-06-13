@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyFirstCSharp
 {
-    public partial class Chat17_Array2 : Form
+    public partial class Chap17_Array2 : Form
     {
-        public Chat17_Array2()
+        public Chap17_Array2()
         {
             InitializeComponent();
         }

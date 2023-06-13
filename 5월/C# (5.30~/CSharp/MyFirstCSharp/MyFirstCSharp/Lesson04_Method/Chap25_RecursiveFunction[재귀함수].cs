@@ -137,6 +137,7 @@ namespace MyFirstCSharp
         {
             int iResult = 0;
             int iLoopCount = 0;
+            ++iLoopCount;
 
             if (_iTurn >= 1 && _iTurn <= 2) //첫번째 순번.
             {
@@ -145,7 +146,7 @@ namespace MyFirstCSharp
                 //이곳이 호출되는 횟수가 재귀 함수의 총 반복 횟수가 된다.
                 iResult = _iTurn - 1; //1번째 기초값 0
                                       //2번째 기초값 1
-                ++iLoopCount;
+                
             }
             else if (_iTurn > 2)
             {
@@ -192,9 +193,10 @@ namespace MyFirstCSharp
         {
             int _iResult = 0;
             int iLoopCount = 0; //반복횟수 0
+            ++iLoopCount;
             if (_Dic.ContainsKey(_iTurn))
             {
-                ++iLoopCount;
+                
                 return _Dic[_iTurn];
             }
             // Dic에 해당 순번의 Key 가 없을 경우(기존에 찾은 값이 없을 경우)

@@ -25,7 +25,6 @@ C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSh
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap16_Loop_For.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap16_Loop_For_Test.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap16_Loop_For_Test_T.resources
-C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chat17_Array2.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap17_MatrixTest.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap18_While.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap19_Foreach_반복문_foreach_.resources
@@ -49,3 +48,4 @@ C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSh
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap23_TryCatchFinally.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap24_Method02_메서드02_.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap25_RecursiveFunction.resources
+C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap17_Array2.resources

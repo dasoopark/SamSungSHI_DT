@@ -1,6 +1,6 @@
 ﻿namespace MyFirstCSharp
 {
-    partial class Chat17_Array2
+    partial class Chap17_Array2
     {
         /// <summary>
         /// Required designer variable.

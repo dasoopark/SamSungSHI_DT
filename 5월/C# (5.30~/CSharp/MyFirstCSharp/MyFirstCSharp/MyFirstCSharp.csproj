@@ -46,377 +46,377 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].cs">
+    <Compile Include="Lesson01_intro\Chap04_DataType_ConvTest[데이터타입 변환 TEST].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].Designer.cs">
+    <Compile Include="Lesson01_intro\Chap04_DataType_ConvTest[데이터타입 변환 TEST].Designer.cs">
       <DependentUpon>Chap04_DataType_ConvTest[데이터타입 변환 TEST].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap01_Hello[메세지박스 문자 표현].cs">
+    <Compile Include="Lesson01_intro\Chap01_Hello[메세지박스 문자 표현].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap01_Hello[메세지박스 문자 표현].Designer.cs">
+    <Compile Include="Lesson01_intro\Chap01_Hello[메세지박스 문자 표현].Designer.cs">
       <DependentUpon>Chap01_Hello[메세지박스 문자 표현].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap02_DataType[데이터타입].cs" />
-    <Compile Include="Chap03_DataTypeConversion.cs">
+    <Compile Include="Lesson01_intro\Chap02_DataType[데이터타입].cs" />
+    <Compile Include="Lesson01_intro\Chap03_DataTypeConversion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap03_DataTypeConversion.Designer.cs">
+    <Compile Include="Lesson01_intro\Chap03_DataTypeConversion.Designer.cs">
       <DependentUpon>Chap03_DataTypeConversion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap05_Operator[연산자].cs">
+    <Compile Include="Lesson01_intro\Chap05_Operator[연산자].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap05_Operator[연산자].Designer.cs">
+    <Compile Include="Lesson01_intro\Chap05_Operator[연산자].Designer.cs">
       <DependentUpon>Chap05_Operator[연산자].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap06_StringChange[문자 바꾸기].cs">
+    <Compile Include="Lesson01_intro\Chap06_StringChange[문자 바꾸기].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap06_StringChange[문자 바꾸기].Designer.cs">
+    <Compile Include="Lesson01_intro\Chap06_StringChange[문자 바꾸기].Designer.cs">
       <DependentUpon>Chap06_StringChange[문자 바꾸기].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap07_StringFind[문자 찾기 및 바꾸기].cs">
+    <Compile Include="Lesson01_intro\Chap07_StringFind[문자 찾기 및 바꾸기].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap07_StringFind[문자 찾기 및 바꾸기].Designer.cs">
+    <Compile Include="Lesson01_intro\Chap07_StringFind[문자 찾기 및 바꾸기].Designer.cs">
       <DependentUpon>Chap07_StringFind[문자 찾기 및 바꾸기].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap08_StringSplit[문자 나누기].cs">
+    <Compile Include="Lesson01_intro\Chap08_StringSplit[문자 나누기].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap08_StringSplit[문자 나누기].Designer.cs">
+    <Compile Include="Lesson01_intro\Chap08_StringSplit[문자 나누기].Designer.cs">
       <DependentUpon>Chap08_StringSplit[문자 나누기].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs">
+    <Compile Include="Lesson01_intro\Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].designer.cs">
+    <Compile Include="Lesson01_intro\Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].designer.cs">
       <DependentUpon>Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap10_NullManage[NULL 다루기].cs">
+    <Compile Include="Lesson01_intro\Chap10_NullManage[NULL 다루기].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap10_NullManage[NULL 다루기].Designer.cs">
+    <Compile Include="Lesson01_intro\Chap10_NullManage[NULL 다루기].Designer.cs">
       <DependentUpon>Chap10_NullManage[NULL 다루기].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap11_BranchingStatment[분기문].cs">
+    <Compile Include="Lesson02_FlowControl\Chap11_BranchingStatment[분기문].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap11_BranchingStatment[분기문].Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap11_BranchingStatment[분기문].Designer.cs">
       <DependentUpon>Chap11_BranchingStatment[분기문].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap12_IF_Test.cs">
+    <Compile Include="Lesson02_FlowControl\Chap12_IF_Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap12_IF_Test.Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap12_IF_Test.Designer.cs">
       <DependentUpon>Chap12_IF_Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap13_switch[Switch 분기문].cs">
+    <Compile Include="Lesson02_FlowControl\Chap13_switch[Switch 분기문].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap13_switch[Switch 분기문].Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap13_switch[Switch 분기문].Designer.cs">
       <DependentUpon>Chap13_switch[Switch 분기문].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap14_Switch_Test.cs">
+    <Compile Include="Lesson02_FlowControl\Chap14_Switch_Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap14_Switch_Test.Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap14_Switch_Test.Designer.cs">
       <DependentUpon>Chap14_Switch_Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap15_Array.cs">
+    <Compile Include="Lesson02_FlowControl\Chap15_Array.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap15_Array.Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap15_Array.Designer.cs">
       <DependentUpon>Chap15_Array.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap16_Loop_For[분기문 FOR].cs">
+    <Compile Include="Lesson02_FlowControl\Chap16_Loop_For[분기문 FOR].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap16_Loop_For[분기문 FOR].Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap16_Loop_For[분기문 FOR].Designer.cs">
       <DependentUpon>Chap16_Loop_For[분기문 FOR].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap16_Loop_For_Test[내꺼].cs">
+    <Compile Include="Lesson02_FlowControl\Chap16_Loop_For_Test[내꺼].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap16_Loop_For_Test[내꺼].Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap16_Loop_For_Test[내꺼].Designer.cs">
       <DependentUpon>Chap16_Loop_For_Test[내꺼].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap16_Loop_For_Test_T[반복문 Test].cs">
+    <Compile Include="Lesson02_FlowControl\Chap16_Loop_For_Test_T[반복문 Test].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap16_Loop_For_Test_T[반복문 Test].designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap16_Loop_For_Test_T[반복문 Test].designer.cs">
       <DependentUpon>Chap16_Loop_For_Test_T[반복문 Test].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap17_MatrixTest.cs">
+    <Compile Include="Lesson02_FlowControl\Chap17_MatrixTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap17_MatrixTest.Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap17_MatrixTest.Designer.cs">
       <DependentUpon>Chap17_MatrixTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap18_While[반복문].cs">
+    <Compile Include="Lesson02_FlowControl\Chap18_While[반복문].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap18_While[반복문].Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap18_While[반복문].Designer.cs">
       <DependentUpon>Chap18_While[반복문].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap19_Foreach[반복문_foreach].cs">
+    <Compile Include="Lesson02_FlowControl\Chap19_Foreach[반복문_foreach].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap19_Foreach[반복문_foreach].Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap19_Foreach[반복문_foreach].Designer.cs">
       <DependentUpon>Chap19_Foreach[반복문_foreach].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap19_Foreach_Test[Foreach 예제].cs">
+    <Compile Include="Lesson02_FlowControl\Chap19_Foreach_Test[Foreach 예제].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap19_Foreach_Test[Foreach 예제].Designer.cs">
+    <Compile Include="Lesson02_FlowControl\Chap19_Foreach_Test[Foreach 예제].Designer.cs">
       <DependentUpon>Chap19_Foreach_Test[Foreach 예제].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_01.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_01.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_01.Designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_01.Designer.cs">
       <DependentUpon>Chap20_MiddleTest_01.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_02.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_02.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_02.Designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_02.Designer.cs">
       <DependentUpon>Chap20_MiddleTest_02.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_03.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_03.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_03.Designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_03.Designer.cs">
       <DependentUpon>Chap20_MiddleTest_03.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_03_T.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_03_T.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_03_T.designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_03_T.designer.cs">
       <DependentUpon>Chap20_MiddleTest_03_T.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_04.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_04.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_04.Designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_04.Designer.cs">
       <DependentUpon>Chap20_MiddleTest_04.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_05.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_05.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_05.Designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_05.Designer.cs">
       <DependentUpon>Chap20_MiddleTest_05.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_06.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_06.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_06.Designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_06.Designer.cs">
       <DependentUpon>Chap20_MiddleTest_06.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_07.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_07.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_07.Designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_07.Designer.cs">
       <DependentUpon>Chap20_MiddleTest_07.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_07_T.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_07_T.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_07_T.designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_07_T.designer.cs">
       <DependentUpon>Chap20_MiddleTest_07_T.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_08.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_08.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap20_MiddleTest_08.Designer.cs">
+    <Compile Include="Lesson03_Algorithm\Chap20_MiddleTest_08.Designer.cs">
       <DependentUpon>Chap20_MiddleTest_08.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap21_Collection.cs">
+    <Compile Include="Lesson04_Method\Chap21_Collection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap21_Collection.Designer.cs">
+    <Compile Include="Lesson04_Method\Chap21_Collection.Designer.cs">
       <DependentUpon>Chap21_Collection.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap21_Collection_Test.cs">
+    <Compile Include="Lesson04_Method\Chap21_Collection_Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap21_Collection_Test.Designer.cs">
+    <Compile Include="Lesson04_Method\Chap21_Collection_Test.Designer.cs">
       <DependentUpon>Chap21_Collection_Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap21_Collection_Test_T.cs">
+    <Compile Include="Lesson04_Method\Chap21_Collection_Test_T.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap21_Collection_Test_T.designer.cs">
+    <Compile Include="Lesson04_Method\Chap21_Collection_Test_T.designer.cs">
       <DependentUpon>Chap21_Collection_Test_T.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap22_Method01_Test.cs">
+    <Compile Include="Lesson04_Method\Chap22_Method01_Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap22_Method01_Test.Designer.cs">
+    <Compile Include="Lesson04_Method\Chap22_Method01_Test.Designer.cs">
       <DependentUpon>Chap22_Method01_Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap22_Method02_Test_T.cs">
+    <Compile Include="Lesson04_Method\Chap22_Method02_Test_T.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap22_Method02_Test_T.designer.cs">
+    <Compile Include="Lesson04_Method\Chap22_Method02_Test_T.designer.cs">
       <DependentUpon>Chap22_Method02_Test_T.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap22_Method[메서드01].cs">
+    <Compile Include="Lesson04_Method\Chap22_Method[메서드01].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap22_Method[메서드01].Designer.cs">
+    <Compile Include="Lesson04_Method\Chap22_Method[메서드01].Designer.cs">
       <DependentUpon>Chap22_Method[메서드01].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap23_TryCatchFinally.cs">
+    <Compile Include="Lesson04_Method\Chap23_TryCatchFinally.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap23_TryCatchFinally.Designer.cs">
+    <Compile Include="Lesson04_Method\Chap23_TryCatchFinally.Designer.cs">
       <DependentUpon>Chap23_TryCatchFinally.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap24_Method02[메서드02].cs">
+    <Compile Include="Lesson04_Method\Chap24_Method02[메서드02].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap24_Method02[메서드02].Designer.cs">
+    <Compile Include="Lesson04_Method\Chap24_Method02[메서드02].Designer.cs">
       <DependentUpon>Chap24_Method02[메서드02].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chap25_RecursiveFunction[재귀함수].cs">
+    <Compile Include="Lesson04_Method\Chap25_RecursiveFunction[재귀함수].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chap25_RecursiveFunction[재귀함수].Designer.cs">
+    <Compile Include="Lesson04_Method\Chap25_RecursiveFunction[재귀함수].Designer.cs">
       <DependentUpon>Chap25_RecursiveFunction[재귀함수].cs</DependentUpon>
     </Compile>
-    <Compile Include="Chat17_Array2[2차원 배열].cs">
+    <Compile Include="Lesson02_FlowControl\Chap17_Array2[2차원 배열].cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chat17_Array2[2차원 배열].Designer.cs">
-      <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>
+    <Compile Include="Lesson02_FlowControl\Chap17_Array2[2차원 배열].Designer.cs">
+      <DependentUpon>Chap17_Array2[2차원 배열].cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
       <DependentUpon>Chap04_DataType_ConvTest[데이터타입 변환 TEST].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap01_Hello[메세지박스 문자 표현].resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap01_Hello[메세지박스 문자 표현].resx">
       <DependentUpon>Chap01_Hello[메세지박스 문자 표현].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap03_DataTypeConversion.resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap03_DataTypeConversion.resx">
       <DependentUpon>Chap03_DataTypeConversion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap05_Operator[연산자].resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap05_Operator[연산자].resx">
       <DependentUpon>Chap05_Operator[연산자].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap06_StringChange[문자 바꾸기].resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap06_StringChange[문자 바꾸기].resx">
       <DependentUpon>Chap06_StringChange[문자 바꾸기].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap07_StringFind[문자 찾기 및 바꾸기].resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap07_StringFind[문자 찾기 및 바꾸기].resx">
       <DependentUpon>Chap07_StringFind[문자 찾기 및 바꾸기].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap08_StringSplit[문자 나누기].resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap08_StringSplit[문자 나누기].resx">
       <DependentUpon>Chap08_StringSplit[문자 나누기].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].resx">
       <DependentUpon>Chap09_StringManage_Test_Teacher[문자열 다루기 테스트].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap10_NullManage[NULL 다루기].resx">
+    <EmbeddedResource Include="Lesson01_intro\Chap10_NullManage[NULL 다루기].resx">
       <DependentUpon>Chap10_NullManage[NULL 다루기].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap11_BranchingStatment[분기문].resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap11_BranchingStatment[분기문].resx">
       <DependentUpon>Chap11_BranchingStatment[분기문].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap12_IF_Test.resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap12_IF_Test.resx">
       <DependentUpon>Chap12_IF_Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap13_switch[Switch 분기문].resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap13_switch[Switch 분기문].resx">
       <DependentUpon>Chap13_switch[Switch 분기문].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap14_Switch_Test.resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap14_Switch_Test.resx">
       <DependentUpon>Chap14_Switch_Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap15_Array.resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap15_Array.resx">
       <DependentUpon>Chap15_Array.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap16_Loop_For[분기문 FOR].resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap16_Loop_For[분기문 FOR].resx">
       <DependentUpon>Chap16_Loop_For[분기문 FOR].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap16_Loop_For_Test[내꺼].resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap16_Loop_For_Test[내꺼].resx">
       <DependentUpon>Chap16_Loop_For_Test[내꺼].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap16_Loop_For_Test_T[반복문 Test].resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap16_Loop_For_Test_T[반복문 Test].resx">
       <DependentUpon>Chap16_Loop_For_Test_T[반복문 Test].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap17_MatrixTest.resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap17_MatrixTest.resx">
       <DependentUpon>Chap17_MatrixTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap18_While[반복문].resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap18_While[반복문].resx">
       <DependentUpon>Chap18_While[반복문].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap19_Foreach[반복문_foreach].resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap19_Foreach[반복문_foreach].resx">
       <DependentUpon>Chap19_Foreach[반복문_foreach].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap19_Foreach_Test[Foreach 예제].resx">
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap19_Foreach_Test[Foreach 예제].resx">
       <DependentUpon>Chap19_Foreach_Test[Foreach 예제].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_01.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_01.resx">
       <DependentUpon>Chap20_MiddleTest_01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_02.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_02.resx">
       <DependentUpon>Chap20_MiddleTest_02.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_03.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_03.resx">
       <DependentUpon>Chap20_MiddleTest_03.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_03_T.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_03_T.resx">
       <DependentUpon>Chap20_MiddleTest_03_T.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_04.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_04.resx">
       <DependentUpon>Chap20_MiddleTest_04.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_05.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_05.resx">
       <DependentUpon>Chap20_MiddleTest_05.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_06.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_06.resx">
       <DependentUpon>Chap20_MiddleTest_06.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_07.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_07.resx">
       <DependentUpon>Chap20_MiddleTest_07.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_07_T.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_07_T.resx">
       <DependentUpon>Chap20_MiddleTest_07_T.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap20_MiddleTest_08.resx">
+    <EmbeddedResource Include="Lesson03_Algorithm\Chap20_MiddleTest_08.resx">
       <DependentUpon>Chap20_MiddleTest_08.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap21_Collection.resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap21_Collection.resx">
       <DependentUpon>Chap21_Collection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap21_Collection_Test.resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap21_Collection_Test.resx">
       <DependentUpon>Chap21_Collection_Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap21_Collection_Test_T.resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap21_Collection_Test_T.resx">
       <DependentUpon>Chap21_Collection_Test_T.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap22_Method01_Test.resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap22_Method01_Test.resx">
       <DependentUpon>Chap22_Method01_Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap22_Method02_Test_T.resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap22_Method02_Test_T.resx">
       <DependentUpon>Chap22_Method02_Test_T.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap22_Method[메서드01].resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap22_Method[메서드01].resx">
       <DependentUpon>Chap22_Method[메서드01].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap23_TryCatchFinally.resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap23_TryCatchFinally.resx">
       <DependentUpon>Chap23_TryCatchFinally.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap24_Method02[메서드02].resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap24_Method02[메서드02].resx">
       <DependentUpon>Chap24_Method02[메서드02].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chap25_RecursiveFunction[재귀함수].resx">
+    <EmbeddedResource Include="Lesson04_Method\Chap25_RecursiveFunction[재귀함수].resx">
       <DependentUpon>Chap25_RecursiveFunction[재귀함수].cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chat17_Array2[2차원 배열].resx">
-      <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>
+    <EmbeddedResource Include="Lesson02_FlowControl\Chap17_Array2[2차원 배열].resx">
+      <DependentUpon>Chap17_Array2[2차원 배열].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -440,5 +440,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
