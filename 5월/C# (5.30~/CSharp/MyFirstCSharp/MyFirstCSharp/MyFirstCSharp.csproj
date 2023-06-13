@@ -275,6 +275,12 @@
     <Compile Include="Chap23_TryCatchFinally.Designer.cs">
       <DependentUpon>Chap23_TryCatchFinally.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chap24_Method02[메서드02].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chap24_Method02[메서드02].Designer.cs">
+      <DependentUpon>Chap24_Method02[메서드02].cs</DependentUpon>
+    </Compile>
     <Compile Include="Chat17_Array2[2차원 배열].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chap23_TryCatchFinally.resx">
       <DependentUpon>Chap23_TryCatchFinally.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chap24_Method02[메서드02].resx">
+      <DependentUpon>Chap24_Method02[메서드02].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chat17_Array2[2차원 배열].resx">
       <DependentUpon>Chat17_Array2[2차원 배열].cs</DependentUpon>
