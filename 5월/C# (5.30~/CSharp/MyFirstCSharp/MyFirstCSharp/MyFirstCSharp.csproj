@@ -299,6 +299,18 @@
     <Compile Include="Lesson04_Method\Chap26_2sComplement[2의 보수법].Designer.cs">
       <DependentUpon>Chap26_2sComplement[2의 보수법].cs</DependentUpon>
     </Compile>
+    <Compile Include="Lesson05_Class\Chap27_AccessModifier[접근제한자].cs" />
+    <Compile Include="Lesson05_Class\Chap27_AccessModifier_Partial.cs" />
+    <Compile Include="Lesson05_Class\Chap28_StaticConst[정적한정자_상수].cs" />
+    <Compile Include="Lesson05_Class\Chap28_StaticConst_F_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap28_StaticConst_F_.Designer.cs">
+      <DependentUpon>Chap28_StaticConst_F_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap29_Class.cs" />
+    <Compile Include="Lesson05_Class\Class1.cs" />
+    <Compile Include="Lesson05_Class\Class2_make.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Lesson01_intro\Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
@@ -426,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lesson04_Method\Chap26_2sComplement[2의 보수법].resx">
       <DependentUpon>Chap26_2sComplement[2의 보수법].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap28_StaticConst_F_.resx">
+      <DependentUpon>Chap28_StaticConst_F_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

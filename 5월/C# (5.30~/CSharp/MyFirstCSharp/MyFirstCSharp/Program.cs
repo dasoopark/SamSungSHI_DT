@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyFirstCSharp.Lesson05_Class;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace MyFirstCSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Chap26_2sComplement_2의_보수법_()); 
+            Application.Run(new Chap29_Class()); 
         }
     }
 }

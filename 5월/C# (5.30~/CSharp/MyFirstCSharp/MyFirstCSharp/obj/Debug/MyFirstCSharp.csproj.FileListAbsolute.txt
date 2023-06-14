@@ -50,3 +50,4 @@ C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSh
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap25_RecursiveFunction.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap17_Array2.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap26_2sComplement_2의_보수법_.resources
+C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Chap28_StaticConst_F_.resources
