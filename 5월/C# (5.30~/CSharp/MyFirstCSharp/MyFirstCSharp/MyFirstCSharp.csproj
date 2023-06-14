@@ -315,6 +315,24 @@
     <Compile Include="Lesson05_Class\Chap30_Class_F[클래스].Designer.cs">
       <DependentUpon>Chap30_Class_F[클래스].cs</DependentUpon>
     </Compile>
+    <Compile Include="Lesson05_Class\Chap31_ClassTest_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap31_ClassTest_Main.Designer.cs">
+      <DependentUpon>Chap31_ClassTest_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap31_ClassTest_Run.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap31_ClassTest_Run.Designer.cs">
+      <DependentUpon>Chap31_ClassTest_Run.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap31_ClassTest_Stop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap31_ClassTest_Stop.Designer.cs">
+      <DependentUpon>Chap31_ClassTest_Stop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lesson05_Class\Class1.cs" />
     <Compile Include="Lesson05_Class\Class2_make.cs" />
     <Compile Include="Program.cs" />
@@ -450,6 +468,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lesson05_Class\Chap30_Class_F[클래스].resx">
       <DependentUpon>Chap30_Class_F[클래스].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap31_ClassTest_Main.resx">
+      <DependentUpon>Chap31_ClassTest_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap31_ClassTest_Run.resx">
+      <DependentUpon>Chap31_ClassTest_Run.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap31_ClassTest_Stop.resx">
+      <DependentUpon>Chap31_ClassTest_Stop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
