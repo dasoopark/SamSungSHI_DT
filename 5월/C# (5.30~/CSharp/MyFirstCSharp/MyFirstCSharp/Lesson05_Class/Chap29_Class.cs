@@ -53,8 +53,26 @@ namespace MyFirstCSharp.Lesson05_Class
         }
         public Chap29_Class(string svalue) //오버로딩
         {
+            //생성자 멤버의 OverLoading
+            //초기화 할 클래스의 생성자를 OverLoading 하여
+            //필요에 따라 유연하게 클래스 멤버를 초기화 하는 기능으로 구현 할 수 있다.
+
+            //생성자 호출 시 전달값으로 필드멤버를 초기화.
             this.sValue = svalue;
         }
+
+        // 4. 메서드 멤버
+        public void MethodMember()
+        {
+            // 실제 프로그래밍이 구현되는 곳
+            // 메서드 내에서 선언한 변수 를 지역 변수.
+            //
+        }
+
+        // 필드 멤버 : 클래스에서 사용되는 변수, 객체를 관리하는 멤버
+        // 프로퍼티 멤버 : 클래스에 사용되는 변수 (특정 조건을 기입할수있다.)
+        // 생성자 멤버 : 클래스가 생성 될 때 호출되는 특수형태의 메서드
+        // 메서드 멤버 : 클래스를 생성 후 필요한 기능을 호출하여 프로그램을 실행
     }
 
     class NewClass22
