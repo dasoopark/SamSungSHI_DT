@@ -345,7 +345,19 @@
     <Compile Include="Lesson05_Class\Chap33_Struct.Designer.cs">
       <DependentUpon>Chap33_Struct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lesson05_Class\Chap34_Struct_Apply_UserInfo.cs" />
+    <Compile Include="Lesson05_Class\Chap34_Structure_Exam_Login[로그인].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Structure_Exam_Login[로그인].Designer.cs">
+      <DependentUpon>Chap34_Structure_Exam_Login[로그인].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struct_Apply_UserReg[사용자등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struct_Apply_UserReg[사용자등록].Designer.cs">
+      <DependentUpon>Chap34_Struct_Apply_UserReg[사용자등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap34_Struct_Apply_UserInfo[사용자정보].cs" />
     <Compile Include="Lesson05_Class\Class1.cs" />
     <Compile Include="Lesson05_Class\Class2_make.cs" />
     <Compile Include="Program.cs" />
@@ -496,6 +508,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lesson05_Class\Chap33_Struct.resx">
       <DependentUpon>Chap33_Struct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap34_Structure_Exam_Login[로그인].resx">
+      <DependentUpon>Chap34_Structure_Exam_Login[로그인].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap34_Struct_Apply_UserReg[사용자등록].resx">
+      <DependentUpon>Chap34_Struct_Apply_UserReg[사용자등록].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
