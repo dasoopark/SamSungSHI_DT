@@ -333,6 +333,12 @@
     <Compile Include="Lesson05_Class\Chap31_ClassTest_Stop.Designer.cs">
       <DependentUpon>Chap31_ClassTest_Stop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lesson05_Class\Chap32_Property[프로퍼티].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson05_Class\Chap32_Property[프로퍼티].Designer.cs">
+      <DependentUpon>Chap32_Property[프로퍼티].cs</DependentUpon>
+    </Compile>
     <Compile Include="Lesson05_Class\Class1.cs" />
     <Compile Include="Lesson05_Class\Class2_make.cs" />
     <Compile Include="Program.cs" />
@@ -477,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lesson05_Class\Chap31_ClassTest_Stop.resx">
       <DependentUpon>Chap31_ClassTest_Stop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson05_Class\Chap32_Property[프로퍼티].resx">
+      <DependentUpon>Chap32_Property[프로퍼티].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
