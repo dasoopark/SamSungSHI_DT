@@ -1,4 +1,4 @@
-﻿namespace MyFirstCSharp.Lesson05_Class
+﻿namespace MyFirstCSharp
 {
     partial class Chap34_Structure_Exam_Login
     {

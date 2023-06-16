@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyFirstCSharp.Lesson05_Class
+namespace MyFirstCSharp
 {
     public partial class Chap34_Struct_Apply_UserReg : Form
     {
@@ -46,7 +46,7 @@ namespace MyFirstCSharp.Lesson05_Class
             //userinfo.UserFlag    =  true;         // 사용
             //userinfo.MakdeDate   =  DateTime.Now; //현재 일 시
 
-            ////전역 변수 리스트에 사용자 정보를 Add
+            ////전역 변수 리스트에 사용자 정보를 Add1
             //userinfos.Add(userinfo);
 
             //위 로직은 다음과 같이 표현할 수 있다.

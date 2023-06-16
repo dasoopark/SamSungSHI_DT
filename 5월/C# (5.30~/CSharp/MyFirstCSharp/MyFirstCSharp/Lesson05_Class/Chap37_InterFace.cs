@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyFirstCSharp
+namespace MyFirstCSharp.Lesson05_Class
 {
-    internal class Class2_make
+    abstract class MyClass
+    {
+
+    }
+    internal interface Chap37_InterFace
     {
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyFirstCSharp.Lesson05_Class
+namespace MyFirstCSharp
 {
     // 구조체 생성.
     struct Color

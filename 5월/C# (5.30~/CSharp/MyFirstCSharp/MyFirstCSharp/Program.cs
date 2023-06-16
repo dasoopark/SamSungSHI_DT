@@ -1,4 +1,4 @@
-﻿using MyFirstCSharp.Lesson05_Class;
+﻿using MyFirstCSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,7 +18,7 @@ namespace MyFirstCSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Chap34_Structure_Exam_Login()); 
+            Application.Run(new Chap36_abstractPolymophism()); 
         }
     }
 }

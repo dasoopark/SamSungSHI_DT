@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.AxHost;
 
-namespace MyFirstCSharp.Lesson05_Class
+namespace MyFirstCSharp
 {
   
     public partial class Chap31_ClassTest_Run : Form

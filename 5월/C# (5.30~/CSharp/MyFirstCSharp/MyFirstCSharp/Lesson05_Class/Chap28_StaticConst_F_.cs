@@ -1,4 +1,4 @@
-﻿using MyFirstCSharp.Lesson05_Class;
+﻿using MyFirstCSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

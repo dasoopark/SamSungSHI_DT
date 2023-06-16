@@ -5,7 +5,7 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyFirstCSharp.Lesson05_Class
+namespace MyFirstCSharp
 {
 
     // Partial Class(분할 클래스, 파생 클래스)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyFirstCSharp.Lesson05_Class
+namespace MyFirstCSharp
 {
 
     // 접근 제한자.
