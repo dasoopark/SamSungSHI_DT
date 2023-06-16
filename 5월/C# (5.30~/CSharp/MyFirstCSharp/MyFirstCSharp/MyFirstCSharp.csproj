@@ -370,8 +370,34 @@
     <Compile Include="Lesson05_Class\Chap36_abstractPolymophism[추상화와 다형성].Designer.cs">
       <DependentUpon>Chap36_abstractPolymophism[추상화와 다형성].cs</DependentUpon>
     </Compile>
+    <Compile Include="Lesson05_Class\Chap37_InterFace.cs" />
     <Compile Include="Lesson05_Class\Class1.cs" />
     <Compile Include="Lesson05_Class\Class2_make.cs" />
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam01[개미수열].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam01[개미수열].designer.cs">
+      <DependentUpon>Final_Exam01[개미수열].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam02_2_Login[로그인].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam02_2_Login[로그인].designer.cs">
+      <DependentUpon>Final_Exam02_2_Login[로그인].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam02_3_UserReg[사용자 등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam02_3_UserReg[사용자 등록].designer.cs">
+      <DependentUpon>Final_Exam02_3_UserReg[사용자 등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam02_4_UserInfo[사용자 정보].cs" />
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam03[과일가게 관리].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson06_FinalExam\문제\Final_Exam03[과일가게 관리].designer.cs">
+      <DependentUpon>Final_Exam03[과일가게 관리].cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Lesson01_intro\Chap04_DataType_ConvTest[데이터타입 변환 TEST].resx">
@@ -533,6 +559,18 @@
     <EmbeddedResource Include="Lesson05_Class\Chap36_abstractPolymophism[추상화와 다형성].resx">
       <DependentUpon>Chap36_abstractPolymophism[추상화와 다형성].cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lesson06_FinalExam\문제\Final_Exam01[개미수열].resx">
+      <DependentUpon>Final_Exam01[개미수열].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson06_FinalExam\문제\Final_Exam02_2_Login[로그인].resx">
+      <DependentUpon>Final_Exam02_2_Login[로그인].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson06_FinalExam\문제\Final_Exam02_3_UserReg[사용자 등록].resx">
+      <DependentUpon>Final_Exam02_3_UserReg[사용자 등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson06_FinalExam\문제\Final_Exam03[과일가게 관리].resx">
+      <DependentUpon>Final_Exam03[과일가게 관리].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -555,6 +593,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Lesson06_FinalExam\정답\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

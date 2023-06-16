@@ -39,15 +39,15 @@ namespace MyFirstCSharp.Lesson05_Class
     }
 
     //MyClass 1과 MyClass 2의 기능을 모두 상속 받아서 사용하고 싶을 때.
-    class MyNewClass : MyClass1, MyClass2
-    {
-        // MyClass 1에서 실행을 해야 할지. MyClass2에서 실행을 해야할지 모호
-        // 클래스는 하나의 클래스만 상속 받을 수 있다.
-          public MyNewClass()
-          {
-            base.doSomething();
-          }
-    }
+    //class MyNewClass : MyClass1, MyClass2
+    //{
+    //    // MyClass 1에서 실행을 해야 할지. MyClass2에서 실행을 해야할지 모호
+    //    // 클래스는 하나의 클래스만 상속 받을 수 있다.
+    //      public MyNewClass()
+    //      {
+    //        base.doSomething();
+    //      }
+    //}
     #endregion
 
 
@@ -97,6 +97,11 @@ namespace MyFirstCSharp.Lesson05_Class
         }
 
         public void DoPdf()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DoPrint()
         {
             throw new NotImplementedException();
         }
