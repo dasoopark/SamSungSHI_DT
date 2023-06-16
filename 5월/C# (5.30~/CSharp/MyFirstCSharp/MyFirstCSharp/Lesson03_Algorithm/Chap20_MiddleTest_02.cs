@@ -23,7 +23,8 @@ namespace MyFirstCSharp
             //int[,] arr = { { 1, 4, 5, 9, 10, 12, 16 }, 
             //               { 2, 7, 11, 13, 14, 15, 18 } };
 
-            //int iMatrixRowCount = arr.GetLength(0); //행
+            //int iMatrixRowCount = arr.
+            //Length(0); //행
             //int iMatrixColumnCount = arr.GetLength(1); //열
 
             //for(int i=0; i<iMatrixRowCount; i++)

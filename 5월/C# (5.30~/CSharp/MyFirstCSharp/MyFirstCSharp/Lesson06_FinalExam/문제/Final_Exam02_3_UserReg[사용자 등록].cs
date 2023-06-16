@@ -37,9 +37,9 @@ namespace MyFirstCSharp
                 return;
             }
 
-            foreach(UserInfo_Exam Check_UserInfo in userinfos)  //중복 ID 등록되지 않게 체크 조건문
+            foreach (UserInfo_Exam Check_UserInfo in userinfos)  //중복 ID 등록되지 않게 체크 조건문
             {
-                if(Check_UserInfo.UserName == txtUserId.Text)
+                if (Check_UserInfo.Userid == txtUserId.Text)
                 {
                     MessageBox.Show("이미 등록되어 있는 ID입니다. 다른 ID를 사용하세요");
                     return;
@@ -54,7 +54,7 @@ namespace MyFirstCSharp
                 UserName = sUserName,    // 사용자명
                 MailAddress = sMailAddress, // 메일 주소
                 UserFlag = true,        // 사용
-                PassCnt = 0,
+                PassCnt = 0,            // 비밀번호 틀린 카운트 횟수
                 MakdeDate = DateTime.Now
             }) ;
 
@@ -63,7 +63,8 @@ namespace MyFirstCSharp
 
         private void btnClose_Click(object sender, EventArgs e) //닫기
         {
-
+            Final_Exam02_2_Login Final_login = new Final_Exam02_2_Login();
+            this.Visible = false;
         }
     }
 }

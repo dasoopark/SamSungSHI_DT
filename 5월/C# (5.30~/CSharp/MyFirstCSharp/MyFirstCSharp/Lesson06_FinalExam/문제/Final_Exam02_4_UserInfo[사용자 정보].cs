@@ -23,7 +23,7 @@ namespace MyFirstCSharp.Lesson06_FinalExam.문제
         //사용 여부
         public bool UserFlag { get; set; }
 
-        //비밀 번호 시도 횟수
+        //비밀 번호 틀린 횟수
         public int PassCnt { get; set; }
 
         //등록일시
