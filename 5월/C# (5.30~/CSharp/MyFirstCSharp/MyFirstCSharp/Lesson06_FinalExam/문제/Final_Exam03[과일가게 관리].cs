@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyFirstCSharp
@@ -19,7 +13,7 @@ namespace MyFirstCSharp
         private Dictionary<string, order_FruitInfo> purchase_list = new Dictionary<string, order_FruitInfo>(); //값에, 과일 정보(가격,개수)를 받는 딕셔너리
         private Dictionary<string, order_FruitInfo> cancel_Temp = new Dictionary<string, order_FruitInfo>(); //취소를 하기 위해, 결제 완료 전 정보를 입력받는 딕셔너리
         private Dictionary<string, order_FruitInfo> orderHistory = new Dictionary<string, order_FruitInfo>(); //텍스트 박스에 구매한 것들을 누적시키기 위해 사용하는 딕셔너리
-        private Dictionary<string, order_FruitInfo> orderQuantities = new Dictionary<string, order_FruitInfo>(); // 발주 수량을 저장하는 딕셔너리
+        private Dictionary<string, order_FruitInfo> baljoolist = new Dictionary<string, order_FruitInfo>(); // 발주 수량을 저장하는 딕셔너리
 
         public Chap99_Final_Exam03()
         {
@@ -251,58 +245,64 @@ namespace MyFirstCSharp
 
         private void btnFruitInvoice_Click(object sender, EventArgs e)
         {
-            // 발주 수량을 기입하지 않은 경우
-            if (string.IsNullOrWhiteSpace(txtAppleInvoieCount.Text) && string.IsNullOrWhiteSpace(txtMelonInvoieCount.Text) && string.IsNullOrWhiteSpace(txtW_MInvoieCount.Text))
+            // 발주 수량을 3칸 다 기입하지 않은 경우 종료
+            if (!CheckBaljoo_Noblank())
             {
-                MessageBox.Show("발주 내역이 없습니다.");
                 return;
             }
 
-            // 발주 수량 기입하지 않은 경우를 0으로 처리하고, 정수가 아닌 값은 무시
-            int appleQty = ParseInputQuantity(txtAppleInvoieCount.Text);
-            int melonQty = ParseInputQuantity(txtMelonInvoieCount.Text);
-            int wmelonQty = ParseInputQuantity(txtW_MInvoieCount.Text);
-
-            // 발주 금액 계산
-            int applePrice = 1500;
-            int melonPrice = 2000;
-            int wmelonPrice = 5000;
-
-            int invoiceAmount = (appleQty * applePrice) + (melonQty * melonPrice) + (wmelonQty * wmelonPrice);
-
-            // 관리자 가게 금액보다 발주 금액이 많은 경우
-            if (invoiceAmount > ilManCash)
+            // 발주 수량칸 3군데 중 한군데로 문자가 들어 가 있는 경우 종료
+            if (!CheckBaljoo_OlnyNum())
             {
-                MessageBox.Show("가게 잔액보다 발주 금액이 많습니다. 발주를 할 수 없습니다.");
                 return;
             }
 
-            // 발주 금액을 가게 잔액에서 차감
-            ilManCash -= invoiceAmount;
+            // 위 모든 사항을 채우면 정상적인 데이터가 들어온것이므로, 발주 딕셔너리에 넣어준다
 
-            // 텍스트 박스에 발주 수량과 금액을 누적하여 표시
-            if (appleQty > 0)
-            {
-                txtOrderList.AppendText($"사과 발주 : {appleQty}개, 금액: {appleQty * applePrice}원\r\n");
-            }
-            if (melonQty > 0)
-            {
-                txtOrderList.AppendText($"참외 발주 : {melonQty}개, 금액: {melonQty * melonPrice}원\r\n");
-            }
-            if (wmelonQty > 0)
-            {
-                txtOrderList.AppendText($"수박 발주 : {wmelonQty}개, 금액: {wmelonQty * wmelonPrice}원\r\n");
-            }
+
+
+        
+
+            //// 발주 금액 계산
+            //int applePrice = 1500;
+            //int melonPrice = 2000;
+            //int wmelonPrice = 5000;
+
+            //int invoiceAmount = (appleQty * applePrice) + (melonQty * melonPrice) + (wmelonQty * wmelonPrice);
+
+            //// 관리자 가게 금액보다 발주 금액이 많은 경우
+            //if (invoiceAmount > ilManCash)
+            //{
+            //    MessageBox.Show("가게 잔액보다 발주 금액이 많습니다. 발주를 할 수 없습니다.");
+            //    return;
+            //}
+
+            //// 발주 금액을 가게 잔액에서 차감
+            //ilManCash -= invoiceAmount;
+
+            //// 텍스트 박스에 발주 수량과 금액을 누적하여 표시
+            //if (appleQty > 0)
+            //{
+            //    txtOrderList.AppendText($"사과 발주 : {appleQty}개, 금액: {appleQty * applePrice}원\r\n");
+            //}
+            //if (melonQty > 0)
+            //{
+            //    txtOrderList.AppendText($"참외 발주 : {melonQty}개, 금액: {melonQty * melonPrice}원\r\n");
+            //}
+            //if (wmelonQty > 0)
+            //{
+            //    txtOrderList.AppendText($"수박 발주 : {wmelonQty}개, 금액: {wmelonQty * wmelonPrice}원\r\n");
+            //}
 
             // 발주 수량을 딕셔너리에 저장
-            orderQuantities["사과"].Quantity = appleQty;
-            orderQuantities["참외"].Quantity = melonQty;
-            orderQuantities["수박"].Quantity = wmelonQty;
+            //orderQuantities["사과"].Quantity = appleQty;
+            //orderQuantities["참외"].Quantity = melonQty;
+            //orderQuantities["수박"].Quantity = wmelonQty;
 
-            // 발주 내역 초기화
-            txtAppleInvoieCount.Text = "";
-            txtMelonInvoieCount.Text = "";
-            txtW_MInvoieCount.Text = "";
+            //// 발주 내역 초기화
+            //txtAppleInvoieCount.Text = "";
+            //txtMelonInvoieCount.Text = "";
+            //txtW_MInvoieCount.Text = "";
 
             MessageBox.Show("정상적으로 발주되었습니다.");
         }
@@ -326,19 +326,66 @@ namespace MyFirstCSharp
             }
         }
 
-        private int ParseInputQuantity(string inputText)
+        // 4-2 발주 입력시, 모든 칸에는 문자로 입력한 내역이 있으면 안됨.
+        private bool input_Onlynum(string inputText)
         {
-            int quantity;
-
+            int quantity = 0;
             if (int.TryParse(inputText, out quantity))
             {
-                return quantity;
+                return true;
             }
             else
             {
-                MessageBox.Show("유효한 수량을 입력해주세요.");
-                return 0;
+                return false;
             }
+        }
+
+        // 4 발주입고 시 발주 과일명, 수량, 가격을 알기 위한 딕셔너리 생성
+        private Dictionary<string, order_FruitInfo> Input_Baljoo_Fruit()
+        {
+
+
+
+            //txtAppleInvoieCount.Text = "";
+            //txtMelonInvoieCount.Text = "";
+            //txtW_MInvoieCount.Text = ""
+
+            return baljoolist;
+        }
+
+
+
+        // 4-1발주입고 클릭시 // 3개 모두 발주 개수를 기입하지 않으면 발주 내역이 없습니다. 메세지를 표현 메소드
+        public bool CheckBaljoo_Noblank()
+        {
+            if (txtAppleInvoieCount.Text == "" && txtMelonInvoieCount.Text == "" && txtW_MInvoieCount.Text == "")
+            {
+                MessageBox.Show("발주 내역이 없습니다. 3개의 칸들을 모두 비울수는 없습니다.");
+                return false;
+            }
+            return true;
+        }
+
+        // 4-2 발주 입력시, 모든 칸에는 문자로 입력한 내역이 있으면 안됨.
+        public bool CheckBaljoo_OlnyNum()
+        {
+            if ((!input_Onlynum(txtAppleInvoieCount.Text) && !string.IsNullOrEmpty(txtAppleInvoieCount.Text)) ||
+       (!input_Onlynum(txtMelonInvoieCount.Text) && !string.IsNullOrEmpty(txtMelonInvoieCount.Text)) ||
+       (!input_Onlynum(txtW_MInvoieCount.Text) && !string.IsNullOrEmpty(txtW_MInvoieCount.Text)))
+            {
+                MessageBox.Show("입력된 발주 칸에는 모두 숫자로 표시되어 있어야 합니다.");
+                return false;
+            }
+            return true;
+        }
+
+        // 4-2 발주입고 클릭시 // 1개라도 발주 내역이 있으면, 나머지 기입하지 않은 발주는 0개인것으로 한다.(문자로입력 내역은 무시)
+        void CheckBajlJoo_Onlyone()
+        {
+
+         }
+
+           
         }
 
     }
@@ -349,5 +396,5 @@ namespace MyFirstCSharp
         public int Quantity { get; set; }
         public int TotalPrice { get; set; }
     }
-}
+
 
