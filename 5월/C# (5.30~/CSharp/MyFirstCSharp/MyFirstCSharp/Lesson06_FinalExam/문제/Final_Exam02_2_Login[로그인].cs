@@ -37,7 +37,7 @@ namespace MyFirstCSharp
             string sPassword = txtPassWord.Text;
 
 
-            bool isUserIdFound = false; //등록된 ID 인지 확인하는 플래그coinpan.com/index.php?mid=free&document_srl=350950029&comment_srl=350950150#comment_350950150
+            bool isUserIdFound = false; //등록된 ID 인지 확인하는 플래그
 
             for (int i = 0; i < _userinfos.Count; ++i) //Foreach 로는, 반복변수의 직접 수정이 안되므로 for문 사용
             {
@@ -48,16 +48,16 @@ namespace MyFirstCSharp
                     isUserIdFound = true;
                     if (userinfo.PassWord == sPassword)
                     {
-                        MessageBox.Show($"{userinfo.UserName}님 반갑습니다.");
+                        MessageBox.Show($"{userinfo.UserName}님 반갑습니다."); //조건 3. 반갑습니다, 로그인 성공시 비밀번호 실패횟수 초기화
                         userinfo.PassCnt = 0; 
                         _userinfos[i] = userinfo; // 유저 정보를 최신 정보의 상태로 업데이트 
                     }
                     else
                     {
-                        MessageBox.Show("비밀번호가 일치하지 않습니다.");
+                       //조건 5.비밀번호 잘못 입력, 남은 횟수, 5회 미일치시 메세지 표현 후 종료.
                         userinfo.PassCnt += 1;
                         _userinfos[i] = userinfo; // 유저 정보를 최신 정보의 상태로 업데이트 
-                        MessageBox.Show($"비밀번호 실패 횟수:{userinfo.PassCnt}");
+                        MessageBox.Show($"비밀번호를 잘못 입력 하였습니다. 남은 횟수:{5 - userinfo.PassCnt}");
                         if(userinfo.PassCnt==5) //비밀번호를 5번 틀렸을 때
                         {
                             MessageBox.Show("비밀번호가 5회 미일치 하여 프로그램을 종료합니다.");
@@ -68,61 +68,12 @@ namespace MyFirstCSharp
                 }
             }
  
-            if (!isUserIdFound)
+            if (!isUserIdFound) //조건 4. 존재하지 않는 ID입니다.
             {
                 MessageBox.Show("존재하지 않는 ID 입니다.");
             }
 
-
-
-
-            //foreach (UserInfo_Exam userinfo in _userinfos)
-            //{
-            //     UserInfo_Exam _passcnt_userinfo = userinfo;
-            //    if (userinfo.Userid == sUserId)
-            //    {
-            //        if (userinfo.PassWord == sPassword)
-            //        {
-            //            MessageBox.Show($"{userinfo.UserName}님 반갑습니다.");
-
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("비밀번호가 일치하지 않습니다.");
-            //            _passcnt_userinfo.PassCnt += 1;
-            //            MessageBox.Show($"비밀번호 실패 횟수:{userinfo.PassCnt}");
-
-            //        }
-            //        return;
-            //    }
-            //    MessageBox.Show("일치하는 사용자 ID가 없습니다.");
-            //}
-
-
-            //bool loginFlag = false;   //아이디와 올바른 비밀번호를 입력할 때 까지 무한 반복
-            //while (!loginFlag)
-            //{
-            //    foreach (UserInfo_Exam userinfo in _userinfos)
-            //    {
-            //        UserInfo_Exam _passcnt_userinfo = userinfo;
-            //        if (userinfo.Userid == sUserId)
-            //        {
-            //            if (userinfo.PassWord == sPassword)
-            //            {
-            //                MessageBox.Show($"{userinfo.UserName}님 반갑습니다.");
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show("비밀번호가 일치하지 않습니다.");
-            //                _passcnt_userinfo.PassCnt += 1;
-            //                MessageBox.Show($"비밀번호 실패 횟수:{_passcnt_userinfo.PassCnt}");
-            //            }
-            //            return;
-            //        }
-            //    }
-            //    MessageBox.Show("일치하는 사용자 ID가 없습니다.");
-            //}
-
+         
         }
 
         private void btnUserReg_Click(object sender, EventArgs e) //사용자 등록

@@ -37,7 +37,7 @@ namespace MyFirstCSharp
                 return;
             }
 
-            foreach (UserInfo_Exam Check_UserInfo in userinfos)  //중복 ID 등록되지 않게 체크 조건문
+            foreach (UserInfo_Exam Check_UserInfo in userinfos)  // (조건 2) 중복 ID 등록되지 않게 체크 조건문
             {
                 if (Check_UserInfo.Userid == txtUserId.Text)
                 {

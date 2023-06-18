@@ -1,4 +1,5 @@
 ﻿using MyFirstCSharp;
+using MyFirstCSharp.Lesson06_FinalExam;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,7 +19,7 @@ namespace MyFirstCSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Chap99_Final_Exam03()); 
+            Application.Run(new Chap99_Final_Exam03());
         }
     }
 }

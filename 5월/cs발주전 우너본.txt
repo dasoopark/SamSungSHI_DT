@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +19,7 @@ namespace MyFirstCSharp
         private Dictionary<string, order_FruitInfo> purchase_list = new Dictionary<string, order_FruitInfo>(); //값에, 과일 정보(가격,개수)를 받는 딕셔너리
         private Dictionary<string, order_FruitInfo> cancel_Temp = new Dictionary<string, order_FruitInfo>(); //취소를 하기 위해, 결제 완료 전 정보를 입력받는 딕셔너리
         private Dictionary<string, order_FruitInfo> orderHistory = new Dictionary<string, order_FruitInfo>(); //텍스트 박스에 구매한 것들을 누적시키기 위해 사용하는 딕셔너리
-        private Dictionary<string, order_FruitInfo> orderQuantities = new Dictionary<string, order_FruitInfo>(); // 발주 수량을 저장하는 딕셔너리
+
 
         public Chap99_Final_Exam03()
         {
@@ -110,7 +110,14 @@ namespace MyFirstCSharp
         }
 
 
-
+        private void btnShowTotalMargin_Click(object sender, EventArgs e)
+        {
+            // 사과 라디오 버튼이 체크 되어있으면
+            if (rdoApple.Checked)
+            {
+                // 사과에 대한 
+            }
+        }
 
         private void btnOrderCancle_Click(object sender, EventArgs e) //4. 주문 취소하기 버튼 클릭
         {
@@ -251,60 +258,7 @@ namespace MyFirstCSharp
 
         private void btnFruitInvoice_Click(object sender, EventArgs e)
         {
-            // 발주 수량을 기입하지 않은 경우
-            if (string.IsNullOrWhiteSpace(txtAppleInvoieCount.Text) && string.IsNullOrWhiteSpace(txtMelonInvoieCount.Text) && string.IsNullOrWhiteSpace(txtW_MInvoieCount.Text))
-            {
-                MessageBox.Show("발주 내역이 없습니다.");
-                return;
-            }
 
-            // 발주 수량 기입하지 않은 경우를 0으로 처리하고, 정수가 아닌 값은 무시
-            int appleQty = ParseInputQuantity(txtAppleInvoieCount.Text);
-            int melonQty = ParseInputQuantity(txtMelonInvoieCount.Text);
-            int wmelonQty = ParseInputQuantity(txtW_MInvoieCount.Text);
-
-            // 발주 금액 계산
-            int applePrice = 1500;
-            int melonPrice = 2000;
-            int wmelonPrice = 5000;
-
-            int invoiceAmount = (appleQty * applePrice) + (melonQty * melonPrice) + (wmelonQty * wmelonPrice);
-
-            // 관리자 가게 금액보다 발주 금액이 많은 경우
-            if (invoiceAmount > ilManCash)
-            {
-                MessageBox.Show("가게 잔액보다 발주 금액이 많습니다. 발주를 할 수 없습니다.");
-                return;
-            }
-
-            // 발주 금액을 가게 잔액에서 차감
-            ilManCash -= invoiceAmount;
-
-            // 텍스트 박스에 발주 수량과 금액을 누적하여 표시
-            if (appleQty > 0)
-            {
-                txtOrderList.AppendText($"사과 발주 : {appleQty}개, 금액: {appleQty * applePrice}원\r\n");
-            }
-            if (melonQty > 0)
-            {
-                txtOrderList.AppendText($"참외 발주 : {melonQty}개, 금액: {melonQty * melonPrice}원\r\n");
-            }
-            if (wmelonQty > 0)
-            {
-                txtOrderList.AppendText($"수박 발주 : {wmelonQty}개, 금액: {wmelonQty * wmelonPrice}원\r\n");
-            }
-
-            // 발주 수량을 딕셔너리에 저장
-            orderQuantities["사과"].Quantity = appleQty;
-            orderQuantities["참외"].Quantity = melonQty;
-            orderQuantities["수박"].Quantity = wmelonQty;
-
-            // 발주 내역 초기화
-            txtAppleInvoieCount.Text = "";
-            txtMelonInvoieCount.Text = "";
-            txtW_MInvoieCount.Text = "";
-
-            MessageBox.Show("정상적으로 발주되었습니다.");
         }
 
         private void BONInvoiceClear_Click(object sender, EventArgs e)
@@ -317,37 +271,96 @@ namespace MyFirstCSharp
 
         }
 
-        private void btnShowTotalMargin_Click(object sender, EventArgs e)
+
+        #region <메소드들 정리 >
+
+        private bool checkanyorders()
         {
-            // 사과 라디오 버튼이 체크 되어있으면
+            // 주문 내역이 있는지 확인합니다.
+            return orderHistory.Count > 0;
+        }
+
+        private Dictionary<string, int> getlistoffruits()
+        {
+            // 과일 목록과 가격을 반환합니다.
+            return new Dictionary<string, int>
+            {
+                {"사과", 2000},
+                {"참외", 2500},
+                {"수박", 18000}
+            };
+        }
+
+        private double calculateordercost()
+        {
+            // 주문 비용을 계산합니다.
+            double cost = 0;
+            foreach (var item in orderHistory)
+            {
+                cost += item.Value.TotalPrice;
+            }
+            return cost;
+        }
+
+        private void processorder()
+        {
+            // 주문 처리를 진행합니다.
+            MessageBox.Show("발주가 완료되었습니다.");
+            ilManCash -= (int)calculateordercost();
+            orderHistory.Clear();
+        }
+
+        private void resetorderquantities()
+        {
+            // 주문 수량을 초기화합니다.
+            lblAppCount.Text = "0";
+            lblMelonCount.Text = "0";
+            lblW_MCount.Text = "0";
+        }
+
+        private string getselectedfruit()
+        {
+            // 선택된 과일을 반환합니다.
             if (rdoApple.Checked)
-            {
-                // 사과에 대한 
-            }
-        }
-
-        private int ParseInputQuantity(string inputText)
-        {
-            int quantity;
-
-            if (int.TryParse(inputText, out quantity))
-            {
-                return quantity;
-            }
+                return "사과";
+            else if (rdoMelon.Checked)
+                return "참외";
+            else if (rdoW_M.Checked)
+                return "수박";
             else
-            {
-                MessageBox.Show("유효한 수량을 입력해주세요.");
-                return 0;
-            }
+                return "";
+        }
+       private int calculatemargin(string fruit)
+          {
+          // 특정 과일의 마진 금액을 계산합니다.
+             if (purchase_list.ContainsKey(fruit) && orderHistory.ContainsKey(fruit))
+             {
+                  return orderHistory[fruit].TotalPrice - purchase_list[fruit].TotalPrice;
+              }
+               return 0;
+          }
+
+        private int calculatetotalmargin()
+         {
+              // 총 마진 금액을 계산합니다.
+              int totalmargin = 0;
+              var fruits = getlistoffruits();
+              foreach (var fruit in fruits.Keys)
+              {
+                  totalmargin += calculatemargin(fruit);
+              }
+              return totalmargin;
+          }
         }
 
+      
     }
-
+    #endregion
     class order_FruitInfo //과일 구매 개수와, 가격을 누적시켜, 텍스트 박스에 출력하기 위해
                           //// 1.결제하기 - 주문했던 과일의 거래 내역을 수량과 금액으로 과일별로 텍스트박스에 누적하여 표현
     {
         public int Quantity { get; set; }
         public int TotalPrice { get; set; }
     }
-}
 
+}
