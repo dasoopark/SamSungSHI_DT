@@ -9,11 +9,19 @@ namespace MyFirstCSharp
         private int iTotalPrice = 0; // 총 결제 금액  
         private int iCustCash = 100000; // 고객 잔액 금액
         private int ilManCash = 100000; // 관리자 초기 가게 잔액.
+        int iTotalBaljooPrice = 0; // 총 발주 금액
+       
 
         private Dictionary<string, order_FruitInfo> purchase_list = new Dictionary<string, order_FruitInfo>(); //값에, 과일 정보(가격,개수)를 받는 딕셔너리
         private Dictionary<string, order_FruitInfo> cancel_Temp = new Dictionary<string, order_FruitInfo>(); //취소를 하기 위해, 결제 완료 전 정보를 입력받는 딕셔너리
         private Dictionary<string, order_FruitInfo> orderHistory = new Dictionary<string, order_FruitInfo>(); //텍스트 박스에 구매한 것들을 누적시키기 위해 사용하는 딕셔너리
-        private Dictionary<string, order_FruitInfo> baljoolist = new Dictionary<string, order_FruitInfo>(); // 발주 수량을 저장하는 딕셔너리
+        private Dictionary<string, order_FruitInfo> baljoolist = new Dictionary<string, order_FruitInfo>(); // 발주 수량을 누적 저장하는 딕셔너리
+        private Dictionary<string, order_FruitInfo> baljoolist_temp = new Dictionary<string, order_FruitInfo>(); // 현재 발주를 기준으로, 매니저 금액 계산 용
+
+        int baljoo_app;
+        int baljoo_melon;
+        int baljoo_watermelon;
+
 
         public Chap99_Final_Exam03()
         {
@@ -258,72 +266,136 @@ namespace MyFirstCSharp
             }
 
             // 위 모든 사항을 채우면 정상적인 데이터가 들어온것이므로, 발주 딕셔너리에 넣어준다
+            iTotalBaljooPrice = 0;
+            if (baljoo_temp())
+            {
+                Input_Baljoo_Fruit();
+            }
+            else
+            {
+                return;
+            }
+            
+            printbaljoo(baljoolist);
+            txtAppleInvoieCount.Text = "";
+            txtMelonInvoieCount.Text = "";
+            txtW_MInvoieCount.Text = "";
 
 
-
-        
-
-            //// 발주 금액 계산
-            //int applePrice = 1500;
-            //int melonPrice = 2000;
-            //int wmelonPrice = 5000;
-
-            //int invoiceAmount = (appleQty * applePrice) + (melonQty * melonPrice) + (wmelonQty * wmelonPrice);
-
-            //// 관리자 가게 금액보다 발주 금액이 많은 경우
-            //if (invoiceAmount > ilManCash)
-            //{
-            //    MessageBox.Show("가게 잔액보다 발주 금액이 많습니다. 발주를 할 수 없습니다.");
-            //    return;
-            //}
-
-            //// 발주 금액을 가게 잔액에서 차감
-            //ilManCash -= invoiceAmount;
-
-            //// 텍스트 박스에 발주 수량과 금액을 누적하여 표시
-            //if (appleQty > 0)
-            //{
-            //    txtOrderList.AppendText($"사과 발주 : {appleQty}개, 금액: {appleQty * applePrice}원\r\n");
-            //}
-            //if (melonQty > 0)
-            //{
-            //    txtOrderList.AppendText($"참외 발주 : {melonQty}개, 금액: {melonQty * melonPrice}원\r\n");
-            //}
-            //if (wmelonQty > 0)
-            //{
-            //    txtOrderList.AppendText($"수박 발주 : {wmelonQty}개, 금액: {wmelonQty * wmelonPrice}원\r\n");
-            //}
-
-            // 발주 수량을 딕셔너리에 저장
-            //orderQuantities["사과"].Quantity = appleQty;
-            //orderQuantities["참외"].Quantity = melonQty;
-            //orderQuantities["수박"].Quantity = wmelonQty;
-
-            //// 발주 내역 초기화
-            //txtAppleInvoieCount.Text = "";
-            //txtMelonInvoieCount.Text = "";
-            //txtW_MInvoieCount.Text = "";
 
             MessageBox.Show("정상적으로 발주되었습니다.");
         }
 
+        // 4-6 : 누르면 기입한 발주 내역을 모두 초기화.
         private void BONInvoiceClear_Click(object sender, EventArgs e)
         {
+           
+            // 발주 목록 프린트 
+            txtOrderList.AppendText("\r\n---- 발주내역을 모두 초기화 합니다. -----\r\n");
+            foreach (var fruit in baljoolist)
+            {
+                ilManCash += fruit.Value.TotalPrice;
+            }
+            txtOrderList.SelectionStart = txtOrderList.Text.Length; //텍스트박스에 누적하여 표현하기 위한 설정 
+            txtOrderList.ScrollToCaret();
+
+            lblManCash.Text = ilManCash.ToString();
+            foreach(var fruit in baljoolist) //초기화시, 수량과 갯수 0개로 초기화
+            {
+                fruit.Value.TotalPrice = 0;
+                fruit.Value.Quantity = 0;
+            }
 
         }
 
+        //4-7 개별 마진보기 버튼 클릭 시
         private void btnShowUnitMargin_Click(object sender, EventArgs e)
         {
+           //발주를 안하고 개별마진을 보면 0원으로 초기화해서 계산 해야함.
+            if (!baljoolist.ContainsKey("사과"))
+            {
+                baljoolist["사과"] =  new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
 
-        }
+            }
+            if (!baljoolist.ContainsKey("참외"))
+            {
+                baljoolist["참외"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+            if (!baljoolist.ContainsKey("수박"))
+            {
+                baljoolist["수박"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+            
+            //구매를 안하고 개별마진을 보면 0원으로 초기화해서 계산해야함.
+            if (!orderHistory.ContainsKey("사과"))
+            {
+                orderHistory["사과"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
 
-        private void btnShowTotalMargin_Click(object sender, EventArgs e)
-        {
-            // 사과 라디오 버튼이 체크 되어있으면
+            }
+            if (!orderHistory.ContainsKey("참외"))
+            {
+                orderHistory["참외"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+            if (!orderHistory.ContainsKey("수박"))
+            {
+                orderHistory["수박"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+
             if (rdoApple.Checked)
             {
-                // 사과에 대한 
+               MessageBox.Show($"사과의 개별 마진 금액:{orderHistory["사과"].TotalPrice - baljoolist["사과"].TotalPrice}원");
             }
+            else if(rdoMelon.Checked)
+            {
+                MessageBox.Show($"참외의 개별 마진 금액:{orderHistory["참외"].TotalPrice - baljoolist["참외"].TotalPrice}원");
+            }
+            else if(rdoW_M.Checked)
+            {
+                MessageBox.Show($"수박의 개별 마진 금액:{orderHistory["수박"].TotalPrice - baljoolist["수박"].TotalPrice}원");
+            }
+        }
+
+        //4-8 전체 마진보기 버튼 클릭 시 / 사과, 참외, 수박의 총 마진금액을 합산
+        private void btnShowTotalMargin_Click(object sender, EventArgs e)
+        {
+
+            //발주를 안하고 전체마진을 보면 0원으로 초기화해서 계산 해야함.
+            if (!baljoolist.ContainsKey("사과"))
+            {
+                baljoolist["사과"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+
+            }
+            if (!baljoolist.ContainsKey("참외"))
+            {
+                baljoolist["참외"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+            if (!baljoolist.ContainsKey("수박"))
+            {
+                baljoolist["수박"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+
+            //구매를 안하고 전체마진을 보면 0원으로 초기화해서 계산해야함.
+            if (!orderHistory.ContainsKey("사과"))
+            {
+                orderHistory["사과"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+
+            }
+            if (!orderHistory.ContainsKey("참외"))
+            {
+                orderHistory["참외"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+            if (!orderHistory.ContainsKey("수박"))
+            {
+                orderHistory["수박"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+
+
+            int total = 0;
+            total += orderHistory["사과"].TotalPrice - baljoolist["사과"].TotalPrice;
+            total += orderHistory["참외"].TotalPrice - baljoolist["참외"].TotalPrice;
+            total += orderHistory["수박"].TotalPrice - baljoolist["수박"].TotalPrice;
+
+            MessageBox.Show($"총 마진 금액은 : {total}원 입니다.");
         }
 
         // 4-2 발주 입력시, 모든 칸에는 문자로 입력한 내역이 있으면 안됨.
@@ -340,18 +412,170 @@ namespace MyFirstCSharp
             }
         }
 
-        // 4 발주입고 시 발주 과일명, 수량, 가격을 알기 위한 딕셔너리 생성
+        // 4 발주입고 시 발주 과일명, 수량, 가격을 알기 위한 누적 딕셔너리 생성
         private Dictionary<string, order_FruitInfo> Input_Baljoo_Fruit()
         {
+            if (!string.IsNullOrEmpty(txtAppleInvoieCount.Text) && int.TryParse(txtAppleInvoieCount.Text, out int appleCount) && appleCount > 0)
+            {
+                if (baljoolist.ContainsKey("사과"))   
+                {
+                    baljoolist["사과"].Quantity += appleCount;
+                    baljoolist["사과"].TotalPrice += (int)(2000 * 0.6) * Convert.ToInt32(txtAppleInvoieCount.Text);     
+                }
+                else
+                {
+                    baljoolist["사과"] = new order_FruitInfo { Quantity = appleCount, TotalPrice = (int)(2000 * 0.6)*Convert.ToInt32(txtAppleInvoieCount.Text) };    
+                }
+            }
 
+            if (!string.IsNullOrEmpty(txtMelonInvoieCount.Text) && int.TryParse(txtMelonInvoieCount.Text, out int melonCount) && melonCount > 0)
+            {
+                if (baljoolist.ContainsKey("참외"))
+                {
+                    baljoolist["참외"].Quantity += melonCount;
+                    baljoolist["참외"].TotalPrice += (int)(2500 * 0.6) * Convert.ToInt32(txtMelonInvoieCount.Text);
+                }
+                else
+                {
+                    baljoolist["참외"] = new order_FruitInfo { Quantity = melonCount, TotalPrice = (int)(2500 * 0.6)* Convert.ToInt32(txtMelonInvoieCount.Text) };
+                }
+            }
 
-
-            //txtAppleInvoieCount.Text = "";
-            //txtMelonInvoieCount.Text = "";
-            //txtW_MInvoieCount.Text = ""
+            if (!string.IsNullOrEmpty(txtW_MInvoieCount.Text) && int.TryParse(txtW_MInvoieCount.Text, out int wmCount) && wmCount > 0)
+            {
+                if (baljoolist.ContainsKey("수박"))
+                {
+                    baljoolist["수박"].Quantity += wmCount;
+                    baljoolist["수박"].TotalPrice += (int)(18000 * 0.6)* Convert.ToInt32(txtW_MInvoieCount.Text);
+                }
+                else
+                {
+                    baljoolist["수박"] = new order_FruitInfo { Quantity = wmCount, TotalPrice = (int)(18000 * 0.6)* Convert.ToInt32(txtW_MInvoieCount.Text) };
+                }
+            }
+          
 
             return baljoolist;
         }
+
+
+        // 4 발주시 매니저 금액에서 현재 발주된 과일들 금액을 빼기 위한 임시 메서드
+        private bool baljoo_temp()
+        {
+
+            if (!string.IsNullOrEmpty(txtAppleInvoieCount.Text) && int.TryParse(txtAppleInvoieCount.Text, out int appleCount) && appleCount > 0)
+            {
+                if (baljoolist_temp.ContainsKey("사과"))
+                {
+                    baljoolist_temp["사과"].Quantity += appleCount;
+                    baljoolist_temp["사과"].TotalPrice += (int)(2000 * 0.6) * Convert.ToInt32(txtAppleInvoieCount.Text);
+                    iTotalBaljooPrice += baljoolist_temp["사과"].TotalPrice;
+                }
+                else
+                {
+                    baljoolist_temp["사과"] = new order_FruitInfo { Quantity = appleCount, TotalPrice = (int)(2000 * 0.6) * Convert.ToInt32(txtAppleInvoieCount.Text) };
+                    iTotalBaljooPrice += baljoolist_temp["사과"].TotalPrice;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(txtMelonInvoieCount.Text) && int.TryParse(txtMelonInvoieCount.Text, out int melonCount) && melonCount > 0)
+            {
+                if (baljoolist_temp.ContainsKey("참외"))
+                {
+                    baljoolist_temp["참외"].Quantity += melonCount;
+                    baljoolist_temp["참외"].TotalPrice += (int)(2500 * 0.6) * Convert.ToInt32(txtMelonInvoieCount.Text);
+                    iTotalBaljooPrice += baljoolist_temp["참외"].TotalPrice;
+                }
+                else
+                {
+                    baljoolist_temp["참외"] = new order_FruitInfo { Quantity = melonCount, TotalPrice = (int)(2500 * 0.6) * Convert.ToInt32(txtMelonInvoieCount.Text) };
+                    iTotalBaljooPrice += baljoolist_temp["참외"].TotalPrice;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(txtW_MInvoieCount.Text) && int.TryParse(txtW_MInvoieCount.Text, out int wmCount) && wmCount > 0)
+            {
+                if (baljoolist_temp.ContainsKey("수박"))
+                {
+                    baljoolist_temp["수박"].Quantity += wmCount;
+                    baljoolist_temp["수박"].TotalPrice += (int)(18000 * 0.6) * Convert.ToInt32(txtW_MInvoieCount.Text);
+                    iTotalBaljooPrice += baljoolist_temp["수박"].TotalPrice;
+                }
+                else
+                {
+                    baljoolist_temp["수박"] = new order_FruitInfo { Quantity = wmCount, TotalPrice = (int)(18000 * 0.6) * Convert.ToInt32(txtW_MInvoieCount.Text) };
+                    iTotalBaljooPrice += baljoolist_temp["수박"].TotalPrice;
+                }
+            }
+
+            // 발주시에 3개중 키가 없는것이 이씅면 오류가 뜨므로, 대입
+            if (!baljoolist_temp.ContainsKey("사과"))
+            {
+                baljoolist_temp["사과"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+            if (!baljoolist_temp.ContainsKey("참외"))
+            {
+                baljoolist_temp["참외"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+            if (!baljoolist_temp.ContainsKey("수박"))
+            {
+                baljoolist_temp["수박"] = new order_FruitInfo { Quantity = 0, TotalPrice = 0 };
+            }
+
+                if (!baljooCashCheck())
+            {
+                iTotalBaljooPrice = 0;
+                return false;
+            }
+            else
+            {
+                ilManCash -= iTotalBaljooPrice;
+                lblManCash.Text = ilManCash.ToString();
+
+                //발주한 만큼 구매가능 갯수를 증가 해준다.
+                int il_AppCount = Convert.ToInt32(lblAppCount.Text) + Convert.ToInt32(baljoolist_temp["사과"].Quantity);
+                int il_mellonCount = Convert.ToInt32(lblMelonCount.Text) + Convert.ToInt32(baljoolist_temp["참외"].Quantity);
+                int il_watermellonCount = Convert.ToInt32(lblW_MCount.Text) + Convert.ToInt32(baljoolist_temp["수박"].Quantity);
+                lblAppCount.Text = il_AppCount.ToString();
+                lblMelonCount.Text = il_mellonCount.ToString();
+                lblW_MCount.Text = il_watermellonCount.ToString();
+                iTotalBaljooPrice = 0;
+                baljoolist_temp.Clear();
+                return true;
+            }
+           
+        }
+
+
+        // 발주 금액이 관리자의 가게금액 보다 많은지 체크하는 메서드. 이후 차감
+        public bool baljooCashCheck()
+        {
+         
+            // 총 발주 금액이 관리자의 가게금액 보다 많을 경우 발주 할 수 없다는 메세지를 표현한다.
+            if (iTotalBaljooPrice > ilManCash)
+            {
+                MessageBox.Show("총 발주 금액이 관리자의 가게금액 보다 많습니다. 발주 할 수 없습니다.");
+                return false;
+            }
+        
+            return true;
+        }
+
+        // 4-5 발주입고 클릭시 // 텍스트 박스에 발주 수량과 금액을 과일 별로 누적하여 표시 한다.
+        void printbaljoo(Dictionary<string, order_FruitInfo> BaljooItem)
+        {
+         
+            // 발주 목록 프린트 
+            txtOrderList.AppendText("\r\n---- 누적된 발주목록 -----\r\n");
+            foreach (var fruit in BaljooItem)
+            {
+                txtOrderList.AppendText($"{fruit.Key} {fruit.Value.Quantity}개 발주 총 발주 금액 : {fruit.Value.TotalPrice}원\r\n");
+            }
+            txtOrderList.SelectionStart = txtOrderList.Text.Length; //텍스트박스에 누적하여 표현하기 위한 설정 
+            txtOrderList.ScrollToCaret();
+
+        }
+
 
 
 
@@ -383,7 +607,7 @@ namespace MyFirstCSharp
         void CheckBajlJoo_Onlyone()
         {
 
-         }
+        }
 
            
         }
