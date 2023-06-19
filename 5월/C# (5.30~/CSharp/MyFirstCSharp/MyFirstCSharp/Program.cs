@@ -19,7 +19,7 @@ namespace MyFirstCSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TestGeneric());
+            Application.Run(new Chap99_Final_Exam03());
         }
     }
 }
