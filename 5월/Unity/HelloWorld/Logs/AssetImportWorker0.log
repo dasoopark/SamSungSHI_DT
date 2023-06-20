@@ -1,0 +1,119 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.5f1 (3737af19df53) revision 3618735'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Enterprise; OS build 19045.2965; Version 2009; 64bit' Language: 'ko' Physical Memory: 16098 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.5f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/samsung/Desktop/DT교육/SamSungSHI_DT/5월/Unity/HelloWorld
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+54097
+Successfully changed project path to: C:/Users/samsung/Desktop/DT교육/SamSungSHI_DT/5월/Unity/HelloWorld
+C:/Users/samsung/Desktop/DT교육/SamSungSHI_DT/5월/Unity/HelloWorld
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 72.52 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.5f1 (3737af19df53)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/samsung/Desktop/DT교육/SamSungSHI_DT/5월/Unity/HelloWorld/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 770 (ID=0x4680)
+    Vendor:   Intel
+    VRAM:     8049 MB
+    Driver:   30.0.101.1404
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56900
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004189 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 82.95 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.500 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005874 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.082 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2665 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.3 MB.
+System memory in use after: 98.4 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3117.
+Total: 1.284000 ms (FindLiveObjects: 0.118900 ms CreateObjectMapping: 0.050100 ms MarkObjects: 1.071000 ms  DeleteObjects: 0.043200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes
+  artifactKey: Guid(7f4d6bf296a982e49bb837c62d86afd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(7f4d6bf296a982e49bb837c62d86afd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5b629cb5fa5b5de7088cb4a7480fb47') in 0.008270 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006645 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.005 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.83 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2660 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.2 MB.
+System memory in use after: 98.4 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3120.
+Total: 2.616600 ms (FindLiveObjects: 0.452200 ms CreateObjectMapping: 0.097000 ms MarkObjects: 1.995700 ms  DeleteObjects: 0.068700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1662.533373 seconds.
+  path: Assets/Small Tank/SmallTank_3dModel
+  artifactKey: Guid(76c2343bdb4ffb841a4e4c659d77dc49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Small Tank/SmallTank_3dModel using Guid(76c2343bdb4ffb841a4e4c659d77dc49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2be34b6e07e04e802acc25bdf209df27') in 0.015186 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.994294 seconds.
+  path: Assets/Small Tank/SmallTank.prefab
+  artifactKey: Guid(65620b9bb482dd3489cba0f1334f3f6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Small Tank/SmallTank.prefab using Guid(65620b9bb482dd3489cba0f1334f3f6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b49db2fbd1b2236e479b8ca0022f01c8') in 0.263451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 95.449365 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85059f4f9e1a832ed95adaa0d25c5c4c') in 0.010426 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8481.677744 seconds.
+  path: Assets/Small Tank/SmallTank_Scene.unity
+  artifactKey: Guid(47a668ff5a822ec4c962b937fa767367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Small Tank/SmallTank_Scene.unity using Guid(47a668ff5a822ec4c962b937fa767367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c2d054191cfb20261336e707b822b49') in 0.017508 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
