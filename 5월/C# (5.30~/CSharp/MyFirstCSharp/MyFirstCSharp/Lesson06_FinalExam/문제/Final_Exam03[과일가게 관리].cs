@@ -229,15 +229,15 @@ namespace MyFirstCSharp
                     purchase_list["수박"].TotalPrice = wmtotal;
                 }
             }
-            MessageBox.Show($"iTotalPrice는 {iTotalPrice}");
+           // MessageBox.Show($"iTotalPrice는 {iTotalPrice}");
             int i_iTotalPrice = iTotalPrice + iapptotal + imelontotal + iwmtotal;
             MessageBox.Show("결제 취소 되었습니다.");
             il_totaltemp = iTotalPrice - i_iTotalPrice;
 
             iTotalPrice += il_totaltemp;
-            MessageBox.Show($"iTotalPrice는 {iTotalPrice}");
-            MessageBox.Show($"il_totaltemp는 {il_totaltemp}");
-            MessageBox.Show($"i_itotalprice {i_iTotalPrice}");
+           // MessageBox.Show($"iTotalPrice는 {iTotalPrice}"); 값체크용
+           // MessageBox.Show($"il_totaltemp는 {il_totaltemp}");
+          //  MessageBox.Show($"i_itotalprice {i_iTotalPrice}");
         
             
 
