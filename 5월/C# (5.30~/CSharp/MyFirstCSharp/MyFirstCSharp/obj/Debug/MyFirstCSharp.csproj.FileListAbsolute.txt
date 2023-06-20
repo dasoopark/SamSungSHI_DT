@@ -135,3 +135,4 @@ C:\Users\PARK\Documents\GitHub\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp
 C:\Users\PARK\Documents\GitHub\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Lesson06_FinalExam.TryParse.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.Lesson06_FinalExam.TryParse.resources
 C:\Users\samsung\Desktop\DT교육\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.TestGeneric.resources
+C:\Users\PARK\Documents\GitHub\SamSungSHI_DT\5월\C# (5.30~\CSharp\MyFirstCSharp\MyFirstCSharp\obj\Debug\MyFirstCSharp.TestGeneric.resources

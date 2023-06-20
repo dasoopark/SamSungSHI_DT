@@ -20,7 +20,8 @@ namespace MyFirstCSharp
         private void btnResult_Click(object sender, EventArgs e)
         {
             string output = GetAntSequenceResult(14);
-            MessageBox.Show(output);
+            string[] outputLines = output.Split('\n');
+            MessageBox.Show(outputLines[14].Trim());
         }
 
         private string GetAntSequenceResult(int n)

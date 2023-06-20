@@ -461,6 +461,7 @@ namespace MyFirstCSharp
             this.txtAppleInvoieCount.Name = "txtAppleInvoieCount";
             this.txtAppleInvoieCount.Size = new System.Drawing.Size(100, 25);
             this.txtAppleInvoieCount.TabIndex = 7;
+            this.txtAppleInvoieCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnFruitInvoice
             // 
@@ -480,6 +481,7 @@ namespace MyFirstCSharp
             this.txtW_MInvoieCount.Name = "txtW_MInvoieCount";
             this.txtW_MInvoieCount.Size = new System.Drawing.Size(100, 25);
             this.txtW_MInvoieCount.TabIndex = 13;
+            this.txtW_MInvoieCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label21
             // 
@@ -533,6 +535,7 @@ namespace MyFirstCSharp
             this.txtMelonInvoieCount.Name = "txtMelonInvoieCount";
             this.txtMelonInvoieCount.Size = new System.Drawing.Size(100, 25);
             this.txtMelonInvoieCount.TabIndex = 10;
+            this.txtMelonInvoieCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label20
             // 

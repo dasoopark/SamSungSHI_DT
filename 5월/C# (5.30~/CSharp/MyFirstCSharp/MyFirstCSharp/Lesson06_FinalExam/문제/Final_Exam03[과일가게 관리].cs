@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
 
 namespace MyFirstCSharp
@@ -11,19 +12,19 @@ namespace MyFirstCSharp
         private int ilManCash = 100000; // 관리자 초기 가게 잔액.
         int iTotalBaljooPrice = 0; // 총 발주 금액
 
+
         int appcnt = 0;
         int meloncnt = 0;
         int wmcnt = 0;
-        
-        
+
+
         private Dictionary<string, order_FruitInfo> purchase_list = new Dictionary<string, order_FruitInfo>(); //값에, 과일 정보(가격,개수)를 받는 딕셔너리
-        private Dictionary<string, order_FruitInfo> cancel_Temp = new Dictionary<string, order_FruitInfo>(); //취소를 하기 위해, 결제 완료 전 정보를 입력받는 딕셔너리
         private Dictionary<string, order_FruitInfo> orderHistory = new Dictionary<string, order_FruitInfo>(); //텍스트 박스에 구매한 것들을 누적시키기 위해 사용하는 딕셔너리
         private Dictionary<string, order_FruitInfo> baljoolist = new Dictionary<string, order_FruitInfo>(); // 발주 수량을 누적 저장하는 딕셔너리
         private Dictionary<string, order_FruitInfo> baljoolist_temp = new Dictionary<string, order_FruitInfo>(); // 현재 발주를 기준으로, 매니저 금액 계산 용
 
 
-      
+
 
 
         public Chap99_Final_Exam03()
@@ -37,23 +38,22 @@ namespace MyFirstCSharp
         {
             Button btnTemp = (Button)sender;
             string sFruitName = btnTemp.Tag.ToString();
+
+
             switch (sFruitName)
             {
                 // 결제 시 주문 수량 별 처리를 위하여 주문 버튼 클릭 후 
                 case "사과":
                     // 사과의 주문 처리
                     FruitInventoryAdj(lblAppCount, sFruitName, 2000);
-                    ++appcnt;
                     break;
                 case "참외":
                     // 참외의 주문 처리 
                     FruitInventoryAdj(lblMelonCount, sFruitName, 2500);
-                    ++meloncnt;
                     break;
                 case "수박":
                     // 수박의 주문 처리
                     FruitInventoryAdj(lblW_MCount, sFruitName, 18000);
-                    ++wmcnt;
                     break;
             }
         }
@@ -65,21 +65,38 @@ namespace MyFirstCSharp
             string _sfruitname = sFruitName;
             // 과일의 현재 재고 수량이 0 일 경우 리턴. 
             iFruitCount = int.Parse(lblFruitCnt.Text);
+
+            if (iFruitCount > 0)
+            {
+                if (_sfruitname == "사과")
+                {
+                    ++appcnt;
+                }
+                else if (_sfruitname == "참외")
+                {
+                    ++meloncnt;
+                }
+                else if (_sfruitname == "수박")
+                {
+                    ++wmcnt;
+                }
+            }
+
+
             if (iFruitCount == 0)
             {
-                MessageBox.Show($"{sFruitName}의 재고 수량이 0 입니다. 주문을 할 수 없습니다.");
+                MessageBox.Show($"{sFruitName}의 재고 수량이 0 입니다. 주문을 더 할 수 없습니다.");
                 return;
             }
 
             // 던져주는 과일의 재고 개수 1 차감. 
             --iFruitCount;
-
             lblFruitCnt.Text = Convert.ToString(iFruitCount);
+
 
             // 총 누적 구매 금액
             iTotalPrice += iSalePrice;
 
-            // 1.결제하기 - 주문했던 과일의 거래 내역을 수량과 금액으로 과일별로 텍스트박스에 누적하여 표현하기 위해 
             if (orderHistory.ContainsKey(sFruitName))
             {
                 orderHistory[sFruitName].Quantity += 1;
@@ -98,6 +115,7 @@ namespace MyFirstCSharp
             {
                 purchase_list[sFruitName] = new order_FruitInfo { Quantity = 1, TotalPrice = iSalePrice };
             }
+
         }
 
 
@@ -117,22 +135,26 @@ namespace MyFirstCSharp
 
         private void btnOrderCancle_Click(object sender, EventArgs e) //4. 주문 취소하기 버튼 클릭
         {
+
+            MessageBox.Show(wmcnt.ToString());
             int apptotal = 0;
             int melontotal = 0;
             int wmtotal = 0;
+            int il_totaltemp = 0;
+         
 
-            
+
             int iapptotal = appcnt * 2000;
             int imelontotal = meloncnt * 2500;
             int iwmtotal = wmcnt * 18000;
 
             foreach (var item in orderHistory)
             {
-                if( item.Key == "사과")
+                if (item.Key == "사과")
                 {
-                    apptotal += item.Value.TotalPrice -(appcnt * 2000) ;
+                    apptotal += item.Value.TotalPrice - (appcnt * 2000);
                 }
-                if ( item.Key == "참외")
+                if (item.Key == "참외")
                 {
                     melontotal += item.Value.TotalPrice - (meloncnt * 2500);
                 }
@@ -141,20 +163,20 @@ namespace MyFirstCSharp
                     wmtotal += item.Value.TotalPrice - (wmcnt * 18000);
                 }
             }
-            
+
 
 
             if (appcnt == 0 && meloncnt == 0 && wmcnt == 0)
             {
                 MessageBox.Show("취소할 내역이 없습니다.");
-                //    return;
+                return;
             }
-           
+
             lblAppCount.Text = (Convert.ToInt32(lblAppCount.Text) + appcnt).ToString();
             lblMelonCount.Text = (Convert.ToInt32(lblMelonCount.Text) + meloncnt).ToString();
             lblW_MCount.Text = (Convert.ToInt32(lblW_MCount.Text) + wmcnt).ToString();
 
-            foreach(var item in orderHistory)
+            foreach (var item in orderHistory)
             {
                 if (item.Key == "사과")
                 {
@@ -207,20 +229,22 @@ namespace MyFirstCSharp
                     purchase_list["수박"].TotalPrice = wmtotal;
                 }
             }
-
+            MessageBox.Show($"iTotalPrice는 {iTotalPrice}");
             int i_iTotalPrice = iTotalPrice + iapptotal + imelontotal + iwmtotal;
             MessageBox.Show("결제 취소 되었습니다.");
-            iTotalPrice -= i_iTotalPrice;
+            il_totaltemp = iTotalPrice - i_iTotalPrice;
 
-            iCustCash += iTotalPrice;
-            ilManCash -= iTotalPrice;
-
-
+            iTotalPrice += il_totaltemp;
+            MessageBox.Show($"iTotalPrice는 {iTotalPrice}");
+            MessageBox.Show($"il_totaltemp는 {il_totaltemp}");
+            MessageBox.Show($"i_itotalprice {i_iTotalPrice}");
+        
+            
 
             appcnt = 0;
             meloncnt = 0;
             wmcnt = 0;
-         
+
             iapptotal = 0;
             imelontotal = 0;
             iwmtotal = 0;
@@ -237,9 +261,35 @@ namespace MyFirstCSharp
             if (iTotalPrice > iCustCash)
             {
                 MessageBox.Show("잔액이 부족합니다. 결제를 할 수 없습니다.");
+                foreach (var fruit in purchase_list)
+                {
+                    if (fruit.Key == "사과")
+                    {
+                        orderHistory["사과"].Quantity -= purchase_list["사과"].Quantity;
+                        orderHistory["사과"].TotalPrice -= purchase_list["사과"].TotalPrice;
+                        iTotalPrice -= purchase_list["사과"].TotalPrice;
+                        lblAppCount.Text = (Convert.ToInt32(lblAppCount.Text) + purchase_list["사과"].Quantity).ToString();
+                    }
+                    if (fruit.Key == "참외")
+                    {
+                        orderHistory["참외"].Quantity -= purchase_list["참외"].Quantity;
+                        orderHistory["참외"].TotalPrice -= purchase_list["참외"].TotalPrice;
+                        iTotalPrice -= purchase_list["참외"].TotalPrice;
+                        lblMelonCount.Text = (Convert.ToInt32(lblMelonCount.Text) + purchase_list["참외"].Quantity).ToString();
+                    }
+                    if (fruit.Key == "수박")
+                    {
+                        orderHistory["수박"].Quantity -= purchase_list["수박"].Quantity;
+                        orderHistory["수박"].TotalPrice -= purchase_list["수박"].TotalPrice;
+                        iTotalPrice -= purchase_list["수박"].TotalPrice;
+                        lblW_MCount.Text = (Convert.ToInt32(lblW_MCount.Text) + purchase_list["수박"].Quantity).ToString();
+                    }
+                }
+                purchase_list.Clear();
                 return;
             }
 
+            //출력용 구문 
             foreach (var fruit in purchase_list)
             {
                 if (fruit.Key == "사과")
@@ -256,7 +306,7 @@ namespace MyFirstCSharp
                 }
             }
 
-
+            // 누적 출력용 구문 
             txtOrderList.AppendText("\r\n---- 누적된 거래 내역 -----\r\n");
             foreach (var fruit in orderHistory)
             {
@@ -318,17 +368,36 @@ namespace MyFirstCSharp
         // 4-6 : 누르면 기입한 발주 내역을 모두 초기화.
         private void BONInvoiceClear_Click(object sender, EventArgs e)
         {
-
+            int baljooappcnt = 0;
+            int baljoomeloncnt = 0;
+            int baljoowmcnt = 0;
             // 발주 목록 프린트 
             txtOrderList.AppendText("\r\n---- 발주내역을 모두 초기화 합니다. -----\r\n");
             foreach (var fruit in baljoolist)
             {
+
                 ilManCash += fruit.Value.TotalPrice;
+                if (fruit.Key == "사과")
+                {
+                    baljooappcnt = fruit.Value.Quantity;
+                }
+                if (fruit.Key == "참외")
+                {
+                    baljoomeloncnt = fruit.Value.Quantity;
+                }
+                if (fruit.Key == "수박")
+                {
+                    baljoowmcnt = fruit.Value.Quantity;
+                }
             }
             txtOrderList.SelectionStart = txtOrderList.Text.Length; //텍스트박스에 누적하여 표현하기 위한 설정 
             txtOrderList.ScrollToCaret();
 
             lblManCash.Text = ilManCash.ToString();
+            lblAppCount.Text = (Convert.ToInt32(lblAppCount.Text) - baljooappcnt).ToString();
+            lblMelonCount.Text = (Convert.ToInt32(lblMelonCount.Text) - baljoomeloncnt).ToString();
+            lblW_MCount.Text = (Convert.ToInt32(lblW_MCount.Text) - baljoowmcnt).ToString();
+
             foreach (var fruit in baljoolist) //초기화시, 수량과 갯수 0개로 초기화
             {
                 fruit.Value.TotalPrice = 0;
