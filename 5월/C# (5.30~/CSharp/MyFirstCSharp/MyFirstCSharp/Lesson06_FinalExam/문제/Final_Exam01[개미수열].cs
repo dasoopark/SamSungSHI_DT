@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// 실기 1 박다수
+// 문제 요구 사항 : 15번째의 수열 메세지 박스 출력 완료 
+
+
 namespace MyFirstCSharp
 {
     public partial class Final_Exam01 : Form

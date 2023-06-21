@@ -9,6 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+// 실기 2
+/*
+     박다수 
+     1. 사용자 정보 관리 사용자 데이터 관리 유형 생성 완료
+     2. 사용자 등록 시 중복 ID 등록 되지 않도록 완료
+     3. LOGIN 시 ID와 비밀번호 일치시 "?? 님 반갑습니다." 메세지 표현 완료
+     4. LOGIN 시 ID 존재하지 않을 경우 "존재하지 않는 ID입니다" 메세지 표현
+     5. LOGIN 시 ID는 일치하지만 PW가 일치하지 않는 경우  
+        비밀번호를 잘못 입력하였습니다 남은횟수 ?회 메세지로 각각의 ID마다 구현완료
+        5회 이상 오류시 비밀번호 5회 미일치 프로그램을 종료 후 메세지 표현 후 종료
+ */
 namespace MyFirstCSharp
 {
     public partial class Final_Exam02_2_Login : Form
@@ -28,7 +40,7 @@ namespace MyFirstCSharp
             //로그인 가능 여부를 판단.
             if (_userinfos.Count == 0)
             {
-                MessageBox.Show("등록된 사용자가 없습니다.");
+                MessageBox.Show("존재하지 않는 ID 입니다");
                 return;
             }
 

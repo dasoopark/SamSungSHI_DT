@@ -3,6 +3,35 @@ using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
 
+/*
+    실기 3 . 박다수
+    0. (사과,참외,수박) 주문 버튼 클릭 시(1,2) : 모두 구현 완료
+
+    1. 결제하기 버튼 클릭 시 (1,2,3,4) : 모두 구현 완료
+
+    2. 총 결제 금액 보기 클릭 시 (1,2) : 모두 구현 완료
+
+    3. 주문 취소하기 클릭시 (1,2) : 모두 구현 완료
+
+    4. 발주 입고 클릭시 (1,2,3,4,5,6,7) : 모두 구현완료
+
+    5. 전체 삭제 버튼 클릭 시 - 기입한 발주 내역을 모두 초기화 하는 이지만
+       발주 텍스트 목록만 지우는것도 구현하였지만, 
+       발주 초기화 시 발주했던 과일 갯수들, 관리자 가게 잔액을 이전 값으로 회복시켜 
+       주어야 한다고 생각하여 발주 전체 삭제 시, 모든 발주 갯수만큼 과일과 관리자 금액이 돌아오게 구현 하였습니다.
+
+    6. 개별 마진 보기 버튼 클릭시 : 모두 구현 완료
+
+    7. 총 마진보기 버튼 클릭 시 : 모두 구현 완료
+   
+
+
+    * 메모용 - 난감했던 버그
+    과일 수량이 0이 될 때 까지 장바구니에 담고  0이 된 후에도 계속 메세지창을 무시하고 버튼을 누른 후
+    되돌리기를 하면  그 누른 횟수 만큼 증감되어 되돌리기 되는 현상이 발생 (초기 과일갯수랑 금액이랑 달라지게됨)
+      - 클리어 차곡차곡 해서 해결 완료
+    
+ */
 namespace MyFirstCSharp
 {
     public partial class Chap99_Final_Exam03 : Form
@@ -141,7 +170,7 @@ namespace MyFirstCSharp
             int melontotal = 0;
             int wmtotal = 0;
             int il_totaltemp = 0;
-         
+
 
 
             int iapptotal = appcnt * 2000;
@@ -229,17 +258,17 @@ namespace MyFirstCSharp
                     purchase_list["수박"].TotalPrice = wmtotal;
                 }
             }
-           // MessageBox.Show($"iTotalPrice는 {iTotalPrice}");
+            // MessageBox.Show($"iTotalPrice는 {iTotalPrice}");
             int i_iTotalPrice = iTotalPrice + iapptotal + imelontotal + iwmtotal;
             MessageBox.Show("결제 취소 되었습니다.");
             il_totaltemp = iTotalPrice - i_iTotalPrice;
 
             iTotalPrice += il_totaltemp;
-           // MessageBox.Show($"iTotalPrice는 {iTotalPrice}"); 값체크용
-           // MessageBox.Show($"il_totaltemp는 {il_totaltemp}");
-          //  MessageBox.Show($"i_itotalprice {i_iTotalPrice}");
-        
-            
+            // MessageBox.Show($"iTotalPrice는 {iTotalPrice}"); 값체크용
+            // MessageBox.Show($"il_totaltemp는 {il_totaltemp}");
+            //  MessageBox.Show($"i_itotalprice {i_iTotalPrice}");
+
+
 
             appcnt = 0;
             meloncnt = 0;
@@ -623,6 +652,11 @@ namespace MyFirstCSharp
             if (!baljooCashCheck())
             {
                 iTotalBaljooPrice = 0;
+                foreach (var item in baljoolist_temp)
+                {
+                    baljoolist_temp[item.Key].Quantity = 0;
+                    baljoolist_temp[item.Key].TotalPrice = 0;
+                }
                 return false;
             }
             else
@@ -701,11 +735,8 @@ namespace MyFirstCSharp
             return true;
         }
 
-        // 4-2 발주입고 클릭시 // 1개라도 발주 내역이 있으면, 나머지 기입하지 않은 발주는 0개인것으로 한다.(문자로입력 내역은 무시)
-        void CheckBajlJoo_Onlyone()
-        {
-
-        }
+      
+    
 
 
     }
@@ -718,5 +749,3 @@ class order_FruitInfo //과일 구매 개수와, 가격을 누적시켜, 텍스�
     public int Quantity { get; set; }
     public int TotalPrice { get; set; }
 }
-
-
