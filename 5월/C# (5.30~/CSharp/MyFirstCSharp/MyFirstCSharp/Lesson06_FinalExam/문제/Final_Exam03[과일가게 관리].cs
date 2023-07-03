@@ -165,7 +165,6 @@ namespace MyFirstCSharp
         private void btnOrderCancle_Click(object sender, EventArgs e) //4. 주문 취소하기 버튼 클릭
         {
 
-            MessageBox.Show(wmcnt.ToString());
             int apptotal = 0;
             int melontotal = 0;
             int wmtotal = 0;
