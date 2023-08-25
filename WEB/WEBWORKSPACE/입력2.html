@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <fieldset>
+        <legend>로그온</legend>
+        <label>userid : <input type="text" name="userid"></label><br/>
+        <label for="password">password :</label>
+        <input type="password" name="password" id="password"> <br/>
+
+        <input type="checkbox" name="favorite" id="fav1"><label for="fav1">포도</label><br/>
+        <input type="checkbox" name="favorite" id="fav2"><label for="fav1">바나나</label><br/>
+        <input type="checkbox" name="favorite" id="fav3"><label for="fav1">사과</label><br/>
+        <input type="checkbox" name="favorite" id="fav4"><label for="fav1">배</label><br/>
+        <input type="checkbox" name="favorite" id="fav5"><label for="fav1">오렌지</label><br/>
+        <button>전송</button>
+    </fieldset>
+        <!--
+            button 태그는 input 태그의 submit와 같다. 요즘은 button 태그를 더 많이 사용한다.
+            이 태그는 서버로 무조건 정보를 전송하기 때문에
+            전송전에 데이터들을 제대로 입력했는지 자바스크립트로 체크를 해서 오류가 없을 때 서버로 정보를 전송하려고 할 때
+            무조건 전송을 하기때문에 전송을 막으려고 해도 못막는다.
+            그래서 잘 안쓴다.
+            <button type="button">보내기</button>나
+            <input type ="button" value="보내기">형태로 많이 사용한다.
+            실습할때 말고 바로 <button>전송</button>
+            <input type="submit" value="보내기"를> 실무에서는 잘 쓰지 않는다
+
+        -->
+    </form>
+</body>
+</html>

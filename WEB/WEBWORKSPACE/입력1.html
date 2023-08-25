@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    input{
+        color:deeppink;
+    }
+    input#blue{
+        color:darkseagreen;
+    }
+</style>
+<body>
+    <form method="post">
+        x: <input type="text" name="x" id="blue"> <br/>
+        y: <input type="text" name="y" id="blue"> <br/>
+        z: <input type="text" name="z" class="green"> <br/>
+        a: <input type="text" name="x" class="green"> <br/>
+        <input type="submit" value="전송"> <br/>
+    </form>
+
+</body>
+</html> 
+
+<script>
+    //getElementById - 무조건 단수
+    document.getElementById("blue").value="1234";
+    //getElementsByClassName - 무조건 복수
+    document.getElementsByClassName("green")[0].value="green";
+    document.getElementsByClassName("green")[1].value="green";
+</script>
