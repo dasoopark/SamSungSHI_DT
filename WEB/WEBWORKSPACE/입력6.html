@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform">
+        이름 : <input type="text" name="name" id="name" autofocus required 
+                placeholder="이름을 입력하세요" value="Tom" disabled><br/>
+        국어 : <input type="text" name="kor" id="kor" placeholder="국어 성적을 입력하세요"
+                value="100" readonly><br/>
+        영어 : <input type="text" name="eng" id="eng" placeholder="영어 성적을 입력하세요"><br/>
+        수학 : <input type="text" name="math" id="math" placeholder="수학 성적을 입력하세요"><br/>
+
+        <button type="button" onclick="goSend()">확인</button>&nbsp;&nbsp;
+        <button type="button">취소</button>
+    </form>
+</body>
+</html>
+
+<script>
+    function goSend()
+    {
+        //alert("확인");
+        let name = document.getElementById("name").value;
+        let kor = document.getElementById("kor").value;
+        let eng = document.getElementById("eng").value;
+        let math = document.getElementById("math").value;
+
+        console.log( name);
+        console.log( kor);
+        console.log( eng);
+        console.log( math);
+        console.log( parseInt(kor)+parseInt(eng)+parseInt(math));
+        // alert(parseInt(kor)+parseInt(eng)+parseInt(math));
+
+        //서버로 정보를 전송한다.
+        var frm = document.myform;
+        frm.method="get";
+        frm.submit(); // 서버로 정보를 전송한다. => ajax가 대세이다.
+    }
+</script>
