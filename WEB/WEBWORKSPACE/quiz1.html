@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Funny Quiz</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                }
+                h1 {
+                    color: #FF5733;
+                }
+                button {
+                    padding: 10px 20px;
+                    background-color: #FF5733;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>어떤 유머 스타일이 당신과 가장 잘 어울릴까요?</h1>
+            <p>아래의 질문에 답해보세요!</p>
+            <div id="quiz">
+                <p>질문 1: 가장 좋아하는 사람은 누구인가요?</p>
+                <label><input type="radio" name="q1" value="1"> 권시훈</label>
+                <label><input type="radio" name="q1" value="2"> 박다수</label>
+                <br>
+                <p>질문 2: 누가더 잘생겼나요?</p>
+                <label><input type="radio" name="q2" value="1"> 권시훈</label>
+                <label><input type="radio" name="q2" value="2"> 박다수</label>
+                <br>
+                <p>질문 3: 권시훈을 점수로 ?</p>
+                <label><input type="radio" name="q3" value="1"> +100</label>
+                <label><input type="radio" name="q3" value="2"> +는무슨 -다</label>
+                <br>
+                <br>
+                <button id="submit">결과 보기</button>
+            </div>
+            <div id="result" style="display: none;">
+                <h2>당신의 유머 스타일은...</h2>
+                <p id="result-text"></p>
+            </div>
+            <script>
+                const submitButton = document.getElementById("submit");
+                const resultDiv = document.getElementById("result");
+                const resultText = document.getElementById("result-text");
+        
+                submitButton.addEventListener("click", showResult);
+        
+                function showResult() {
+                    const answers = document.querySelectorAll("input[type='radio']:checked");
+                    if (answers.length === 3) {
+                        resultDiv.style.display = "block";
+                        const score = parseInt(answers[1].value) + parseInt(answers[1].value) + parseInt(answers[1].value);
+                        if (score >= 5) {
+                            resultText.textContent = ".";
+                        } else {
+                            resultText.textContent = "형 담타?";
+                        }
+                    } else {
+                        alert("모든 질문에 답해주세요!");
+                    }
+                }
+            </script>
+        </body>
+        </html>

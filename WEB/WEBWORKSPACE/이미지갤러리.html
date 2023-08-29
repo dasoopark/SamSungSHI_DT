@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width:1000px;
+            margin:30px auto; /*중앙정렬*/
+            /*text-align : 태그 내에서 정렬
+            태그 자체가 중간에 오게 하려면
+            margin-right:auto;
+            를 주면 left쪽도 자동이 되면서 알아서 중앙정렬을 한다
+            top right에 auto를 주었음
+            */
+            border:1px solid red;
+            height: 500px;
+        }
+        /*block - 자기영역이 확고: 줄바꿈이 이뤄진다. 
+        inline - 줄바꿈 안함
+        display:inline-block 두개의 성격을
+         */
+
+        .layer
+        {
+            border:1px solid blue;
+            width:28%;
+            height:300px;
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지갤러리</h1>
+    <div id="container">
+        <div class="layer">
+            <h3 class=""imagetitle">그림제목</h3>
+        </div>
+
+        <div class="layer">
+        </div>
+
+        <div class="layer">
+        </div>
+
+        <div class="layer">
+        </div>
+    </div>
+</body>
+</html>

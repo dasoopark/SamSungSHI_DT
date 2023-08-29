@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*class를 정의한다. table은 필요없음 table1이 담당.*/
+        .table1
+        {
+            margin:auto
+        }
+        .table1 table{
+            border:1px solid red;
+            width:50%;
+            caption-side:bottom;
+            border-collapse: collapse;
+        }
+        .table1 td, .table1 th{
+            border:1px dotted blue;
+            padding:10px;
+            text-align: center;
+        }
+        .table1 th{
+            background-color: deepskyblue;
+        }
+
+            /*class를 정의한다. table은 필요없음 table1이 담당.*/
+        .table2
+        {
+            margin:auto
+        }
+        .table2 table{
+            border:1px solid #00ff1a;
+            width:50%;
+            caption-side:bottom;
+            border-collapse: collapse;
+        }
+        .table2 td, .table2 th{
+            border:1px dotted #00ff1a;
+            padding:10px;
+            text-align: center;
+        }
+        .table2 th{
+            background-color: rgb(196,249,152);
+        }
+    </style>
+</head>
+<body>
+    <table class="table1">
+        <caption>선물용과 가정용 상품구성</caption>
+        <tread>
+            <tr>
+                <th>용도</th>
+                <th>중량</th>
+                <th>개수</th>
+                <th>가격</th>
+            </tr>
+        </tread>
+        <tbody>
+            <tr>
+                <td rowspan="2">선물용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>3,500원</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>52,000원</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table2">
+        <caption>선물용과 가정용 상품구성</caption>
+        <tread>
+            <tr>
+                <th>용도</th>
+                <th>중량</th>
+                <th>개수</th>
+                <th>가격</th>
+            </tr>
+        </tread>
+        <tbody>
+            <tr>
+                <td rowspan="2">선물용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>3,500원</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>52,000원</td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
