@@ -1,0 +1,39 @@
+<!-- 애니메이션.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                position: relative; /*이 속성이 있어야 한다 (움직임)*/
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                animation-name: example;
+                animation-duration: 4s;
+            }
+
+            @keyframes example {
+                from {
+                    background-color: red;
+                    left:0px;
+                    top: 0px;
+                }
+                to {
+                    background-color: yellow;
+                    left:400px;
+                    top: 300px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Animation</h1>
+
+        <div></div>
+
+        <p>
+            <b>Note:</b> When an animation is finished, it goes back to its
+            original style.
+        </p>
+    </body>
+</html>
