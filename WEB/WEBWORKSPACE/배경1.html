@@ -1,0 +1,40 @@
+<!-- 배경1.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .style1 {
+                background-color: bisque;
+                width: 300px;
+                height: 200px;
+                padding: 10px;
+                border: 10px dotted #ccc;
+            }
+            #clip-border {
+                background-clip: border-box;
+            }
+            #clip-padding {
+                background-clip: padding-box;
+            }
+            #clip-content {
+                background-clip: content-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="style1" id="clip-padding">
+                <h1>레드향</h1>
+                <p>
+                    레드향은 ............................. <br />
+                    레드향은 ............................. <br />
+                    레드향은 ............................. <br />
+                    레드향은 ............................. <br />
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

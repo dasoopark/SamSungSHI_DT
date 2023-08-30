@@ -1,0 +1,59 @@
+<!-- 연결선택자2.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            a[href] {
+                background: yellow;
+                border: 1px solid red;
+                font-weight: bold;
+            }
+            a[href="#none"] {
+                background: green;
+                border: 1px solid red;
+                font-weight: bold;
+            }
+            /* a[class~="button"] {
+                background: cyan;
+                padding: 10px;
+                width: 200px;
+                height: 40px;
+                line-height: 40px;
+            } */
+            /* a[class|="button"] {
+                background: cyan;
+                padding: 10px;
+                width: 200px;
+                height: 40px;
+                line-height: 40px;
+            } */
+            /* a[class^="button"] {
+                background: cyan;
+                padding: 10px;
+                width: 200px;
+                height: 40px;
+                line-height: 40px;
+            } */
+            a[class$="button"] {
+                background: cyan;
+                padding: 10px;
+                width: 200px;
+                height: 40px;
+                line-height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a>메인메뉴</a></li>
+            <li><a href="#none" class="button">메뉴1</a></li>
+            <li><a href="#" class="back button large">메뉴2</a></li>
+            <li><a href="#none" class="button-1">메뉴3</a></li>
+            <li><a href="#none" class="button-me">메뉴3</a></li>
+            <li><a href="#" class="mybutton">메뉴4</a></li>
+        </ul>
+    </body>
+</html>

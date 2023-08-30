@@ -1,0 +1,41 @@
+<!-- 연결선택자1.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            section > p {
+                color: red;
+            }
+            section div p {
+                color: blue;
+            }
+            h1 + p {
+                color: green;
+                font-weight: 900;
+            }
+        </style>
+    </head>
+    <body>
+        <p>연결선택자 사용</p>
+        <section>
+            <h1>연결선택자로 선택하기</h1>
+            <p>p태그1</p>
+            <p>p태그2</p>
+            <p>p태그3</p>
+            <p>p태그4</p>
+            <div>
+                <p>p태그2</p>
+                <p>p태그3</p>
+            </div>
+            <div>
+                <p>p태그2</p>
+                <p>p태그3</p>
+            </div>
+        </section>
+    </body>
+</html>
+
+<!-- #entertain > div.news_prime > div > ul > li:nth-child(1)> a -->

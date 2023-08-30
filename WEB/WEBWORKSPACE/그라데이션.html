@@ -1,0 +1,29 @@
+<!— 그라데이션1.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 500px;
+                height: 300px;
+                border-radius: 10px;
+                border: 1px solid red;
+            }
+            .grad {
+                background: linear-gradient(
+                    180deg,
+                    blue,
+                    rgb(158, 113, 207) 30%,
+                    rgb(244, 84, 111)
+                );
+                /* background: linear-gradient(to left top, blue,rgb(158, 113, 207) 30%, rgb(244, 84, 111)); */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grad"></div>
+    </body>
+</html>

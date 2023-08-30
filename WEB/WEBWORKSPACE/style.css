@@ -1,19 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
-    body{
-        margin:0;
-    }
-    
-    h1 {
-        background-color: lightskyblue;
-        margin: 0;
-        padding:30px;   
-    }
-    p {
-        text-align: center;
-        color:chocolate;
-        font-size: 20px;
-    }
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-    /*
-    css주석 : 이 사이에 놓는다.
-    */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.animal {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.animal img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
