@@ -1,0 +1,25 @@
+<!-- 자바스크립트1.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 onclick="goClick()">자바스크립트</h1>
+        <p>위 텍스트를 클릭해보세요</p>
+    </body>
+</html>
+<script>
+    function goClick() {
+        //h태그를 접근해야 한다.
+        var h1 = document.getElementsByTagName("h1");
+        h1[0].style.color = "#f00";
+        // - 이 변수에 못쓴다.
+        h1[0].style.backgroundColor = "#ff0";
+        h1[0].innerHTML = "모던<span style=color:'#0000FF'>스크</span>립트";
+        h1[0].innerText = "모던<span style=color:'#0000FF'>스크</span>립트";
+        //value- input 태그류 그 밖에는 innerHTML사용한다.
+    }
+</script>

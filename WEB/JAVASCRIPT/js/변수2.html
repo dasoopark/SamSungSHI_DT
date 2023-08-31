@@ -1,0 +1,32 @@
+<!— 변수2.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+<script>
+    var a; //변수에 값을 할당하지 않으면 이 변수가 어떤 데이터도 가르키고 있지 않다
+    //타입을 모른다
+    console.log(a);
+    var b = null;
+    console.log(b);
+
+    var name = "홍길동";
+    var age = 23;
+
+    console.log(name + "의 나이는 " + age + "입니다");
+    //백틱(`)-맨왼쪽의 물결무늬아래에 있는 키
+    console.log(`${name}의 나이는 ${age}입니다`);
+
+    a = 10;
+    b = 7;
+
+    console.log(`${a} + ${b}= ${a + b}`);
+    console.log(`${a} - ${b}= ${a - b}`);
+    console.log(`${a} * ${b}= ${a * b}`);
+    console.log(`${a} / ${b}= ${a / b}`); // / -> 결과가 실수가 나온다
+</script>

@@ -1,0 +1,28 @@
+<!— 변수1.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+
+<script>
+    //자바스크립트는 변수를 선언하지 않아도 사용이 가능하다.
+    //var키워드만 사용했음 => 호이스팅이라는 문제가 발생한다
+    //let 키워드를 만들고 이걸 사용하라 =>
+    a = 100;
+    console.log("a=", a);
+
+
+    // if문이나 for문 등에서 {}안에서 변수를 선언하면, 그 변수는 {}안에서만 존재해야한다.
+    // var message = "안녕하세요";
+    let message = "안녕하세요";
+    if (true) {
+        let message = "반갑습니다.";
+        console.log(message);
+    }
+</script>
+

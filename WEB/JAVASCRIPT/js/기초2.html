@@ -1,0 +1,23 @@
+<!-- 기초2.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>프롬프트창</h1>
+    </body>
+</html>
+
+<script>
+    //첫번째 파라미터가 문구
+    //두번째 - 값을 입력을 안할 때 기본값으로
+    a = prompt("이름을 입력하세요", "홍길동");
+    if (a == null) {
+        alert("취소버튼을 누르셨습니다");
+    } else {
+        alert("이름은" + a + "입니다");
+    }
+</script>
