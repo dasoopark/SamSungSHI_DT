@@ -1,0 +1,41 @@
+<!-- switch문.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>1~5중에 하나를 입력하세요</p>
+        <input type="text" id="number" value="1" />
+        <button type="button" id="btnPress" onclick="goPress()">
+            선택하기
+        </button>
+    </body>
+</html>
+
+<script>
+    function goPress(params) {
+        let sel = document.getElementById("number").value;
+        switch (sel) {
+            case "1":
+                alert("제주도 여행권 당첨");
+                break;
+            case "2":
+                alert("갤럭시 당첨");
+                break;
+            case "3":
+                alert("노트북 당첨");
+                break;
+            case "4":
+                alert("갤럭시탭 당첨");
+                break;
+            case "5":
+                alert("50000원 당첨");
+                break;
+            default:
+                alert("꽝");
+        }
+    }
+</script>

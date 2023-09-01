@@ -1,0 +1,33 @@
+<!— 구구단.html —>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        구구단 : <input type="text" id="dan" />
+        <button type="button" onclick="goGugudan()">확인</button> <br /><br />
+        <div
+            id="result"
+            style="border: 1px solid black; width: 300px; height: 300px"
+        ></div>
+    </body>
+</html>
+
+<script>
+    function goGugudan() {
+        var dan = document.querySelector("#dan").value;
+        if (dan == "") dan = 3;
+
+        var result = "";
+        for (let i = 0; i <= 9; i++) {
+            result += `<span style="color:red">${dan}X${i}=${
+                dan * i
+            }</span> <br/>`;
+        }
+        document.querySelector("#result").innerHTML = result;
+    }
+</script>

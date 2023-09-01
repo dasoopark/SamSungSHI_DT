@@ -1,0 +1,41 @@
+<!— 배열1.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>배열</h1>
+    </body>
+</html>
+<script>
+    "use strict";
+    // 자바스크립트는 배열도 참조고 일반변수도 참조
+    var flowers = [
+        "작약",
+        "수국",
+        "봉선화",
+        "목련",
+        "불두화",
+        "백일홍",
+        "천일홍",
+        "장미",
+    ];
+
+    for (var i = 0; i < flowers.length; i++) {
+        console.log(flowers[i]);
+    }
+// in 배열로부터 인덱스를 가져온다
+
+console.log("—————in 연산자—————");
+    for (var i in flowers) {
+        console.log(flowers[i]);
+    }
+    // c#의 foreach, 객체배열로부터 요소를 하나씩 가져온다
+console.log("—————of 연산자—————");
+for (var flower of flowers) {
+        console.log(꽃);
+    }
+</script>

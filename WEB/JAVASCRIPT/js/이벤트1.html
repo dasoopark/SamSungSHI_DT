@@ -1,0 +1,34 @@
+<!— 이벤트1.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button
+            type="button"
+            id="btnPress"
+            style="background-color: blue"
+            onclick="goPress()"
+        >
+            이벤트
+        </button>
+    </body>
+</html>
+<script>
+    function goPress() {
+        // html 문서에 정의된 객체
+        // window - 전체 브라우저 창 자체
+        // location - 위치 이동, navigation href, reload, anchor (<a>)태그를 객체화
+        // document - html문서의 객체에 접근해서 가져올 때
+        // event - 이벤트가 발생하면 이 객체가 이벤트에 대한 모든 정보를 가지고 있다.
+        console.log(event);
+        // style background-color: 스네이크 표기법, 자바스크립트로 접근할 때는
+        // 변수에 - 사용못함, 카멜 표기법 backgroundColor (-소문자=>대문자)
+        console.log(event.target.style.backgroundColor); //이벤트가 발생한 객체에 단한 배경색 정보
+        document.getElementsByTagName("body")[0].style.backgroundColor =
+            event.target.style.backgroundColor;
+    }
+</script>

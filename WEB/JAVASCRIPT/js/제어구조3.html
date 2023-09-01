@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <h1>문제</h1>
+    한계: <input type="text" id="limit"><br/>
+    <button type="button" onclick="goConfirm()">확인</button><br/>
+    <span id="result">결과: </span>
+</body>
+</html>
+<script>
+    function goConfirm(){
+        var n = Number(document.getElementById('limit').value);
+        var result=0;
+        for (var i=1; i<=n; i++){
+            result = result + i;
+        }
+        console.debug(n);
+        console.debug(result);
+        document.getElementById('result').innerText="결과: "+result;
+    }
+</script>

@@ -1,0 +1,35 @@
+<!— json.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+<script>
+    let person = { name: "홍길동", age: 12 };
+    console.log(person.name, person.age);
+    console.log(person["name"], person["age"]);
+
+    let student = {
+        name: "Tom",
+        kor: 90,
+        eng: 70,
+        mat: 90,
+        subject_cnt: 3,
+    };
+    student.total = student.kor + student.eng + student.mat;
+    student.avg = student.total / student.subject_cnt;
+    console.log(student.name, student.total, student.avg);
+
+    student2 = { name: "Tom", subject: [90, 60, 70] };
+    student2.total = 0;
+    for (let i = 0; i < student2.subject.length; i++)
+        student2.total += student2.subject[i];
+    student2.total = student2.subject.reduce((pre, value) => pre + value);
+
+    student2.avg = student2.total / student2.subject.length;
+    console.log(student2.name, student2.total, student2.avg);
+</script>

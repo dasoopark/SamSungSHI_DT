@@ -1,0 +1,51 @@
+<!-- 함수1.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>함수</h1>
+    </body>
+</html>
+<script>
+    // 함수는 함수이름이 함수의 주소를 담는다.
+    // myadd 변수에 함수주소를 저장
+    // 이름이 같으면서 형태가 다른 함수를 만들 수 있는 것을 오버로딩이라 하는데
+    // 자바스크립트는 오버로딩을 지원하지 않는다
+    // 대신에 기본값을 사용한다
+    function myadd(a, b, c) {
+        return a + b + c;
+    }
+    function myadd(a, b) {
+        return a + b;
+    }
+
+    console.log(myadd(3, 4, 5));
+    console.log(myadd(3, 4));
+
+    function myadd2(a = 1, b = 2, c = 3) {
+        return a + b + c;
+    }
+
+    console.log(myadd2());
+    console.log(myadd2(10));
+    console.log(myadd2(10, 20));
+    console.log(myadd2(10, 20, 30));
+    // 기본값 안주는 변수는 앞쪽에, 기본값 주는 변수는 뒤쪽으로
+
+    // 1~n까지의 합계 구하기
+    function sigma(limit = 10) {
+        let i,
+            s = 0;
+        for (let i = 1; i <= limit; i++) {
+            s += i;
+        }
+        return s;
+    }
+    console.log(sigma());
+    console.log(sigma(100));
+    console.log(sigma(1000));
+</script>

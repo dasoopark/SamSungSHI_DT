@@ -1,0 +1,72 @@
+<!— 정렬.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+<script>
+    //select 정렬은 오름차순의 경우 젤 작은 값을 찾아서 첫번째
+    //두번째로 작은값 찾아서 두번째 방에
+    function sort(arr, compare) {
+        //함수를 매개변수로 받는다
+        for (i = 0; i < arr.length - 1; i++) {
+            for (j = i + 1; j < arr.length; j++) {
+                if (compare(arr[i], arr[j]) > 0) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+
+    function compare1(a, b) {
+        return a - b;
+    }
+    let arr = [5, 2, 9, 7, 3, 4, 8, 11, 1];
+    console.log(arr);
+    sort(arr, compare1);
+    console.log(arr);
+
+    function compare2(a, b) {
+        return a > b;
+    }
+    console.log(arr);
+    sort(arr, compare2);
+    console.log(arr);
+
+    let words = ["5", "2", "9", "7", "3", "4", "8", "11", "1"];
+    console.log(words);
+    sort(words, compare2);
+    console.log(words);
+
+    // 객체일 경우
+    //JSON은 자바스크립트가 객체를 저장하는 방식 {"키1": "값1", "키2": "값2"} c# Dictionary
+    // 파이썬 Dict
+
+    function compare3(a, b) {
+        return a.name > b.name;
+    }
+
+    let persons = [
+        { "name": "홍길동", age: 22 },
+        { "name": "임꺽정", age: 42 },
+        { "name": "정길산", age: 13 },
+        { "name": "강감찬", age: 28 },
+        { "name": "서희", age: 46 },
+        { "name": "윤관", age: 52 },
+    ];
+
+    console.log(persons);
+    // sort(persons, compare3);
+    sort(persons, (a, b) => a.name > b.name);
+    console.log(persons);
+    sort(persons, (a, b) => a.age > b.age);
+    console.log(persons);
+    sort(persons, (a, b) => a.age < b.age);
+    console.log(persons);
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        서버로 값을 보내야할 경우에는 form 태그와 name 속성이 중요
+        그냥 브라우저에서만 작동할려면 form 태그 필요x id 속성 중요    
+    -->
+    나이: <input type="text" id="age"><br/>
+    <button type="button" onclick="goConfirm()">확인</button>
+    <!-- onclick - 에서 함수를 전달하면 클릭이벤트가 발생할 때 함수 호출 -->
+</body>
+</html>
+<script>
+    function goConfirm(){
+        var age = document.getElementById("age");
+        if(age.value==""){
+            alert("나이를 입력하세요");
+            return;
+        }
+        if(age.value>=19){  // 본래 value는 ""문자열로 받아온다.
+            alert("성년입니다.");
+        } else{
+            alert("미성년입니다.");
+        }
+    }
+</script>

@@ -1,0 +1,135 @@
+<!-- 람다2.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>람다(filter)</h1>
+    </body>
+</html>
+<script>
+    var numbers = [1, 2, 4, 6, 7, 8, 11, 15, 18, 23];
+
+    //map : 배열의 요소와 인덱스를 받아서 연산을 수행 후 다시 그 요소를 반환
+    // 값 변경해서 새로 만들때 사용한다. *2를 해보자
+
+    let results = numbers.map((e) => e * 2);
+    console.log(results);
+
+    let words = [
+        "boy",
+        "girl",
+        "survey",
+        "house",
+        "hook",
+        "default",
+        "process",
+        "rain",
+        "cloud",
+        "hospital",
+        "fall",
+        "shift",
+    ];
+    results = words.map((w) => w.toUpperCase());
+    console.log(results);
+
+    results = words.filter((w) => w.length > 5).map((w) => w.toUpperCase());
+    console.log(results);
+
+    results = words
+        .filter((w) => w.length > 5)
+        .map((w) => w.toUpperCase())
+        .forEach((w) => console.log(w));
+    console.log(results);
+
+    let products = [
+        {
+            product_name: "먹태깡",
+            product_unit: 3000,
+            product_cnt: 40,
+            product_price: 120000,
+        },
+        {
+            product_name: "조청유과",
+            product_unit: 4000,
+            product_cnt: 30,
+            product_price: 120000,
+        },
+        {
+            product_name: "자갈치",
+            product_unit: 2000,
+            product_cnt: 20,
+            product_price: 40000,
+        },
+        {
+            product_name: "맛동산",
+            product_unit: 3500,
+            product_cnt: 10,
+            product_price: 35000,
+        },
+        {
+            product_name: "에이스",
+            product_unit: 5000,
+            product_cnt: 10,
+            product_price: 50000,
+        },
+        {
+            product_name: "새우깡",
+            product_unit: 3000,
+            product_cnt: 10,
+            product_price: 30000,
+        },
+        {
+            product_name: "오예스",
+            product_unit: 12000,
+            product_cnt: 20,
+            product_price: 240000,
+        },
+        {
+            product_name: "초코파이",
+            product_unit: 13000,
+            product_cnt: 10,
+            product_price: 130000,
+        },
+        {
+            product_name: "브라보콘",
+            product_unit: 3000,
+            product_cnt: 10,
+            product_price: 30000,
+        },
+        {
+            product_name: "누가바",
+            product_unit: 1000,
+            product_cnt: 40,
+            product_price: 40000,
+        },
+    ];
+
+    result2 = products.map((p) => {
+        p["product_price"] = p.product_unit * p.product_cnt;
+        return p;
+    });
+
+    result2.forEach((p) => console.log(p));
+
+    // 2차원 배열일때
+    let a = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [9, 10, 11],
+    ];
+
+    a = a.map((a1, i) => {
+        console.log(a1);
+        return a1.map((a2, i) => {
+            return a2 * 2;
+        });
+    });
+
+    console.log(a);
+</script>
+

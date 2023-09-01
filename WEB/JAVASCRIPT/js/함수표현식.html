@@ -1,0 +1,31 @@
+<!— 함수표현식.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+<script>
+    // c언어에서는 함수포인터
+    // 함수 이름 자체가 함수가 있는 곳의 주소를 가지는 변수이다.
+    let add = function (a, b) {
+        return a + b;
+    };
+    let sub = function (a = 1, b = 2) {
+        return a - b;
+    };
+
+    console.log(add(4, 5));
+    console.log(sub(4, 8));
+    console.log(sub());
+
+    let sub2 = sub; //다른 변수에 함수 주소 저장하기
+    console.log(sub2(4, 8));
+    console.log(sub2());
+
+    //화살표함수
+    let funAdd = (a, b) => a + b;
+</script>

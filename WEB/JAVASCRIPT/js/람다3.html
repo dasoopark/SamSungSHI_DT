@@ -1,0 +1,93 @@
+<!-- 람다3.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+<script>
+    let nums = [4, 6, 7, 11, 8, 3, 2, 1, 19];
+    //nums.sort((a, b) => a - b); //람다를 주면 된다
+    //console.log(nums); //자기 순서가 바뀐다
+    // 원래순서를 유지하면서 정렬된 데이터를 반환한다
+
+    let orderedNum = nums.toSorted((a, b) => b - a);
+    console.log("원본", nums);
+    console.log("정렬", orderedNum);
+
+    let products = [
+        {
+            product_name: "먹태깡",
+            product_unit: 3000,
+            product_cnt: 40,
+            product_price: 120000,
+        },
+        {
+            product_name: "조청유과",
+            product_unit: 4000,
+            product_cnt: 30,
+            product_price: 120000,
+        },
+        {
+            product_name: "자갈치",
+            product_unit: 2000,
+            product_cnt: 20,
+            product_price: 40000,
+        },
+        {
+            product_name: "맛동산",
+            product_unit: 3500,
+            product_cnt: 10,
+            product_price: 35000,
+        },
+        {
+            product_name: "에이스",
+            product_unit: 5000,
+            product_cnt: 10,
+            product_price: 50000,
+        },
+        {
+            product_name: "새우깡",
+            product_unit: 3000,
+            product_cnt: 10,
+            product_price: 30000,
+        },
+        {
+            product_name: "오예스",
+            product_unit: 12000,
+            product_cnt: 20,
+            product_price: 240000,
+        },
+        {
+            product_name: "초코파이",
+            product_unit: 13000,
+            product_cnt: 10,
+            product_price: 130000,
+        },
+        {
+            product_name: "브라보콘",
+            product_unit: 3000,
+            product_cnt: 10,
+            product_price: 30000,
+        },
+        {
+            product_name: "누가바",
+            product_unit: 1000,
+            product_cnt: 40,
+            product_price: 40000,
+        },
+    ];
+
+    // map 써서 전체  가격 구하고 정렬하기 (가격 내림차순) 하고 출력하기
+
+    products
+        .map((p) => {
+            p["product_price"] = p.product_unit * p.product_cnt;
+            return p;
+        })
+        .toSorted((p1, p2) => p2.product_price - p1.product_price)
+        .forEach((p) => console.log(p));
+</script>

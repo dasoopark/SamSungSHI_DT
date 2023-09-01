@@ -1,0 +1,178 @@
+<!-- 람다1.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>람다(filter)</h1>
+    </body>
+</html>
+<script>
+    var numbers = [1, 2, 4, 6, 7, 8, 11, 15, 18, 23];
+    numbers.push(25); //데이터 추가
+    // 문제 : 각각 짝수와 홀수 배열을 만들고 데이터를 분리해서 저장하자
+    console.log(numbers);
+
+    let evens = [];
+    let odds = [];
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 == 0) {
+            evens.push(numbers[i]);
+        } else {
+            odds.push(numbers[i]);
+        }
+    }
+    // console.log(evens);
+    console.log(odds);
+
+    //fillter 함수 사용하기 - 필터링 조건식을 주고 return 도 생략하고 등등
+
+    evens = numbers.filter((item) => item % 2 == 0);
+    console.log(evens);
+    odds = numbers.filter((item) => item % 2 == 1);
+    console.log(odds);
+
+    let words = [
+        "boy",
+        "girl",
+        "survey",
+        "house",
+        "hook",
+        "default",
+        "process",
+        "rain",
+        "cloud",
+        "hospital",
+        "fall",
+        "shift",
+    ];
+
+    // 1. 글자수가 5글자 넘는 것만
+    let result1 = words.filter((w) => w.length >= 5);
+    console.log(result1);
+
+    // 2. 시작이 h인 단어만
+    let result2 = words.filter((w) => w[0] == "h");
+    console.log(result2);
+
+    // 3. r을 포함하는 단어만
+    let result3 = words.filter((w) => w.indexOf("r") != -1);
+
+    console.log(result3);
+
+    let products = [
+        {
+            product_name: "먹태깡",
+            product_unit: 3000,
+            product_cnt: 40,
+            product_price: 120000,
+        },
+        {
+            product_name: "조청유과",
+            product_unit: 4000,
+            product_cnt: 30,
+            product_price: 120000,
+        },
+        {
+            product_name: "자갈치",
+            product_unit: 2000,
+            product_cnt: 20,
+            product_price: 40000,
+        },
+        {
+            product_name: "맛동산",
+            product_unit: 3500,
+            product_cnt: 10,
+            product_price: 35000,
+        },
+        {
+            product_name: "에이스",
+            product_unit: 5000,
+            product_cnt: 10,
+            product_price: 50000,
+        },
+        {
+            product_name: "새우깡",
+            product_unit: 3000,
+            product_cnt: 10,
+            product_price: 30000,
+        },
+        {
+            product_name: "오예스",
+            product_unit: 12000,
+            product_cnt: 20,
+            product_price: 240000,
+        },
+        {
+            product_name: "초코파이",
+            product_unit: 13000,
+            product_cnt: 10,
+            product_price: 130000,
+        },
+        {
+            product_name: "브라보콘",
+            product_unit: 3000,
+            product_cnt: 10,
+            product_price: 30000,
+        },
+        {
+            product_name: "누가바",
+            product_unit: 1000,
+            product_cnt: 40,
+            product_price: 40000,
+        },
+    ];
+
+    // 문제1. 제품 가격이 100000원 넘는 제품 리스트
+    result1 = products.filter((product) => product.product_price > 100000);
+    console.log(result1);
+    result1.forEach((e) => {
+        document.write(
+            `${e.product_name} ${e.product_unit} ${e.product_cnt}  ${e.product_price}<br/>`
+        );
+    });
+    // forEach 는 반환을 하지 않기 때문에 최종연산자라고 부른다
+    // 문제2. 제품명이 자갈치, 새우깡, 오예스 3개 리스트 추출하기
+    document.write("<br/>———문제2————<br/>");
+    products
+        .filter(
+            (p) =>
+                p.product_name == "자갈치" ||
+                p.product_name == "새우깡" ||
+                p.product_name == "오예스"
+        )
+        .forEach((e) => {
+            document.write(
+                `${e.product_name} ${e.product_unit} ${e.product_cnt}  ${e.product_price}<br/>`
+            );
+        });
+
+    // 문제3. 제품명이 자갈치, 새우깡, 오예스 중에 개수가 20개 넘는 것
+    document.write("<br/>———문제3————<br/>");
+    products
+        .filter(
+            (p) =>
+                (p.product_name == "자갈치" ||
+                    p.product_name == "새우깡" ||
+                    p.product_name == "오예스") &&
+                p.product_cnt >= 20
+        )
+        .forEach((e) => {
+            document.write(
+                `${e.product_name} ${e.product_unit} ${e.product_cnt}  ${e.product_price}<br/>`
+            );
+        });
+
+    // 문제4. 제품 단가가 50000원 이상 100000원 이하만 추출하기
+    document.write("<br/>———문제4————<br/>");
+    products
+        .filter((p) => p.product_price >= 50000 && p.product_price <= 100000)
+        .forEach((e) => {
+            document.write(
+                `${e.product_name} ${e.product_unit} ${e.product_cnt}  ${e.product_price}<br/>`
+            );
+        });
+</script>
