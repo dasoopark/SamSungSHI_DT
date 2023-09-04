@@ -1,0 +1,45 @@
+<!— json2.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+<script>
+    let scores = [
+        { id: 1, name: "홍길동", kor: 90, eng: 80, mat: 90 },
+        { id: 2, name: "임꺽정", kor: 90, eng: 90, mat: 80 },
+        { id: 3, name: "장길산", kor: 100, eng: 80, mat: 70 },
+        { id: 4, name: "김성훈", kor: 80, eng: 60, mat: 100 },
+        { id: 5, name: "이정미", kor: 70, eng: 70, mat: 80 },
+        { id: 6, name: "전미화", kor: 60, eng: 80, mat: 90 },
+    ];
+
+    for (let i = 0; i < scores.length; i++) {
+        let s = scores[i];
+        console.log(`${s.id} ${s.name} ${s.kor} ${s.eng} ${s.mat}`);
+    }
+
+    for (i in scores) {
+        let s = scores[i];
+        console.log(`${s.id} ${s.name} ${s.kor} ${s.eng} ${s.mat}`);
+    }
+
+    for (s of scores) {
+        console.log(`${s.id} ${s.name} ${s.kor} ${s.eng} ${s.mat}`);
+    }
+
+    scores.forEach((s) => {
+        console.log(`${s.id} ${s.name} ${s.kor} ${s.eng} ${s.mat}`);
+    });
+
+    // 총점 / 평균 추가
+    scores.forEach((s) => {
+        s.total = s.kor + s.mat + s.eng;
+        s.avg = s.total / 3;
+        console.log(`${s.id} ${s.name} ${s.kor} ${s.eng} ${s.mat} ${s.total} ${s.avg}`);
+    });
+</script>

@@ -1,0 +1,69 @@
+<!-- json4.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>json에 메서드 저장하기</h1>
+    </body>
+</html>
+<script>
+    let person = {
+        name: "홍길동",
+        age: 23,
+        phone: "010-0000-0000",
+        display: function () {
+            //자바스크립트는 this 생략 불가
+            // 화살표 함수는 this 를 사용 못한다. 그래서 여기도 사용을 못한다.
+            console.log(this.name, this.age, this.phone);
+        },
+        setValue: function (name = "", age = 20, phone = "010-0000-0000") {
+            this.name = name;
+            this.age = age;
+            this.phone = phone;
+        },
+        output: function () {
+            // this가 있어야 객체들을 이해할 수 있다
+            console.log(name, age, phone);
+        },
+        output2: () => {
+            // this가 있어야 객체들을 이해할 수 있다
+            console.log("********************");
+        },
+        output3: () => {
+            // this가 있어야 객체들을 이해할 수 있다
+            console.log(this.name, this.age, this.phone);
+        },
+    };
+
+    person.display();
+    person.setValue("임꺽정", 33, "010-0000-1111");
+    person.display();
+    // person.output();
+    person.output2();
+    person.output3(); //화살표함수는 this를 사용하지 못한다. jquery나 react 나 vue this가
+    // 필요한 곳에서는 화살표함수를 사용하지 못한다.
+    console.log(person);
+
+    let employee = {
+        empno: 1,
+        yearsal: 70000000,
+        address: "경남 거제시 장평동",
+        __proto__: person,
+    };
+    console.log(employee);
+    console.log(employee.name);
+    employee.display();
+
+    function output(p) {
+        console.log(p.name); 
+        console.log(p.age); 
+        console.log(p.phone); 
+        
+    }
+
+    output(person) //함수의 매개변수로 json전달하기
+</script>
