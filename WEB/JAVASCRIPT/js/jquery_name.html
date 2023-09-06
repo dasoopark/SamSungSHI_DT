@@ -1,0 +1,104 @@
+<!-- jquery_name.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <form id="form" name="form">
+            <input type="hidden" name="seq" id="seq" /><br />
+            이름: <input type="text" name="username" id="username" /><br />
+            이메일: <input type="text" name="email" id="email" /><br />
+
+            나이: <br />
+            <input type="radio" name="age" value="10" />10대
+            <input type="radio" name="age" value="20" />20대
+            <input type="radio" name="age" value="30" />30대
+            <input type="radio" name="age" value="40" />40대
+            <input type="radio" name="age" value="50" />50대
+            <br />
+            관심분야 : <br />
+            <input type="checkbox" name="interest" value="1" />프로그래밍 <br />
+            <input type="checkbox" name="interest" value="2" />웹프로그래밍
+            <br />
+            <input type="checkbox" name="interest" value="3" />Datebase <br />
+            <input type="checkbox" name="interest" value="4" />빅데이터 <br />
+            <input type="checkbox" name="interest" value="5" />인공지능 <br />
+            <input type="checkbox" name="interest" value="6" />하드웨어 <br />
+            <br />
+
+            좋아하는 색:
+            <select name="color">
+                <option>== 선택하세요 ==</option>
+                <option value="red">red</option>
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+                <option value="magenta">magenta</option>
+                <option value="cyan">cyan</option>
+            </select>
+            <br />
+            자기소개: <br />
+            <textarea name="intro" cols="30" rows="10"></textarea>
+            <br />
+            <button type="button" id="btnSend">등록</button>
+        </form>
+    </body>
+</html>
+<script>
+    // 처음에 켜질 때 데이터 넣기
+    $(() => {
+        initData();
+        // 데이터를 읽어서 콘솔에 뿌리기
+        $("#btnSend").click(() => {
+            let seq = $("input[type=hidden][name=seq]").val();
+            console.log(seq);
+            let username = $("input[type=text][name=username]").val();
+            console.log(username);
+
+            let email = $("input[type=text][name=email]").val();
+            console.log(email);
+
+            // 선택된 항목의 값을 가져온다
+            let age = $("input[type=radio][name=age]").val();
+            console.log(age);
+
+            // checkbox는 여러개를 선택할 수 있기 때문에 배열로 처리해야한다
+            let interest = "";
+            // each -> forEach구문처럼 배열 요소마다 each에 전달된 함수를 호출한다
+            $("input[type=checkbox][name=interest]:checked").each(function () {
+                interest += $(this).val() + ",";
+            });
+            console.log(interest);
+
+            let color = $("select[name=color]").val();
+            console.log(color);
+
+            let intro = $("textarea[name=intro]").val();
+            console.log(intro);
+        });
+    });
+
+    function initData() {
+        // 값을 입력할 때 checkbox, radio 말고는 id를 사용하자
+        $("input[type=hidden][name=seq]").val("15");
+        $("input[type=text][name=username]").val("홍길동");
+        $("input[type=text][name=email]").val("test@add.com");
+        // 라디오박스 체크하기 eq(인덱스).checked = true
+        $("input[type=radio][name=age]").eq(1).prop("checked", true);
+        // eq(인덱스 : 0~)
+        $("input[type=checkbox][name=interest]").eq(1).prop("checked", true);
+        $("input[type=checkbox][name=interest]").eq(3).prop("checked", true);
+        $("select[name=color]").val("blue");
+
+        $("textarea[name=intro]").val("자기소개입니다\n어쩌구 저쩌구");
+    }
+    //textarea 태그가 줄바꿈이 \n을 사용한다. 이걸 가져다가
+    // 그냥 테이블태그나 div에 뿌리면 자동으로 -> br로 바뀌는게 아니기 때문에
+    // 화면에 출력할 때 \n -> br태그로 바꾸는 작업이 필요하다
+    // 스마트에디터 : 무료(cheditor => 섬머노트 (훨씬 쉽고, react도 지원))
+    // \n -> br로 바꿔주고 웹접근성 문제도 해결해준다
+    // 나모웹에디터(유료) : 많이 비싸다. 사내 라이센스가 있어야한다.
+</script>

@@ -1,0 +1,31 @@
+<!-- jquery3.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <style>
+            p.red {
+                color: red;
+            }
+            p.blue {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p>셀렉터1</p>
+        <p class="red">셀렉터2</p>
+        <p class="red">셀렉터3</p>
+        <p class="blue">셀렉터4</p>
+        <p class="blue">셀렉터5</p>
+    </body>
+</html>
+<script>
+    $("p").css("color","green") //속성 변경하기
+    $("p.red").css("color","magenta") 
+    $("p.blue").css("color","cyan") 
+    $("p:first").css("backgroundColor","cyan") 
+</script>

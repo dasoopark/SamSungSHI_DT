@@ -1,0 +1,28 @@
+<!— jquery2.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    </head>
+    <body>
+        x : <input type="text" id="x" /><br />
+        y : <input type="text" id="y" /><br />
+        <button type="button" id="btnAdd">+</button>
+        <div id="result"></div>
+    </body>
+</html>
+
+<script>
+    $(
+        function() {
+            $("#btnAdd").click(() => {
+                let x = parseInt($("#x").val());
+                let y = parseInt($("#y").val());
+                $("#result").html("<h1>" + (x + y) + "</h1>");
+            });
+        },
+    );
+</script>

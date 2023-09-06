@@ -1,0 +1,41 @@
+<!-- 키이벤트2.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        키이벤트 : <input type="text" id="" onkeypress="keyPress()" /> 정규식 :
+        <input type="text" name="" id="reg" oninput="inputChange()" />
+    </body>
+</html>
+<script>
+    function keyPress() {
+        //keydown - keypress - keyup
+        // keyCode - ascii 코드값
+        // 한글도 발생안함
+        console.log(event.keyCode);
+        if (event.keyCode < 48 || event.keyCode > 57) {
+            event.returnValue = false;
+        }
+    }
+
+    function inputChange() {
+        // 정규식 => 쓰임새가 점점 커지고 있다.
+        // 문자열 중에 특정 패턴에 맞는 데이터를 찾고자 할 때 사용한다
+        let reg = document.getElementById("reg");
+        // reg.value.replace(패턴, "바꿀 단어");
+        // 패턴 /[0-9]/ 0~9 사이값이 들어가는
+        //      /^[0-9]/ 문자열 시작이 0~9로 시작해야한다.
+        //      /[^0-9]/ 0~9까지는 냅두고 나머지 문자를
+        reg.value = reg.value.replace(/[^0-9]/, "");
+        // reg.value = reg.value.replace(/[^A-Z]/, "");
+        // 0~9를 제외한 나머지 문자는 없애라
+    }
+
+    // /[^a-zA-Z]/ 영문만 입력가능
+    // /[^가-핳]/ 한글만 입력가능
+    // /[^a-zA-Z0-9]/ 영문하고 숫자만 입력가능
+</script>

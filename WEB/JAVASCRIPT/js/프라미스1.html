@@ -1,0 +1,65 @@
+<!— 프라미스1.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>프라미스</h1>
+        <p>비동기 객체를 만들기 쉽게 해준다</p>
+    </body>
+</html>
+<script>
+    let promise = new Promise((resolve, reject) => {
+        //setTimeout(함수, 밀리초):밀리초가 흐른 뒤에 매개변수로 전달뙨 함수를 호출한다.
+        setTimeout(() => {
+            resolve(1000);
+        }, 1000);
+        // 1000밀리초 = 1초, 1초 뒤에 resolve함수를 호출한다. resolve 함수는 1000을 외부로 전달한다
+    });
+    console.log(promise); //결과값이 아니다 Promise 객체에 대한 참조값을 전달할 뿐
+    // 반환값이 의미가 없다
+    promise
+        .then((data) => {
+            // resolve(1000)=> data로 받아온다
+            console.log("promise가 내부에서 resolve를 호출했을 경우에");
+        })
+        .catch((error) => {
+            // reject("error")=> error로 받아온다
+
+            console.log("promise가 내부에서 reject를 호출했을 경우에");
+        });
+    console.log("***********ending**********");
+
+    limit = 10;
+    new Promise((resolve, reject) => {
+        let i,
+            sum = 0;
+        if (limit <= 100) {
+            reject("100보다 큰 값을 전달하세요");
+        }
+        for (let i = 0; i <= 100000000; i++) {
+            sum += i;
+        }
+        resolve(sum);
+    })
+        .then((result) => {
+            console.log("합계: ", result);
+        })
+        .then((result) => {
+            result2 = result * 10;
+            console.log("합계: ", result2);
+            return result2;
+        })
+        .then((result) => {
+            result3 = result * 10;
+            console.log("합계: ", result3);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+    console.log("여기가 먼저 진행된다.");
+</script>

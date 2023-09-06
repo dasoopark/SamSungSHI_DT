@@ -1,0 +1,56 @@
+<!-- 시계.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #clock {
+                border: 1px solid blue;
+                background-color: aquamarine;
+                padding: 10px;
+                margin-top: 30px;
+                height: 50px;
+                line-height: 50px;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>setTimeout -> 한번만 호출, setInterval - 반복해서</h1>
+        <button type="button" id="btnStart">시작</button>
+        <button type="button" id="btnStop">멈춤</button>
+        <h1 id="clock"></h1>
+    </body>
+</html>
+<script>
+    // setInterval을 멈추려면 반환값을 받아서 보관햇다가 이를 파괴해야한다.
+    // clearInterval함수를 통해서
+    // setInterval을 호출해서 반환값을 저장해야 하는데 이 값이 여러곳의 함수에서 호출된다.
+    // 함수 안에서 작성된 변수는 함수 내부에만 존재한다.
+    // 그래서 함수 내부가 아니라 함수 외부에 전역변수로 저장되어야 한다.
+    let myclock = null; //아직 타이머가 할당되지 않았음을 보장하기 위해 null 값초기화
+
+    window.onload = function () {
+        document.getElementById("btnStart").addEventListener("click", () => {
+            if (myclock == null) {
+                myclock = setInterval(showClock, 1000); //초당 한번씩 함수가 호출된다
+            }
+        });
+
+        document.getElementById("btnStop").addEventListener("click", () => {
+            if (myclock != null) {
+                clearInterval(myclock); //시게는 멈추지만 자동으로 null로 초기화되지 않는다
+                myclock = null;
+            }
+        });
+    };
+    function showClock() {
+        // 현재 날짜와 시간
+        let current = new Date();
+        document.getElementById("clock").innerHTML =
+            current.toLocaleTimeString();
+    }
+    showClock();
+</script>

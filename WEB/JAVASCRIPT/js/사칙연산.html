@@ -1,0 +1,51 @@
+<!-- 사칙연산.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        x : <input type="text" id="x" /> <br />
+        y : <input type="text" id="y" /> <br />
+        result : <input type="text" name="" id="result" readonly /> <br />
+        <button type="button" id="btnAdd">+</button> &nbsp;&nbsp;
+        <button type="button" id="btnSub">-</button> &nbsp;&nbsp;
+        <button type="button" id="btnMul">*</button> &nbsp;&nbsp;
+        <button type="button" id="btnDiv">/</button> &nbsp;&nbsp;
+    </body>
+</html>
+<script>
+    window.onload = function () {
+        // 함수추가
+        document.getElementById("btnAdd").addEventListener("click", () => {
+            goCalc(1);
+        });
+        document.getElementById("btnSub").addEventListener("click", () => {
+            goCalc(2);
+        });
+        document.getElementById("btnMul").addEventListener("click", () => {
+            goCalc(3);
+        });
+        document.getElementById("btnDiv").addEventListener("click", () => {
+            goCalc(4);
+        });
+
+        function goCalc(oper) {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            let result = 0;
+            if (oper == "1") {
+                result = parseInt(x) + parseInt(y);
+            } else if (oper == "2") {
+                result = parseInt(x) - parseInt(y);
+            } else if (oper == "3") {
+                result = parseInt(x) * parseInt(y);
+            } else if (oper == "4") {
+                result = parseInt(x) / parseInt(y);
+            }
+            document.getElementById("result").value = result;
+        }
+    };
+</script>

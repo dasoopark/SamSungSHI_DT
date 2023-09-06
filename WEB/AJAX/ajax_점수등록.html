@@ -1,0 +1,111 @@
+<!-- ajax_test2.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student Scores</title>
+    </head>
+    <body>
+        <div>
+            <div>
+                이름 : <input type="text" id="name" /> <br />
+                국어 : <input type="text" id="korean" /> <br />
+                영어 : <input type="text" id="english" /> <br />
+                수학 : <input type="text" id="math" /> <br />
+                <button type="button" onclick="addStudent()">등록하기</button>
+            </div>
+            <div id="result">
+                <table border="1">
+                    <tr>
+                        <th>이름</th>
+                        <th>국어</th>
+                        <th>영어</th>
+                        <th>수학</th>
+                        <th>총점</th>
+                        <th>평균</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    function addStudent() {
+        let name = document.getElementById("name").value;
+        let korean = parseFloat(document.getElementById("korean").value);
+        let english = parseFloat(document.getElementById("english").value);
+        let math = parseFloat(document.getElementById("math").value);
+        
+        // Calculate total and average
+        let total = korean + english + math;
+        let average = total / 3;
+
+        // Create a new student object
+        let newStudent = {
+            name: name,
+            korean: korean,
+            english: english,
+            math: math,
+            total: total,
+            average: average.toFixed(2), // Round average to 2 decimal places
+        };
+
+        // Send the new student data to the server
+        fetch("http://localhost:3000/posts", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newStudent),
+        })
+            .then((response) => {
+                console.log(response);
+                // Refresh the student list
+                callAjax();
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    function callAjax() {
+        fetch("http://localhost:3000/posts") // Assuming you have a "posts" endpoint
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let table = document.querySelector("#result table");
+
+                // Clear existing rows from the table, excluding the header row
+                while (table.rows.length > 1) {
+                    table.deleteRow(1);
+                }
+
+                data.forEach((student) => {
+                    if (student.name && student.korean && student.english && student.math && student.total && student.average) {
+                        let row = table.insertRow();
+                        let nameCell = row.insertCell(0);
+                        let koreanCell = row.insertCell(1);
+                        let englishCell = row.insertCell(2);
+                        let mathCell = row.insertCell(3);
+                        let totalCell = row.insertCell(4);
+                        let averageCell = row.insertCell(5);
+
+                        nameCell.textContent = student.name;
+                        koreanCell.textContent = student.korean;
+                        englishCell.textContent = student.english;
+                        mathCell.textContent = student.math;
+                        totalCell.textContent = student.total;
+                        averageCell.textContent = student.average;
+                    }
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    // Call the initial data retrieval when the page loads
+    window.onload = callAjax;
+</script>

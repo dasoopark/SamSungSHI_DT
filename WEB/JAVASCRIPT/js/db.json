@@ -1,0 +1,9 @@
+{
+    "table": [
+        { "name": "새우깡", "count": 2, "price": 2000 },
+        { "name": "꿀꽈배기", "count": 3, " price": 2500 },
+        { "name": "자갈치", "count": 4, "price": 3000 },
+        { "name": "맛동산", "count": 5, "price": 3500 },
+        { "name": "에이스", "count": 6, "price": 4000 }
+    ]
+}

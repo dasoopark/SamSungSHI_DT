@@ -1,0 +1,36 @@
+<!-- jquery5.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- 
+        jquery에서는 모든 태그에 id를 붙이는게 편하다
+        -->
+        <form id="myform"></form>
+        <h1>속성 변경하기</h1>
+        아이디 : <input type="text" name="" id="" /> 패스워드 :
+        <input type="password" name="" id="" />
+
+        <button type="button" id="btnSend">보내기</button>
+    </body>
+</html>
+<script>
+    //jquery4.html:21 Uncaught ReferenceError: $ is not defined
+    $(() => {
+        $("*").prop("style", "color:blue");
+
+        $("#btnSend").click(() => {
+            $("#myform").prop("action", "jquery4.html"); //내가 서버로 정보를 보내면
+            $("#myform").prop("method", "GET"); //jquery4.html이 처리해라
+            console.log($("#myform"));
+            console.log($("#myform").prop("action")); //속성 값 읽기
+            console.log($("#myform").prop("method"));
+            $("myform").submit();
+        });
+    });
+</script>

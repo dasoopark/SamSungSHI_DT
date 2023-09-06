@@ -1,0 +1,67 @@
+<!-- jquery문제1.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <button
+            type="button"
+            id="btn1"
+            class="button"
+            style="background-color: aqua"
+        >
+            aqua
+        </button>
+        <button
+            type="button"
+            id="btn2"
+            class="button"
+            style="background-color: #aeff00"
+        >
+            연두
+        </button>
+        <button
+            type="button"
+            id="btn3"
+            class="button"
+            style="background-color: magenta"
+        >
+            magenta
+        </button>
+        <button
+            type="button"
+            id="btn4"
+            class="button"
+            style="background-color: blue"
+        >
+            blue
+        </button>
+        <button
+            type="button"
+            id="btn5"
+            class="button"
+            style="background-color: yellow"
+        >
+            yellow
+        </button>
+    </body>
+</html>
+
+<script>
+    $(() => {
+        $(".button").click((e) => {
+            // 함수에 매개변수를 붙이면 이 매개변수도 이벤트 객체이다.
+            // 자바스크립트 자체가 이벤트라는 객체가 존재한다.
+            // event 객체의 target 속성에 이벤트가 발생한 객체 정보가 저장된다.
+            console.log($("#" + event.target.id).css("backgroundColor"));
+            $("body").css(
+                "backgroundColor",
+                $("#" + event.target.id).css("backgroundColor")
+            );
+        });
+    });
+</script>

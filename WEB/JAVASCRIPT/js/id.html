@@ -1,0 +1,34 @@
+<!-- id.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="title1">제목줄1</h1>
+        <h1 id="title2">제목줄2</h1>
+        <h1 id="title3">제목줄3</h1>
+    </body>
+</html>
+
+<script>
+    let h1 = document.getElementsByTagName("h1"); //배열임 0,1,2
+    console.log(h1);
+
+    document.getElementById("title1").innerHTML = "첫번째 제목";
+    document.getElementById("title2").innerHTML = "두번째 제목";
+    document.getElementById("title3").innerHTML = "세번째 제목";
+
+    let titles = ["", "연인", "소방관 옆 경찰서", "국민사형투표"];
+    let colors = ["", "#ff0000", "#f0f000", "#00f0f0"];
+    // for (let i = 1; i < titles.length; i++) {
+    //     document.getElementById("title" + i).innerHTML = titles[i];
+    // }
+
+    for (let i = 1; i <= h1.length; i++) {
+        h1[i-1].innerHTML = titles[i];
+        h1[i-1].style.color = colors[i];
+    }
+</script>

@@ -1,0 +1,53 @@
+<!— 비동기2.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+</html>
+<script>
+    // 동기모드일때
+    function sigma(limit = 10) {
+        let i,
+            sum = 0;
+        for (let i = 0; i <= limit; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    // 일반함수의 경우
+    let result = sigma(100);
+    console.log(result);
+
+    // 비동기 모드 : 함수 sigma2앞에 async 라는 키워드를 놓으면
+    // 이 함수는 결과를 반환하는게 아니라 Promise객체를 반환한다.
+    // 그래서 함수호출하면서 then ~ catch 구문으로 처리해야한다
+    async function sigma2(limit = 10) {
+        let i,
+            sum = 0;
+        for (let i = 0; i <= limit; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    result = sigma2(200);
+    result
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+    // await - Promise 객체가 완료할 때까지 기다리게 한다
+    async function main() {
+        let result2 = await sigma2(100);
+        console.log(result);
+    }
+    main();
+</script>

@@ -1,0 +1,43 @@
+<!— 예외처리.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>예외처리</h1>
+    </body>
+</html>
+<script>
+    let person = { name: "홍길동", age: 12 }; //json 객체
+    // **********************************
+    // 테스트 데이터를 만들어서 json형식으로 보내려고 할 때 키나 값을 반드시 ""로 만들어서 보내야
+    // JSON.parse가 제대로 동작을 한다
+    let person2 = '{ "name": "홍길동", "age": 12 }'; // str 객체
+    console.log(typeof person); //object
+    console.log(typeof person2); // string - 웹에서 json을 주고 받을 때 json을 줄때도 있고
+    // json형태의 문자열을 주기도 한다
+    console.log(person.name, person.age);
+    console.log(person2.name, person2.age); //error 발생, undifined 가 출력된다
+    try {
+        person3 = JSON.parse(person2); // person : string -> json 으로 변경
+        // stringfy : json -> string 으로 변경한다
+        console.log(person3.name, person3.age);
+    } catch (err) {
+        console.log(err.message);
+    } finally {
+        console.log("예외가 발생하던 말던 여기는 반드시 들린다");
+        console.log("마무리 작업 : 디비 연결 닫기 또는 파일 열기 닫기 등 ….");
+    }
+
+    /*
+        throw : 강제로 예외발생
+                예외도 발생시키지만 스택을 정리한다. (함수가 비정상적으로 
+                종료되면 제대로 마무리가 안된다)
+                return : 값도 반환하지만 스택을 정리한다.
+                클래스 사용시, 객체 생성시 오류가 발생할 때, 생성자 안에서 return을 못쓴다
+                그때는 throw를 호출하자
+     */
+</script>

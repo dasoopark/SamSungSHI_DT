@@ -1,0 +1,45 @@
+<!— 리스트추가.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" name="product" id="product" />
+        <button type="button" id="btnAdd">추가</button>
+        <button type="button" id="btnDel">삭제</button> <br />
+
+        <ul id="coffee">
+            <li>카카오</li>
+        </ul>
+    </body>
+</html>
+<script>
+    window.onload = () => {
+        document
+            .getElementById("btnAdd")
+            .addEventListener("click", funAdd);
+        document
+            .getElementById("btnDel")
+            .addEventListener("click", funDel);
+    };
+
+    function funAdd() {
+        coffee = document.getElementById("coffee");
+        child = document.createElement("li");
+        child.innerHTML = document.getElementById("product").value;
+        coffee.appendChild(child);
+        document.getElementById("product").value = "";
+    }
+
+    function funDel() {
+        coffee = document.getElementById("coffee");
+        if (coffee.children.length > 1) {
+            coffee.removeChild(coffee.lastChild);
+        } else {
+            alert("더이상 삭제불가");
+        }
+    }
+</script>

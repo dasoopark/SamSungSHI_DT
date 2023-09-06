@@ -1,0 +1,71 @@
+ajax_test
+
+1. json 서버 - json 파일을 가지고, 마치 웹서버처럼(res full api server) 동작을 한다.
+    json 파일은 딱 json형식 데이터만 기술해야 한다.
+    별도의 주석같은거 넣으면 안된다.
+
+    https://www.npmjs.com/package/json-server#getting-started
+
+
+mydb.json
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
+
+시작 - cmd 
+경로를 이 파일이 있는곳으로 이동 
+d: 드라이브 변경
+cd ~내파일
+d:/>내파일주소
+d:/ 경로/> json-server --watch mydb.json
+
+콘솔창은 복사 - 드래그 ctrl-enter
+
+post맨 - 브라우저 대신에 서버로 정보를 주고 받는 역할을 하는 앱이다.
+         브라우저는 서버에 정보를 전송할때 GET 방식만 지원하고 POST방식은
+         별도의 웹페이지를 만들고 <form method="post"> 형식으로 전송해야 한다.
+         그래서 별도의 웹페이지를 만들지 않고 서버에 post방식으로 데이터를 전송할 수 있는 툴을 사용한다.
+         (curl, postman, insomnia 등 많이 있다.)
+
+
+post맨에서 post방식으로 데이터 전송시 데이터는 body 부분에 저장한다.
+1)form-data : 파일전송시 이용
+2) xxx-form-urlencoded: 파일 전송이 아닌 form 태그로 데이터를 전송할 때 사용한다.
+3) raw : json형식으로 데이터를 전송할 때 사용한다.
+         json-server프로그램은 이 방식만 지원한다.
+
+    
+ajax - Asynchronous Javascript And Xml (비동기식 통신)   
+처음에는 XML 형태로 데이터를 주고받기 => json형식으로
+
+<?xml encode="utf-f">
+
+    <data>
+        <posts>
+            <id>1</id>
+            <title>제목1</title>
+            <author>홍길동</author>
+        </posts>
+          <posts>
+            <id>2</id>
+            <title>제목2</title>
+            <author>임꺽정</author>
+        </posts>
+    </data>
+</xml>
+쓸데없는것들이 많아서 => json으로 전환되었음
+
+웹클라이언트                                                웹서버
+문서를 요청 ----------------------------------------->  이미 만들어진 문서를 찾아서 클라이언트에게 보내준다
+                                                        문서전체가 왔다갔다 했음
+
+자바스크립트가 서버하고 직접 통신해서 데이터를 수신하는 기능을 만들었음
+자바스크립트가 비동기처리가 기본이다
+
+Ajax : 자바스크립트의 비동기 처리 기술

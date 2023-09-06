@@ -1,0 +1,38 @@
+<!-- name.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" name="number" id="number1" value="10" /><br />
+        <input type="text" name="number" id="number2" value="20" /><br />
+        <input type="text" name="number" id="number3" value="30" /><br />
+        <input type="text" name="number" id="number4" value="40" /><br />
+        <input type="text" name="number" id="number5" value="50" /><br />
+        <input type="text" name="number" id="number6" value="60" /><br />
+    </body>
+</html>
+<script>
+    // name ---- 서버로 정보를 전송할 때 키값이 되는데 자바스크립트에서도 접근 가능하다
+    // 항상 배열 형태로만 가능하다.
+    let numbers = document.getElementsByName("number"); //무조건 배열형태로
+    // console.log(numbers);
+
+    // sum = 0;
+    // for (let i = 0; i < numbers.length; i++) {
+    //     sum += parseFloat(numbers[i].value); //eval (객체) parseInt, parseFloat
+    // }
+    // sum = 0;
+    // numbers.forEach((e) => {
+    //     console.log(e.value);
+    //     sum+=parseInt(e.value)
+    // });
+    sum = 0;
+    for (let i = 1; i <= numbers.length; i++) {
+        sum += parseFloat(document.getElementById("number" + i).value);
+    }
+    alert(sum);
+</script>

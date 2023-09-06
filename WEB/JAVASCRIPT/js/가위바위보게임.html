@@ -1,0 +1,64 @@
+<!-- 가위바위보게임.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>가위바위보게임</h1>
+        <p>다음 중 선택하세요</p>
+        <button type="button" id="btn1">가위</button>
+        <button type="button" id="btn2">바위</button>
+        <button type="button" id="btn3">보</button><br />
+        <div id="result"></div>
+    </body>
+</html>
+<script>
+    /* 
+    1. 컴퓨터가 생각을 한다
+    computer = Math.ceil(Math.random() * 3);
+    console.log( computer );
+    2. 사람이 버튼을 누른다. = 가위바위보 중에 선택을 한다.
+
+    3. 누가 이겼는지 판단 후 출력한다.
+    
+    */
+    window.onload = function () {
+        document.getElementById("btn1").addEventListener("click", () => {
+            gameStart("1");
+        });
+        document.getElementById("btn2").addEventListener("click", () => {
+            gameStart("2");
+        });
+        document.getElementById("btn3").addEventListener("click", () => {
+            gameStart("3");
+        });
+    };
+
+    function gameStart(person) {
+        computer = Math.ceil(Math.random() * 3);
+        console.log(computer); //컨닝용
+
+        let winner = whoWin(computer, person);
+        let title1 = ["", "가위", "바위", "보"];
+        let title2 = ["", "컴퓨터 승", "사람 승", "무승부"];
+        console.log(title1[computer], title1[person], title2[winner]);
+        document.getElementById("result").innerHTML = `컴퓨터: ${title1[computer]} 사람: ${title1[person]} 승부: ${title2[winner]}`
+    }
+    function whoWin(computer, person) {
+        if (computer == person) {
+            return 3; // 무승부
+        }
+        if (
+            (computer == 1 && person == 3) ||
+            (computer == 2 && person == 1) ||
+            (computer == 3 && person == 2)
+        ) {
+            return 1; //컴퓨터가 이기는 경우
+        } else {
+            return 2; //사람이 이기는 경우
+        }
+    }
+</script>

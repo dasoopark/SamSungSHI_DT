@@ -1,0 +1,25 @@
+<!— 키이벤트.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>소문자를 입력하면 대문자로 바꿔준다</p>
+        <span>Enter your name : </span>
+        <input type="text" id="yourname" onkeyup="changeUpper()" />
+    </body>
+</html>
+<script>
+    // 키이벤트 => 자바스크립트 정규식을 이용해 처리
+    // 키보드 keydown(눌렀을 때) - keypress(아스키코드를 갖는 키를 눌렀을 때) - keyup(뗄 때)
+    // keypress : F1 ~ F12 , esc
+    // 자바스크립트 정규식을 사용해라
+
+    function changeUpper() {
+        var yourname = document.getElementById("yourname");
+        yourname.value = yourname.value.toUpperCase();
+    }
+</script>

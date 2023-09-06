@@ -1,0 +1,13 @@
+node js 설치 필수
+
+시작 - cmd
+npm install -g json-server
+D: 드라이브 변경
+cd 자바스크립트
+d :/자바스크립트
+-- json서버 내용확인명령어
+
+json-server --watch db.json
+
+브라우저로 접근하기
+localhost:3000/table

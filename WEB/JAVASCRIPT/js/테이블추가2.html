@@ -1,0 +1,72 @@
+<!-- 테이블추가2.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>품목</td>
+                    <td>수량</td>
+                    <td>단가</td>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- name 못준다. id나 클래만 가능하다 -->
+            </tbody>
+        </table>
+    </body>
+</html>
+
+<script>
+    let data = [
+        { name: "새우깡", count: 2, price: 2000 },
+        { name: "꿀꽈배기", count: 3, price: 2500 },
+        { name: "자갈치", count: 4, price: 3000 },
+        { name: "맛동산", count: 5, price: 3500 },
+        { name: "에이스", count: 6, price: 4000 },
+    ];
+
+    function loadData() {
+        //마치서버로부터 데이터 읽어온듯이
+        let tbody = document.getElementById("tbody");
+        // XMLhttpRequest - 자바스크립트가 만든 클래스
+        // 비동기와 서버와 통신을 담당한다 (ajax통신) - 아약스, 아이젝스, 에이젝스,...
+        // XMLhttpRequest - onload : 서버와 데이터 통신이 완료하면 호출된다.
+        //                           함수주소를 전달한다. 데이터가 수신되면 호출된다.
+        //                            - responseText : 수신된 데이터를 문자열 형태로 갖고 있다.
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            console.log(this.statusText);
+            console.log(this.responseText);
+            data = JSON.parse(this.responseText);   //responseText(string) => JSON으로 전환
+            for (item of data) {
+                //1.행을 먼저 추가한다.
+                let row = tbody.insertRow(tbody.rows.length); //행을 아래로 붙임, 맨마지막에 행을 붙인다
+
+                let cell1 = row.insertCell(0); //td 셀을 추가한다
+                let cell2 = row.insertCell(1);
+                let cell3 = row.insertCell(2);
+
+                cell1.innerHTML = item["name"];
+                cell2.innerHTML = item["count"];
+                cell3.innerHTML = item["price"];
+            }
+        };
+
+        // 서버를 GET방식으로 호출, GET, url, 비동기(true)
+        xhttp.open("GET", "http://localhost:3000/table", true);
+        xhttp.send();
+
+        // 모던 스크립트에서는 fetch
+        // Promise로 만들던지
+        // axios 라이브러리를 사용하던가
+        // jquery
+    }
+
+    window.onload = loadData;
+</script>

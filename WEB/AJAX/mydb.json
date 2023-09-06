@@ -1,0 +1,79 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server222",
+      "author": "conan"
+    },
+    {
+      "title": "post 맨을 사용해보자",
+      "author": "post맨",
+      "id": 3
+    },
+    {
+      "title": "66",
+      "author": "66",
+      "id": 4
+    },
+    {
+      "name": "4",
+      "korean": 4,
+      "english": 4,
+      "math": 4,
+      "total": 12,
+      "average": "4.00",
+      "id": 5
+    },
+    {
+      "name": "f",
+      "korean": null,
+      "english": null,
+      "math": null,
+      "total": null,
+      "average": "NaN",
+      "id": 6
+    },
+    {
+      "name": "hh",
+      "korean": null,
+      "english": null,
+      "math": null,
+      "total": null,
+      "average": "NaN",
+      "id": 7
+    },
+    {
+      "name": "g",
+      "korean": null,
+      "english": null,
+      "math": null,
+      "total": null,
+      "average": "NaN",
+      "id": 8
+    },
+    {
+      "name": "f",
+      "korean": null,
+      "english": null,
+      "math": null,
+      "total": null,
+      "average": "NaN",
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

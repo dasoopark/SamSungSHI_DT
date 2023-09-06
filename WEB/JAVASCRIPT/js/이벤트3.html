@@ -1,0 +1,32 @@
+<!— 이벤트3.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>버튼에 리스너 붙이기</p>
+        <button id="myBtn">버튼</button>
+    </body>
+</html>
+<script>
+    let btn = document.getElementById("myBtn");
+    window.onload = () => {
+        btn.addEventListener("click", firstFunction);
+        btn.addEventListener("click", secondFunction);
+        btn.addEventListener("click", threeFunction);
+    };
+
+    function firstFunction() {
+        console.log("first function");
+    }
+
+    function secondFunction() {
+        console.log("second function");
+    }
+    function threeFunction() {
+        console.log("three function");
+    }
+</script>

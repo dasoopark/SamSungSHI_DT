@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <form action="">
+        관심분야 : <br/>
+        <input type="checkbox" name="interest" value="1" />프로그래밍 <br />
+        <input type="checkbox" name="interest" value="2" />웹프로그래밍<br />
+        <input type="checkbox" name="interest" value="3" />Datebase <br />
+        <input type="checkbox" name="interest" value="4" />빅데이터 <br />
+        <input type="checkbox" name="interest" value="5" />인공지능 <br />
+        <input type="checkbox" name="interest" value="6" />하드웨어 <br />
+        <button id="btnSel">전체선책</button> <!-- type="button"이 없을 경우에 submit 이다.-->
+        <button id="btnRelease">선택해제</button> <br/>
+    </form>
+</body>
+</html>
+
+<script>
+    $( ()=>{
+        $("#btnSel").click(()=>{
+        // submit 기능을 차단한다
+        event.preventDefault(); // 원래의 이벤트가 갖는 성격을 막는다
+        $("input[type=checkbox][name=interest]").prop("checked", true);})
+        $("#btnRelease").click(()=>{$("input[type=checkbox][name=interest]").prop("checked", false);})
+    })
+</script>

@@ -1,0 +1,50 @@
+<!— class1.html —>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>클래스</h1>
+    </body>
+</html>
+<script>
+    class Person {
+        //여기에 변수를 만들까 말까?
+        // 클래스 공유 메모리 - 클래스를 정의할 때 한번만 생성
+        name = "홍길동";
+        age = 23;
+        address = ["서울시", "거제시"];
+        //생성자 - 변수를 생성자에서 만들자
+
+        constructor(name = "", age = 0, address = []) {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+            console.log("생성자 호출")
+        }
+        
+        setValue(name = "", age = 0, address = []) {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+        output() {
+            console.log(`이름 : ${this.name}`);
+            console.log(`나이 : ${this.age}`);
+            console.log(`주소 : ${this.address[1]}`);
+            this.address.forEach((e) => {
+                console.log(e);
+            });
+        }
+    }
+    let person = new Person();
+    person.output();
+
+    let person2 = new Person();
+    person2.name = "임꺽정";
+    person2.address.push("부산시");
+    person2.output();
+</script>
