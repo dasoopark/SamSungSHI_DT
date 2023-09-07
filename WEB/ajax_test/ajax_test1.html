@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <button type="button" id="btnSend" onclick="callAjax()">ajaxcall</button>
+</body>
+</html>
+
+<script>
+    function callAjax()
+    {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+            console.log("현재상태 : ", this.readyState, this.status);
+            if(this.readyState==4 &&  this.status=="200")
+            {
+                //응답처리하기 
+                console.log( this.responseText );
+                document.getElementById("result").innerHTML = this.responseText;
+
+            }
+        }
+
+        xhttp.open("GET", "http://localhost:3000/posts", true);
+        xhttp.send();  //에러상황 
+    }
+</script>

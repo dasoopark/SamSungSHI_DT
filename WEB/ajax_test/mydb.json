@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server222",
+      "author": "conan"
+    },
+    {
+      "title": "post 맨을 사용해보자",
+      "author": "post맨",
+      "id": 3
+    },
+    {
+      "title": "쌍갑포차",
+      "author": "배혜수",
+      "id": 4
+    },
+    {
+      "title": "쌍갑포차",
+      "author": "배혜수",
+      "id": 5
+    },
+    {
+      "title": "마음의소리",
+      "author": "조석",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
