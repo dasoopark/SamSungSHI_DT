@@ -1,4 +1,3 @@
-<!-- 첫번째 풀더내 html 파일의 이름인 무조건 index.html으로 한다.-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>환영합니다</h1>
+    <!-- ejs 가 하는일은 <%=title%> 바뀌치기 -->
+    <h1><%=title%></h1>
+
+    <ul>
+        <li><a href="http://127.0.0.1:4000/userinfo">사용자정보</a></li>
+    </ul>
+
 </body>
 </html>
+

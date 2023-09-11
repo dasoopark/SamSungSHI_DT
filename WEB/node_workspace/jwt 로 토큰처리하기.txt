@@ -1,0 +1,58 @@
+https://victorydntmd.tistory.com/116
+
+1. npm install jsonwebtoken
+
+2. 토큰생성 
+
+1)설정 
+config/jwt.js 
+let jwtObj = {};
+
+jwtObj.secret = "apple"; 
+//아무거나 복잡한거 쓰자. 이 파일은 노출되지 않도록 보안에 신경쓰자  
+module.exports = jwtObj;
+
+2)
+let jwt = require("jsonwebtoken"); 
+let secretObj = require("../config/jwt");
+
+//원하는 정보를 json으로 전달한다 .
+let token = jwt.sign({
+        "userid":test
+        "email": "foo@example.com"   // 토큰의 내용(payload)
+      },
+      secretObj.secret ,    // 비밀 키
+      {
+        expiresIn: '5m'    // 유효 시간은 5분, 유효시간을 길게 줄수도 있다 
+      })
+
+
+    models.user.find({
+        where: {
+            email: "foo@example.com"
+        }
+    })
+  .then( user => {
+    if(user.pwd === "1234"){
+      res.cookie("user", token);
+      res.json({
+        token: token
+      })
+    }
+  })
+
+확인
+router.get("/someAPI", function(req, res, next){
+  let token = req.cookies.user;
+
+  let decoded = jwt.verify(token, secretObj.secret);
+  if(decoded){
+    res.send("권한이 있어서 API 수행 가능")
+  }
+  else{
+    res.send("권한이 없습니다.")
+  }
+})
+
+
+https://velog.io/@neity16/NodeJS-JWT-Token-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0

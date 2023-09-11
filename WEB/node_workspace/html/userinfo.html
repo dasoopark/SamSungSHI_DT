@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    이름 : <%=username%> <br/>
+    나이 : <%=age%> <br/>
+    전번 : <%=phone%> <br/>
+    주소 : <%=address%> <br/>
+    
+    <%
+    for(i=0; i<fav.length; i++){
+    %>
+        <%=fav[i]%><br/>
+    <%
+    }
+    %>
+
+    <%
+    for(i=0; i<friends.length; i++){
+    %>
+        <%=friends[i].name%> &nbsp;&nbsp;
+        <%=friends[i].phone%><br/>
+    <%
+    }
+    %>
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+참고사이트 : https://velog.io/@backtony/git-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%A0%95%EB%A6%AC
+
+
+1. 설치하기 
+https://git-scm.com/download/win
+64-bit Git for Windows Setup. 선택하기 
+디폴트로 설치한다. 
+
+
+2. git 명령어 형식
+
+git 명령어 옵션 
+
+mkdir gittest
+
+깃 초기화
+git init
+git 폴더 안에 init을 했다면 .git이라는 숨겨진 폴더가 만들어지고 그 안에는
+ git 내부 구현사항들이 저장되어 있다.
+기본적으로 master branch가 생긴다(이전버전임), 만들어줘야 한다 
+
+dir/a  로 확인하기 
+cd .git
+dir 
+type config 
+
+
+https://www.lainyzine.com/ko/article/how-to-set-git-repository-username-and-email/
+
+ Commit 작업을 할 때 누구의 작업인지를 기록하는 것이 매우 중요합니다.
+  Git에서는 커밋을 할 때 사용할 이름과 이메일을 지정할 수 있으며, 
+  이 때 커밋에 기록된 이메일은 GitHub의 사용자를 연결할 때도 사용됩니다. 
+  Git을 사용한다면 설치 후 꼭 미리 설정해두기를 권장합니다.
+
+
+로컬에서 기본값으로 사용할 Git 사용자 이름과 이메일 설정(global 옵션)
+현재 시스템의 모든 Git 작업에 사용할 사용자 이름(user.name)과 이메일을 설정하고자 한다면, global옵션을 사용해 git config 명령어를 실행해줍니다.
+
+저장소 별로 Git 사용자와 이메일 정보 설정하기
+저장소 디렉터리에서 --global 없이 git config를 사용하면 해당 디렉터리(저장소) 전용 설정을 추가할 수 있습니다.
+git config user.name "LainyZine"
+git config user.email lainyzine.com@gmail.com
+이 설정은 저장소 별로 저장되며 global 옵션으로 설정한 정보보다 우선적으로 사용됩니다.
+
+git config --global user.name BHS
+git config --global user.email littleconan@hanmail.net
+
+현재 저장소의 user, email 설정값을 확인하는 방법
+git config --list 
+git config user.name
+git config user.email
+
+
+copy con test 
+I like star
+CTRL-Z 
+
+git add .
+$ git commit -m'Initiazile repsitory'
+[master (root-commit) 7c4f2a2] Initiazile repsitory
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+
+커밋정보 확인
+git show     
+
+
+# 전역 설정을 삭제
+$ git config --global --unset user.name
+$ git config --global --unset user.email
+
+# 개별 저장소의 설정을 삭제
+$ git config --unset user.name
+$ git config --unset user.email
+
+Git 저장소의 커밋 정보와 GitHub 사용자가 연결되는 원리
+GitHub에서는 Git 커밋의 이메일 정보를 사용해 GitHub 사용자를 매칭합니다. GitHub 하나의 계정에는 Primary 메일을 비롯해 추가 이메일을 등록할 수 있습니다. 고유한 이메일 주소는 오직 하나의 계정에만 등록될 수 있기 때문에 이메일 주소로 GitHub 사용자와 매칭하는 것이 가능합니다.
+
+
+심화 주제: GPG 인증
+로컬에서 user.email을 설정하는 것은 커밋의 작성자가 누구인지를 보장하지 않습니다. 이 값을 다른 사용자의 이메일로 변경하고 커밋하면 GitHub에서는 다른 사람 프로필을 연결해버립니다. 이러한 문제를 방지하고 작성자 본인임을 증명하기 위해서 추가적으로 GPG 인증을 사용할 수 있습니다. 이렇게 추가 인증을 하는경우 GitHub의 커밋 정보에서 Verified 마크를 확인할 수 있습니다.
+파일작성자 확인 
+git blame 파일명 
+
+git blame test 
+
+
+오류가 발생한 시점 찾아내기
+// 이진 탐색 시작을 알린다.
+git bisect start
+
+// 현재 커밋에서 오류가 발생한다면 
+git bisect bad
+
+// 어느 시점 이후로 오류가 발생했다고 예상되는 시점으로 이동
+git checkout 해당커밋해시
+
+// 해당 커밋에서는 오류가 발생하지 않았다면
+git bisect good
+
+// 이후부터는 git이 이진탐색으로 커밋을 checkout 시킨다.
+// 옮겨진 위치마다 돌려보고 git bisect good, bad를 입력하다 보면
+// 최종적으로 오류가 처음 발생하는 시점을 찾아준다.
+
+
+
+커밋하기
+스테이징 상태에 있는 것 메시지와 함께 커밋하기
+git commit -m "메시지"
+
+추적중인 working directory와 스테이징에 있는 것 모두를 메시지와 함께 커밋하기
+git commit -am "메시지"
+
+현재 커밋의 변경사항 확인하기
+git commit -v
+
+삭제
+rm c.txt 
+
+git rm c.txt
+rm 으로 지우면 스테이징에 포함되지 않으므로 따로 add를 해줘야 한다. 하지만 git rm을 사용하면 바로 스테이징에 적용된다.
+
+
+git commit -v
+
+파일명 수정
+mv c.txt o.txt
+
+git mv c.txt o.txt
+mv로 파일명을 수정하면 스테이징에 포함되지 않으므로 따로 add해줘야 한다. 하지만 git mv를 사용하면 바로 스테이징에 적용된다.
+
+
+restore
+git restore --staged 파일명
+staging area에서 working directory로 옮긴다.
+staged 옵션을 빼면 working directory에서도 제거한다.(아애 원래대로 되돌린다는 뜻)
+
+
+
+
+모든 config 설정 정보 보기
+git config --list              
+
+global config 보기
+git config --global --list
+
+깃 폴더 열기와 삭제
+윈도우
+start .git
+
+맥
+open .git
+
+git 삭제
+rm -rf .git
