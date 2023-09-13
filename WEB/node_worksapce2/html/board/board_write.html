@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" name="myform">
+        제목 : <input type="text" name="title" id="title"><br/>
+        이름 : <input type="text" name="writer" id="writer"><br/>
+        내용 : <textarea name="contents" cols="80" rows="4" id="contents"></textarea><br/>
+
+        <button type="button" id="btnWrite">글쓰기</button>
+    </form>
+</body>
+</html>
+
+<script>
+    window.onload = function(){
+        document.getElementById("btnWrite").addEventListener("click", ()=>{
+            var frm = document.myform; //폼객체를 가져오는 부분이 세방법 
+            //document.name속성 
+            //document.getElementById(id속성)
+            //document.forms[0];
+            frm.method="POST";
+            frm.action = "/board/save";
+            frm.submit();
+        })
+    }
+</script>

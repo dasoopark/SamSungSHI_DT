@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="myform">
+        <h1>score write</h1>
+
+        이름 : <input type="text" name="name" id="name"><br/>
+        국어 : <input type="text" name="kor" id="kor"><br/>
+        영어 : <input type="text" name="eng" id="eng"><br/>
+        수학 : <input type="text" name="mat" id="mat"><br/>
+
+        <button type="button" id="btnWrite">글쓰기</button>
+        <button type="button" id="btnCancel">취소</button>
+    </form>
+</body>
+</html>
+<script>
+    $(()=>{
+        $("#btnWrite").click(()=>{
+            $("#myform").prop("action", "/score/save");
+            $("#myform").prop("method", "POST");
+            $("#myform").submit();
+        });
+
+        $("#btnCancel").click(()=>{
+            $("#myform").prop("action", "/score/list");
+            $("#myform").prop("method", "GET");
+            $("#myform").submit();
+        });
+    })
+</script>

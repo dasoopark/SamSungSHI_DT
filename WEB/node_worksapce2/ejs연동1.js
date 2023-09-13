@@ -22,11 +22,37 @@ let server = http.createServer( (req, res)=>{
         {
             route.test1(req, res); 
         }
+        else if(pathName =="/test2")
+        {
+            route.test2(req, res); 
+        }
+        else if(pathName =="/board/list")
+        {
+            route.board_list(req, res); 
+        }
+        else if(pathName =="/board/write")  // url => 함수명은 관계없음 
+        {
+            route.board_write(req, res); 
+        }
+        else
+        {
+            res.writeHead(200, {"Content-Type":"text/html;charset=utf-8"});
+            res.end("<h1>My Home</h1>");
+        }
     }
-    else 
+    else  //POST방식
     {
-        res.writeHead(200, {"Content-Type":"text/html;charset=utf-8"});
-        res.end("<h1>POST방식 처리</h1>"); //post맨
+        let pathName = url.parse(req.url).pathname;
+        if(pathName == "/board/save")
+        {
+            route.board_save(req, res);
+            
+        }
+        else 
+        {
+            res.writeHead(200, {"Content-Type":"text/html;charset=utf-8"});
+            res.end("<h1>POST방식 처리</h1>"); //post맨
+        }
     }
 });
 //createServer 도 비동기 함수이다. 반환값은 완성된 서버에 대한 참조이다 

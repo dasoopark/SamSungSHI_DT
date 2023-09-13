@@ -6,15 +6,38 @@
     <title>Document</title>
 </head>
 <body>
-    <!--변수의 값 < % = 변수명 % >-->
-    <%
-       var i;
-       for(var i=1; i<=9 ; i++)
-       {
-    %>
-        <%=dan%> * <%=i%> = <%=dan*i%><br/>
-    <%
-       }
-    %>
+   <table>
+        <thead>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+        </thead>
+        <tbody>
+            <% board_list.forEach( (item)=>{ %>
+                <tr>
+                    <td><%=item.id%></td>
+                    <td><%=item.title%></td>
+                    <td><%=item.writer%></td>
+                </tr>
+            <%    
+            }) 
+            %>
+        </tbody>
+
+        <form name="myform">
+            <button type="button" id="btnWrite">글쓰기</button>
+        </form>
+   </table>
 </body>
 </html>
+
+<script>
+    window.onload = function(){
+        document.getElementById("btnWrite").addEventListener("click", ()=>{
+            var frm = document.myform;
+            frm.action="/board/write";
+            frm.method ="GET";
+            frm.submit();
+        })
+    }
+</script>
