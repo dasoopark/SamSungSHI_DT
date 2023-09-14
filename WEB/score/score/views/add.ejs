@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="myform">
+        x : <input type="text" name="x" id="x"><br>
+        y : <input type="text" name="y" id="y"><br>
+        <select name="oper" id="oper">
+            <option value="1">+</option>
+            <option value="2">-</option>
+            <option value="3">*</option>
+            <option value="4">/</option>
+        </select> <br>
+
+        <button type="button" id="btnSend">보내기</button>
+
+    </form>
+</body>
+</html>
+<script>
+    $(()=>{
+        $("#btnSend").click(()=>{
+            $("#myform").prop("method", "get");
+            $("#myform").prop("action", "add_result");
+            $("#myform").submit();
+        });
+    })
+</script>
