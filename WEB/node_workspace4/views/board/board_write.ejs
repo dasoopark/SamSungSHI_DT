@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="myform">
+        <h1>게시글 작성</h1>
+
+        제목 : <input type="text" name="title" id="title"> <br/>
+        작성자 : <input type="text" name="writer" id="writer"> <br/>
+        내용 : <input type="text" name="contents" id="contents"> <br/>
+
+        <button type="button" id="btnWrite">등록</button> 
+        <button type="button" id="btnCancel">취소</button> 
+    </form>
+</body>
+</html>
+
+<script>
+    $(()=>{
+        $("#btnWrite").click(()=>{
+            $("#myform").prop("method", "post"); 
+            $("#myform").prop("action", "/board/save");
+            $("#myform").submit();
+        });
+
+        $("#btnCancel").click(()=>{
+            $("#myform").prop("method", "get"); 
+            $("#myform").prop("action", "/board/list");
+            $("#myform").submit();
+        });
+    })
+</script>

@@ -4,35 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,  initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>score list</h1>
+    <form name="myform" id="myform">
 
-    <table>
-        <thead >
-            <tr>
-                <th>번호</th>
-                <th>이름</th>
-                <th>국어</th>
-                <th>영어</th>
-                <th>수학</th>
-                <th>총점</th>
-                <th>평균</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for( item of scoreList){ %>
-            <tr>
-                <td><%=item.id%></td>
-                <td><%=item.name%></td>
-                <td><%=item.kor%></td>
-                <td><%=item.eng%></td>
-                <td><%=item.mat%></td>
-                <td><%=item.kor + item.eng + item.mat%></td>
-                <td><%=Math.round((item.kor + item.eng + item.mat)/3, 2) %></td>
-            </tr>
-            <% } %>
-        </tbody>
-    </table>
+        <h1>score list</h1>
+
+        <table>
+            <thead >
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>국어</th>
+                    <th>영어</th>
+                    <th>수학</th>
+                    <th>총점</th>
+                    <th>평균</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( item of scoreList){ %>
+                <tr>
+                    <!-- http://127.0.0.1:4000/score/view?id=1 -->
+
+                    <td><%=item.id%></td>
+                    <td><a href="/score/view?id=<%=item.id%>"><%=item.name%></a></td>
+                    <td><%=item.kor%></td>
+                    <td><%=item.eng%></td>
+                    <td><%=item.mat%></td>
+                    <td><%=item.kor + item.eng + item.mat%></td>
+                    <td><%=((item.kor + item.eng + item.mat)/3).toFixed(2) %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <br/><br/>
+        <button type="button"  id="btnWrite">글쓰기</button>
+
+    
+    </form>
 </body>
 </html>
+
+<script>
+    $(()=>{
+        $("#btnWrite").click( ()=>{
+            //jquery form객체 
+            $("#myform").prop("action", "/score/write");  //action속성에 서버 rul 
+            $("#myform").prop("method", "GET");
+            $("#myform").submit(); 
+        });
+    })
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <form action="gugu_result" method="get" id="myform">
+        단 : <input type="text" name="dan" id=""> 
+        <button type="button" id="btnSend">확인</button> <br/>
+    </form>
+</body>
+</html>
+<script>
+  $(()=>{
+        $("#btnSend").click(()=>{
+            $("#myform").prop("method", "get");
+            $("#myform").prop("action", "gugu_result");
+            $("#myform").submit();
+        });
+    })
+</script>
+

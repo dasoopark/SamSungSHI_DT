@@ -115,6 +115,12 @@ function process(req, res)
         //http://127.0.0.1:4000/score/write
         route.score_write(req, res); //함수 만들어야 함 
     }
+    else if(pathname=="/score/save")
+    {
+        //http://127.0.0.1:4000/score/save
+        route.score_save(req, res); //함수 만들어야 함 
+    }
+
     else
     {
         res.writeHead(404, {"Content-Type":"text/html;charset=utf-8"} );
@@ -124,3 +130,24 @@ function process(req, res)
 
 //문제1.  html 파일을 하나 만들고 파일명은  flower1.html  
 //        /flower  라고 경로를 치면 flower1.html 내용이 보이게 하기     
+
+/*
+ 
+  /weekpay/list 
+ /weekpay/write 
+ /weekpay/save
+
+주급 
+이름, 시간당급여, 근무시간, 주급 
+홍길동  10000 40 40000
+장길산  20000 20 40000
+
+route2.js 파일에 몰아넣기 
+weekpay_list();
+weekpay_write();
+weekpay_save();
+
+weekpay/weekpay_list.html 
+weekpay/weekpay_write.html 
+weekpay/weekpay_view.html 
+*/

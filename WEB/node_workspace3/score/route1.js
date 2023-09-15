@@ -52,31 +52,46 @@ scoreList =[
     {"id":5, "name":"을지문덕", "kor":90, "eng":80, "mat":70}
 ];
 
+//npm install mysql2
+let commonDB = require('./commonDB');/////////////////////
+
 function score_list(req, res)
 {
-    fs.readFile("./html/score/score_list.html", "utf-8", (error, data)=>{
+    fs.readFile("./html/score/score_list.html", "utf-8", async(error, data)=>{ /////////////////
         if(error)
         {
             callError(req,res);
             return;
         }
 
+        let sql="select * from tb_score";/////////////////////////
+        let scoreList = await commonDB.loadDB(sql, []);//////////////////////
+        
         let result = ejs.render(data, {"scoreList":scoreList} );
         res.writeHead(200, {"Content-Type":"text/html;charset=utf-8"});
         res.end( result );
     })
 }
 
+
+
 function score_view(req, res)
 {
-    fs.readFile("./html/score/score_view.html", "utf-8", (error, data)=>{
+    fs.readFile("./html/score/score_view.html", "utf-8", async(error, data)=>{
         if(error)
         {
             callError(req,res);
             return;
         }
+        //get방식으로 받는다 
 
-        let result = ejs.render(data);
+
+        let id =  url.parse(req.url, true).query.id;
+        let sql = "select * from tb_score where id=?";
+        let param=[id];
+        let item = await commonDB.loadDB(sql, param);
+        let result = ejs.render(data, {board:item[0]});
+
         res.writeHead(200, {"Content-Type":"text/html;charset=utf-8"});
         res.end( result );
     })
@@ -97,10 +112,38 @@ function score_write(req, res)
     })
 }
 
+function score_save(req, res)
+{
+    //입력한값 
+    let body = "";
+    req.on('data', (data)=>{
+        console.log( data);
+        body+=data; // 수신된 데이터를 모아서 
+    });
+   
+    //수신완료시 
+    req.on('end', async()=>{  ////////////////////////////////////////////////////////////
+        //파싱작업 
+        params = new URLParams(body);
+        console.log(params); 
+
+        //json객체로 전환 - 따로 함수가 없어서 직접 만들음 
+        let sql = `insert into tb_score(name, kor, eng, mat,wdate)
+        values(?,?,?,?,now())`;
+        score = [params.get("name"), params.get("kor"), params.get("eng"), params.get("mat")];
+        await commonDB.saveDB(sql, score);
+
+        //직접 /save/list 를 호출할 수 없다. 내부적으로 별도의 처리가 
+        //많이 이뤄진다. 그래서 페이지 자동이동으로 해결해야 한다 
+        res.writeHead(302, {"Location":"/score/list"});
+        res.end();
+    });
+}
 
 exports.score_list = score_list;
 exports.score_view= score_view;
 exports.score_write = score_write;
+exports.score_save = score_save;
 
 exports.flower = flower;
 exports.index = index;
