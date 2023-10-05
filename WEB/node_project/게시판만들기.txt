@@ -1,0 +1,37 @@
+
+1. 목록                  /board/list/1 
+2. 글쓰기                /board/list -> /board/write  -> /board/save -> /board/list
+3. 상세보기              /board/list -> /board/view   -> 목록(/board/list) 
+                                                        수정(/board/modify) 
+                                                        삭제 (/board/delete) 
+4. 수정하기               /board/modify  ->  /board/list/1 
+5. 삭제하기               /board/delete  ->  /board/list/1 
+
+board.js 에 
+ /board/list/1  --> 디비에서 데이터 읽어서 list.ejs와 결합 
+ /board/write   --> write.ejs로 이동
+ /board/save    --> write.ejs에서 보낸 정보를 받아와서 디비에 저장 후 list로 redirect 한다 
+ /board/view    --> list.ejs 에서 id값을 읽어온다. 그리고 view.ejs 와 결합한다
+ /board/modify  --> view.ejs에서 id값을 전달받은 후 ==> 수정하면으로 이동 write.ejs로 이동한다 
+                    html문서에 hidden 태그를 사용해서, write(mode=insert, id=""), 
+                    modify( mode="modify" id="상세화면으로전달된 id" )+ 디비에서 데이터를 읽어와야 한다  
+ /board/delete   --> 삭제진짜? 물어보고 삭제후 list 로 redirect
+
+
+ list.ejs 
+ write.ejs
+ view.ejs
+
+
+드라이브 이동 
+d:
+
+폴더 위치 이동 
+cd node_project 
+
+프로젝트 생성 
+express myhome3  --view=ejs  
+
+dir 폴더의 내용보기 
+
+npm install mysql2 

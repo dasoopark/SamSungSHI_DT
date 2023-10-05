@@ -1,0 +1,44 @@
+<ul class="pagination  justify-content-center">
+    
+    <li class="page-item "><a class="page-link" href="#none" onclick="goPage('1')">first</a></li>
+    <%
+    if( paging.pageNum == 1){ %>
+        <li class="page-item disabled"><a class="page-link" href="#none">Previous</a></li>
+    <%}else{%>
+      <li class="page-item"><a class="page-link" href="#none" onclick="goPage('<%= paging.pageNum-1 %>')">Previous</a></li>
+    <%}%> 
+
+
+    <%for(var i=paging.pgStart; i<paging.pgEnd;  i++)
+    {
+        if( i==paging.pageNum){
+    %>
+        <li class="page-item "><a class="page-link " href="#none" onclick="goPage('<%=i%>')"><%=i%></a></li>
+    <%}else{%>
+        <li class="page-item"><a class="page-link "  href="#none" onclick="goPage('<%=i%>')"><%=i%></a></li>
+    <%} /*end of if*/
+    }/*end of for*/%>
+ 
+
+    <%
+    if(  paging.pageNum  >= paging.pgTotal ){ %>
+      <li class="page-item disabled"><a class="page-link" href="#none" >Next</a></li>
+    <%}else{%>
+      <li class="page-item "><a class="page-link" href="#none" onclick="goPage('<%= paging.pageNum +1 %>')">Next</a></li>
+    <%}%> 
+    <li class="page-item"><a class="page-link" href="#none" onclick="goPage('<%=paging.pgTotal%>')">last</a></li>
+  </ul>
+  <!-- 
+  << < 1 2 3 4 5 > >>                    curInfo = 1~5              5       
+  << < 6 7 8 9 10 > >>                   curInfo = 6~10 
+  << < 11 12 13 14 15 > >>               curInfo = 11~15
+  << < 16 17 18 19 20 > >>               curInfo = 16~20
+  
+ 현재페이지정보                            curInfo = 1~5 
+ 그룹시작정보 그룹엔딩정보  : 1, 5         pageGroupStart  
+                              6, 10        pageGroupEnd 
+
+전체페이지수  :  전체데이터개수/페이지크기 totalPage
+
+
+  -->
